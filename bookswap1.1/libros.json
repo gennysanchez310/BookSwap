@@ -1,0 +1,297 @@
+[
+    {
+      "titulo": "El Infinito en un Junco",
+      "editorial": "Siruela",
+      "fecha_publicacion": "2019-09-25",
+      "categorias": ["Ensayo", "Historia", "Filosofía"]
+    },
+    {
+      "titulo": "Sira",
+      "editorial": "Planeta",
+      "fecha_publicacion": "2021-04-14",
+      "categorias": ["Novela Histórica", "Ficción"]
+    },
+    {
+      "titulo": "El Juego del Alma",
+      "editorial": "Planeta",
+      "fecha_publicacion": "2021-03-25",
+      "categorias": ["Novela Negra", "Misterio"]
+    },
+    {
+      "titulo": "Cuentos de Buenas Noches para Niñas Rebeldes",
+      "editorial": "Destino",
+      "fecha_publicacion": "2017-10-01",
+      "categorias": ["Infantil", "Educativo"]
+    },
+    {
+      "titulo": "El Club de los Psicoanalistas",
+      "editorial": "Penguin Random House",
+      "fecha_publicacion": "2020-07-15",
+      "categorias": ["Thriller", "Misterio"]
+    },
+    {
+      "titulo": "La Novena Casa",
+      "editorial": "Umbriel",
+      "fecha_publicacion": "2020-02-12",
+      "categorias": ["Fantasía", "Suspenso"]
+    },
+    {
+      "titulo": "El Tiempo entre Costuras",
+      "editorial": "Planeta",
+      "fecha_publicacion": "2009-06-24",
+      "categorias": ["Novela Histórica", "Ficción"]
+    },
+    {
+      "titulo": "El Visitante",
+      "editorial": "Plaza & Janés",
+      "fecha_publicacion": "2019-03-05",
+      "categorias": ["Terror", "Thriller"]
+    },
+    {
+      "titulo": "La Sombra del Viento",
+      "editorial": "Planeta",
+      "fecha_publicacion": "2001-05-01",
+      "categorias": ["Misterio", "Novela"]
+    },
+    {
+      "titulo": "La Cara Norte del Corazón",
+      "editorial": "Destino",
+      "fecha_publicacion": "2019-08-20",
+      "categorias": ["Thriller", "Suspenso"]
+    },
+    {
+      "titulo": "Principios",
+      "editorial": "Deusto",
+      "fecha_publicacion": "2018-02-01",
+      "categorias": ["Negocios", "Economía"]
+    },
+    {
+      "titulo": "Breve Historia del Tiempo",
+      "editorial": "Crítica",
+      "fecha_publicacion": "1988-04-01",
+      "categorias": ["Ciencia", "Física", "Divulgación"]
+    },
+    {
+      "titulo": "El Hombre en Busca de Sentido",
+      "editorial": "Herder",
+      "fecha_publicacion": "1946-01-01",
+      "categorias": ["Psicología", "Filosofía"]
+    },
+    {
+      "titulo": "La Chica Salvaje",
+      "editorial": "Ático de los Libros",
+      "fecha_publicacion": "2018-09-01",
+      "categorias": ["Novela", "Ficción"]
+    },
+    {
+      "titulo": "El Código Da Vinci",
+      "editorial": "Planeta",
+      "fecha_publicacion": "2003-03-18",
+      "categorias": ["Misterio", "Suspenso"]
+    },
+    {
+      "titulo": "El Arte de la Guerra",
+      "editorial": "Ediciones Obelisco",
+      "fecha_publicacion": "1997-01-01",
+      "categorias": ["Estrategia", "Historia"]
+    },
+    {
+      "titulo": "Padre Rico, Padre Pobre",
+      "editorial": "Aguilar",
+      "fecha_publicacion": "1997-04-01",
+      "categorias": ["Finanzas", "Autoayuda"]
+    },
+    {
+      "titulo": "Crónica de una Muerte Anunciada",
+      "editorial": "Debolsillo",
+      "fecha_publicacion": "1981-05-01",
+      "categorias": ["Ficción", "Novela"]
+    },
+    {
+      "titulo": "1984",
+      "editorial": "Debolsillo",
+      "fecha_publicacion": "1949-06-08",
+      "categorias": ["Ficción", "Ciencia Ficción", "Distopía"]
+    },
+    {
+      "titulo": "El Nombre del Viento",
+      "editorial": "Plaza & Janés",
+      "fecha_publicacion": "2007-03-27",
+      "categorias": ["Fantasía", "Aventura"]
+    },
+    {
+      "titulo": "Los Juegos del Hambre",
+      "editorial": "RBA",
+      "fecha_publicacion": "2008-09-14",
+      "categorias": ["Juvenil", "Ciencia Ficción"]
+    },
+    {
+      "titulo": "Ready Player One",
+      "editorial": "Ediciones B",
+      "fecha_publicacion": "2011-08-16",
+      "categorias": ["Ciencia Ficción", "Aventura"]
+    },
+    {
+      "titulo": "El Gran Gatsby",
+      "editorial": "Debolsillo",
+      "fecha_publicacion": "1925-04-10",
+      "categorias": ["Clásico", "Novela"]
+    },
+    {
+      "titulo": "Don Quijote de la Mancha",
+      "editorial": "Cátedra",
+      "fecha_publicacion": "1605-01-16",
+      "categorias": ["Clásico", "Ficción"]
+    },
+    {
+      "titulo": "Cien Años de Soledad",
+      "editorial": "Sudamericana",
+      "fecha_publicacion": "1967-05-05",
+      "categorias": ["Novela", "Realismo Mágico"]
+    },
+    {
+      "titulo": "El Alquimista",
+      "editorial": "Planeta",
+      "fecha_publicacion": "1988-01-01",
+      "categorias": ["Ficción", "Filosofía"]
+    },
+    {
+      "titulo": "La Cabaña",
+      "editorial": "Urano",
+      "fecha_publicacion": "2007-09-01",
+      "categorias": ["Ficción", "Religión"]
+    },
+    {
+      "titulo": "El Señor de los Anillos",
+      "editorial": "Minotauro",
+      "fecha_publicacion": "1954-07-29",
+      "categorias": ["Fantasía", "Aventura"]
+    },
+    {
+      "titulo": "La Historia Interminable",
+      "editorial": "Alfaguara",
+      "fecha_publicacion": "1979-09-01",
+      "categorias": ["Fantasía", "Juvenil"]
+    },
+    {
+      "titulo": "Carrie",
+      "editorial": "Plaza & Janés",
+      "fecha_publicacion": "1974-04-05",
+      "categorias": ["Terror", "Suspenso"]
+    },
+    {
+      "titulo": "Los Secretos de la Mente Millonaria",
+      "editorial": "Aguilar",
+      "fecha_publicacion": "2005-06-01",
+      "categorias": ["Finanzas", "Autoayuda"]
+    },
+    {
+      "titulo": "El Poder del Ahora",
+      "editorial": "Grijalbo",
+      "fecha_publicacion": "1997-10-01",
+      "categorias": ["Autoayuda", "Espiritualidad"]
+    },
+    {
+      "titulo": "Despierta tu Héroe Interior",
+      "editorial": "Grijalbo",
+      "fecha_publicacion": "2018-03-01",
+      "categorias": ["Autoayuda", "Motivación"]
+    },
+    {
+      "titulo": "Harry Potter y la Piedra Filosofal",
+      "editorial": "Salamandra",
+      "fecha_publicacion": "1997-06-26",
+      "categorias": ["Fantasía", "Juvenil"]
+    },
+    {
+      "titulo": "El Instituto",
+      "editorial": "Plaza & Janés",
+      "fecha_publicacion": "2019-09-10",
+      "categorias": ["Terror", "Suspenso"]
+    },
+    {
+      "titulo": "Dune",
+      "editorial": "Ediciones B",
+      "fecha_publicacion": "1965-08-01",
+      "categorias": ["Ciencia Ficción", "Aventura"]
+    },
+    {
+      "titulo": "Matar a un Ruiseñor",
+      "editorial": "Harper Lee",
+      "fecha_publicacion": "1960-07-11",
+      "categorias": ["Clásico", "Novela"]
+    },
+    {
+      "titulo": "Sapiens: De Animales a Dioses",
+      "editorial": "Debate",
+      "fecha_publicacion": "2014-09-04",
+      "categorias": ["Historia", "Ciencia", "Ensayo"]
+    },
+    {
+      "titulo": "Homo Deus",
+      "editorial": "Debate",
+      "fecha_publicacion": "2015-09-08",
+      "categorias": ["Ensayo", "Futuro", "Tecnología"]
+    },
+    {
+      "titulo": "La Ladrona de Libros",
+      "editorial": "Lumen",
+      "fecha_publicacion": "2005-03-14",
+      "categorias": ["Novela Histórica", "Ficción"]
+    },
+    {
+      "titulo": "Educated",
+      "editorial": "Random House",
+      "fecha_publicacion": "2018-02-20",
+      "categorias": ["Memorias", "Educación"]
+    },
+    {
+      "titulo": "La Vida Invisible de Addie LaRue",
+      "editorial": "Umbriel",
+      "fecha_publicacion": "2020-10-06",
+      "categorias": ["Fantasía", "Ficción"]
+    },
+    {
+      "titulo": "El Monje que Vendió su Ferrari",
+      "editorial": "Debolsillo",
+      "fecha_publicacion": "1997-01-01",
+      "categorias": ["Autoayuda", "Filosofía"]
+    },
+    {
+      "titulo": "Los Cuatro Acuerdos",
+      "editorial": "Urano",
+      "fecha_publicacion": "1997-11-07",
+      "categorias": ["Autoayuda", "Espiritualidad"]
+    },
+    {
+      "titulo": "A Sangre Fría",
+      "editorial": "Random House",
+      "fecha_publicacion": "1966-01-17",
+      "categorias": ["Crónica", "Misterio"]
+    },
+    {
+      "titulo": "Fahrenheit 451",
+      "editorial": "Debolsillo",
+      "fecha_publicacion": "1953-10-19",
+      "categorias": ["Ciencia Ficción", "Distopía"]
+    },
+    {
+      "titulo": "Orgullo y Prejuicio",
+      "editorial": "Debolsillo",
+      "fecha_publicacion": "1813-01-28",
+      "categorias": ["Clásico", "Romance"]
+    },
+    {
+      "titulo": "Los Pilares de la Tierra",
+      "editorial": "Debolsillo",
+      "fecha_publicacion": "1989-09-01",
+      "categorias": ["Novela Histórica", "Ficción"]
+    },
+    {
+      "titulo": "Hacia Rutas Salvajes",
+      "editorial": "RBA",
+      "fecha_publicacion": "1996-01-13",
+      "categorias": ["Aventura", "Biografía"]
+    }
+  ]
+  
