@@ -1,0 +1,331 @@
+[
+  {
+    "titulo": "Cien años de soledad",
+    "autor": "Gabriel García Márquez",
+    "descripcion": "La historia épica de la familia Buendía en el pueblo ficticio de Macondo.",
+    "fecha_publicacion": "1967",
+    "genero": "Realismo mágico"
+  },
+  {
+    "titulo": "Don Quijote de la Mancha",
+    "autor": "Miguel de Cervantes",
+    "descripcion": "Las aventuras del ingenioso hidalgo Don Quijote y su escudero Sancho Panza.",
+    "fecha_publicacion": "1605",
+    "genero": "Aventura"
+  },
+  {
+    "titulo": "La sombra del viento",
+    "autor": "Carlos Ruiz Zafón",
+    "descripcion": "Un joven descubre un misterioso libro que cambiará su vida en la Barcelona de posguerra.",
+    "fecha_publicacion": "2001",
+    "genero": "Ficción histórica"
+  },
+  {
+    "titulo": "1984",
+    "autor": "George Orwell",
+    "descripcion": "Una distopía que muestra un futuro donde el totalitarismo gobierna el mundo.",
+    "fecha_publicacion": "1949",
+    "genero": "Ciencia ficción"
+  },
+  {
+    "titulo": "Crimen y castigo",
+    "autor": "Fiódor Dostoyevski",
+    "descripcion": "La lucha psicológica de un hombre después de cometer un asesinato.",
+    "fecha_publicacion": "1866",
+    "genero": "Ficción psicológica"
+  },
+  {
+    "titulo": "El amor en los tiempos del cólera",
+    "autor": "Gabriel García Márquez",
+    "descripcion": "La historia de un amor que espera durante décadas en medio de una epidemia.",
+    "fecha_publicacion": "1985",
+    "genero": "Romance"
+  },
+  {
+    "titulo": "El principito",
+    "autor": "Antoine de Saint-Exupéry",
+    "descripcion": "Un niño que vive en un asteroide cuenta sus aventuras y su visión del mundo.",
+    "fecha_publicacion": "1943",
+    "genero": "Fábula"
+  },
+  {
+    "titulo": "Rayuela",
+    "autor": "Julio Cortázar",
+    "descripcion": "Una novela experimental que puede leerse de distintas maneras.",
+    "fecha_publicacion": "1963",
+    "genero": "Ficción surrealista"
+  },
+  {
+    "titulo": "La casa de los espíritus",
+    "autor": "Isabel Allende",
+    "descripcion": "Sigue la vida de varias generaciones de la familia Trueba en un Chile mágico.",
+    "fecha_publicacion": "1982",
+    "genero": "Realismo mágico"
+  },
+  {
+    "titulo": "El nombre de la rosa",
+    "autor": "Umberto Eco",
+    "descripcion": "Un fraile franciscano investiga una serie de asesinatos en una abadía medieval.",
+    "fecha_publicacion": "1980",
+    "genero": "Misterio histórico"
+  },
+  {
+    "titulo": "Los miserables",
+    "autor": "Victor Hugo",
+    "descripcion": "La redención de un exconvicto en el contexto de la Revolución Francesa.",
+    "fecha_publicacion": "1862",
+    "genero": "Ficción histórica"
+  },
+  {
+    "titulo": "El retrato de Dorian Gray",
+    "autor": "Oscar Wilde",
+    "descripcion": "Un joven que permanece eternamente joven mientras su retrato envejece.",
+    "fecha_publicacion": "1890",
+    "genero": "Ficción gótica"
+  },
+  {
+    "titulo": "Matar a un ruiseñor",
+    "autor": "Harper Lee",
+    "descripcion": "Una niña observa el racismo en su pequeño pueblo a través de los ojos de su padre abogado.",
+    "fecha_publicacion": "1960",
+    "genero": "Ficción"
+  },
+  {
+    "titulo": "El señor de los anillos",
+    "autor": "J.R.R. Tolkien",
+    "descripcion": "Una épica fantasía sobre la lucha contra el mal en la Tierra Media.",
+    "fecha_publicacion": "1954",
+    "genero": "Fantasía"
+  },
+  {
+    "titulo": "Ulises",
+    "autor": "James Joyce",
+    "descripcion": "Un día en la vida de Leopold Bloom en el Dublín de 1904.",
+    "fecha_publicacion": "1922",
+    "genero": "Ficción moderna"
+  },
+  {
+    "titulo": "Orgullo y prejuicio",
+    "autor": "Jane Austen",
+    "descripcion": "La relación entre la vivaz Elizabeth Bennet y el reservado señor Darcy.",
+    "fecha_publicacion": "1813",
+    "genero": "Romance"
+  },
+  {
+    "titulo": "La metamorfosis",
+    "autor": "Franz Kafka",
+    "descripcion": "Un hombre se despierta una mañana convertido en un insecto gigante.",
+    "fecha_publicacion": "1915",
+    "genero": "Ficción surrealista"
+  },
+  {
+    "titulo": "Fahrenheit 451",
+    "autor": "Ray Bradbury",
+    "descripcion": "Un futuro donde los bomberos queman libros en una sociedad sin pensamiento crítico.",
+    "fecha_publicacion": "1953",
+    "genero": "Ciencia ficción"
+  },
+  {
+    "titulo": "Ana Karenina",
+    "autor": "León Tolstói",
+    "descripcion": "La trágica historia de amor de Ana Karenina en la Rusia imperial.",
+    "fecha_publicacion": "1877",
+    "genero": "Ficción romántica"
+  },
+  {
+    "titulo": "Cumbres borrascosas",
+    "autor": "Emily Brontë",
+    "descripcion": "Una tormentosa historia de amor y venganza en los páramos ingleses.",
+    "fecha_publicacion": "1847",
+    "genero": "Romance gótico"
+  },
+  {
+    "titulo": "El extranjero",
+    "autor": "Albert Camus",
+    "descripcion": "Un hombre vive su vida en indiferencia hasta que comete un asesinato.",
+    "fecha_publicacion": "1942",
+    "genero": "Filosofía existencial"
+  },
+  {
+    "titulo": "Los detectives salvajes",
+    "autor": "Roberto Bolaño",
+    "descripcion": "Un grupo de poetas en busca de una poeta desaparecida en México.",
+    "fecha_publicacion": "1998",
+    "genero": "Ficción contemporánea"
+  },
+  {
+    "titulo": "El viejo y el mar",
+    "autor": "Ernest Hemingway",
+    "descripcion": "La lucha de un viejo pescador contra un enorme pez en el mar Caribe.",
+    "fecha_publicacion": "1952",
+    "genero": "Ficción"
+  },
+  {
+    "titulo": "Moby Dick",
+    "autor": "Herman Melville",
+    "descripcion": "La obsesiva caza del capitán Ahab por la ballena blanca Moby Dick.",
+    "fecha_publicacion": "1851",
+    "genero": "Aventura"
+  },
+  {
+    "titulo": "Pedro Páramo",
+    "autor": "Juan Rulfo",
+    "descripcion": "Un hombre viaja a un pueblo fantasmal para encontrar a su padre.",
+    "fecha_publicacion": "1955",
+    "genero": "Realismo mágico"
+  },
+  {
+    "titulo": "El guardián entre el centeno",
+    "autor": "J.D. Salinger",
+    "descripcion": "Un joven se enfrenta a la transición hacia la adultez en Nueva York.",
+    "fecha_publicacion": "1951",
+    "genero": "Ficción"
+  },
+  {
+    "titulo": "Madame Bovary",
+    "autor": "Gustave Flaubert",
+    "descripcion": "La trágica vida de una mujer insatisfecha con su vida rural.",
+    "fecha_publicacion": "1857",
+    "genero": "Ficción realista"
+  },
+  {
+    "titulo": "Ensayo sobre la ceguera",
+    "autor": "José Saramago",
+    "descripcion": "Una epidemia de ceguera asola una ciudad, revelando la naturaleza humana.",
+    "fecha_publicacion": "1995",
+    "genero": "Ficción distópica"
+  },
+  {
+    "titulo": "La carretera",
+    "autor": "Cormac McCarthy",
+    "descripcion": "Un padre y su hijo luchan por sobrevivir en un mundo post-apocalíptico.",
+    "fecha_publicacion": "2006",
+    "genero": "Ciencia ficción"
+  },
+  {
+    "titulo": "Las intermitencias de la muerte",
+    "autor": "José Saramago",
+    "descripcion": "Un mundo donde la muerte ha dejado de existir, pero las consecuencias son terribles.",
+    "fecha_publicacion": "2005",
+    "genero": "Ficción filosófica"
+  },
+  {
+    "titulo": "Los pilares de la Tierra",
+    "autor": "Ken Follett",
+    "descripcion": "La construcción de una catedral gótica en la Inglaterra del siglo XII.",
+    "fecha_publicacion": "1989",
+    "genero": "Ficción histórica"
+  },
+  {
+    "titulo": "La isla del tesoro",
+    "autor": "Robert Louis Stevenson",
+    "descripcion": "Un joven emprende una aventura en busca de un tesoro pirata.",
+    "fecha_publicacion": "1883",
+    "genero": "Aventura"
+  },
+  {
+    "titulo": "Las aventuras de Huckleberry Finn",
+    "autor": "Mark Twain",
+    "descripcion": "Un niño huye de su vida doméstica y viaja por el río Misisipi.",
+    "fecha_publicacion": "1884",
+    "genero": "Aventura"
+  },
+  {
+    "titulo": "Drácula",
+    "autor": "Bram Stoker",
+    "descripcion": "Un abogado viaja a Transilvania y se enfrenta al conde Drácula.",
+    "fecha_publicacion": "1897",
+    "genero": "Terror"
+  },
+  {
+    "titulo": "Frankestein",
+    "autor": "Mary Shelley",
+    "descripcion": "La historia de un científico que crea una criatura con vida propia.",
+    "fecha_publicacion": "1818",
+    "genero": "Ciencia ficción gótica"
+  },
+  {
+    "titulo": "El gran Gatsby",
+    "autor": "F. Scott Fitzgerald",
+    "descripcion": "La decadencia y los excesos de la alta sociedad en los años 20 en EE.UU.",
+    "fecha_publicacion": "1925",
+    "genero": "Ficción moderna"
+  },
+  {
+    "titulo": "El perfume",
+    "autor": "Patrick Süskind",
+    "descripcion": "Un hombre obsesionado con el olor crea perfumes mortales en el París del siglo XVIII.",
+    "fecha_publicacion": "1985",
+    "genero": "Ficción histórica"
+  },
+  {
+    "titulo": "La insoportable levedad del ser",
+    "autor": "Milan Kundera",
+    "descripcion": "Reflexiones sobre el amor y la política en la Checoslovaquia comunista.",
+    "fecha_publicacion": "1984",
+    "genero": "Filosofía existencial"
+  },
+  {
+    "titulo": "La muerte de Artemio Cruz",
+    "autor": "Carlos Fuentes",
+    "descripcion": "Un exrevolucionario recuerda su vida mientras agoniza en su lecho de muerte.",
+    "fecha_publicacion": "1962",
+    "genero": "Ficción histórica"
+  },
+  {
+    "titulo": "La guerra y la paz",
+    "autor": "León Tolstói",
+    "descripcion": "Las vidas entrelazadas de cinco familias aristocráticas durante las guerras napoleónicas.",
+    "fecha_publicacion": "1869",
+    "genero": "Ficción histórica"
+  },
+  {
+    "titulo": "La divina comedia",
+    "autor": "Dante Alighieri",
+    "descripcion": "Un viaje épico por el Infierno, el Purgatorio y el Paraíso.",
+    "fecha_publicacion": "1320",
+    "genero": "Poesía épica"
+  },
+  {
+    "titulo": "El hobbit",
+    "autor": "J.R.R. Tolkien",
+    "descripcion": "Las aventuras de Bilbo Bolsón en su búsqueda para recuperar un tesoro.",
+    "fecha_publicacion": "1937",
+    "genero": "Fantasía"
+  },
+  {
+    "titulo": "La peste",
+    "autor": "Albert Camus",
+    "descripcion": "Una plaga asola una ciudad y revela la lucha humana contra lo inevitable.",
+    "fecha_publicacion": "1947",
+    "genero": "Filosofía existencial"
+  },
+  {
+    "titulo": "Lolita",
+    "autor": "Vladimir Nabokov",
+    "descripcion": "La perturbadora relación de un hombre con su hijastra.",
+    "fecha_publicacion": "1955",
+    "genero": "Ficción psicológica"
+  },
+  {
+    "titulo": "Beloved",
+    "autor": "Toni Morrison",
+    "descripcion": "Una exesclava es atormentada por el fantasma de su hija.",
+    "fecha_publicacion": "1987",
+    "genero": "Ficción histórica"
+  },
+  {
+    "titulo": "El proceso",
+    "autor": "Franz Kafka",
+    "descripcion": "Un hombre es arrestado y procesado sin saber por qué.",
+    "fecha_publicacion": "1925",
+    "genero": "Ficción surrealista"
+  },
+  {
+    "titulo": "El ruido y la furia",
+    "autor": "William Faulkner",
+    "descripcion": "La caída de una familia aristocrática del sur de Estados Unidos.",
+    "fecha_publicacion": "1929",
+    "genero": "Ficción moderna"
+  }
+]

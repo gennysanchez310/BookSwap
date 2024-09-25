@@ -1,0 +1,340 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f5;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6699cc;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2em;
+  color: white;
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li button, nav ul li a {
+  background-color: #6699cc;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.1em;
+}
+
+nav ul li button:hover, nav ul li a:hover {
+  background-color: #7788aa;
+}
+
+section {
+  padding: 40px;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #6699cc;
+  color: white;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Botones de registro e inicio de sesión (solo para index.html) */
+#registro-btn, #login-btn {
+  background-color: #cc6699;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px;
+}
+
+#registro-btn:hover, #login-btn:hover {
+  background-color: #bb5577;
+}
+
+/* Estilo para la página de explorar (explorar.html) */
+#busqueda {
+  margin-bottom: 20px;
+}
+
+#busqueda input {
+  padding: 10px;
+  font-size: 1em;
+  width: 300px;
+  margin-right: 10px;
+}
+
+#busqueda button {
+  padding: 10px 20px;
+  background-color: #cc6699;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+#libros-lista {
+  margin-top: 20px;
+}
+
+/* Estilo para perfil (perfil.html) */
+button {
+  padding: 10px 20px;
+  background-color: #cc6699;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #bb5577;
+}
+
+/* Estilo para la página de comunidad (comunidad.html) y blog (blog.html) */
+button {
+  padding: 10px 20px;
+  background-color: #cc6699;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #6a5acd; /* Color morado pastel */
+  color: white;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 1em;
+}
+
+.auth-buttons {
+  display: flex;
+}
+
+.auth-buttons button {
+  margin-left: 0.5em;
+}
+
+section {
+  padding: 2em;
+  max-width: 1200px;
+  margin: auto;
+}
+
+#busqueda {
+  margin-bottom: 1em;
+}
+
+.libros-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1em;
+}
+
+.libro-card {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.libro-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  background-color: #6a5acd; /* Color morado pastel */
+  color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F4F4F9;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #7E57C2;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* Section Styles */
+.perfil-seccion {
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #5C6BC0;
+}
+
+h3 {
+  color: #7E57C2;
+}
+
+/* Form Styles */
+.formulario {
+  background-color: #EDE7F6;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #B39DDB;
+  border-radius: 5px;
+}
+
+select {
+  height: 120px;
+}
+
+button {
+  background-color: #7E57C2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5C6BC0;
+}
+
+/* Mis Libros Styles */
+.mis-libros {
+  margin-top: 20px;
+}
+
+.libros {
+  margin-bottom: 20px;
+}
+
+.libros h3 {
+  margin-top: 20px;
+}
+
+.libros ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.libros li {
+  background-color: #E3F2FD;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #7E57C2;
+  color: white;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
+
+
+
+
+

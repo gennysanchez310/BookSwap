@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookSwap - Explorar Libros</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1>BookSwap</h1>
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="explorar.html">Explorar Libros</a></li>
+        <li><a href="perfil.html">Perfil</a></li>
+        <li><a href="comunidad.html">Comunidad</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <button id="login-btn">Inicia Sesión</button>
+      <button id="registro-btn">Regístrate</button>
+    </div>
+  </header>
+
+  <section>
+    <h2>Explorar Libros</h2>
+    <div id="busqueda">
+      <input type="text" id="search-input" placeholder="Buscar por título o autor">
+      <button onclick="buscarLibro()">Buscar</button>
+    </div>
+    <div id="libros-lista" class="libros-container">
+      <!-- Ejemplo de tarjeta de libro -->
+      <div class="libro-card">
+        <img src="img/Captura de pantalla 2024-09-24 183513.png" alt="Eleanor y Park">
+        <h3>Eleanor y Park</h3>
+        <p>Autor: Rainbow Rowell</p>
+        <p>Para todos aquellos que quedaron fascinados por Las ventajas de ser un marginado.
+
+            Una historia de amor entre dos outsiders lo bastante inteligentes como para saber que el primer amor nunca es para siempre, pero lo suficientemente valientes como para intentarlo.</p>
+        <button>Intercambiar</button>
+      </div>
+      <!-- Más tarjetas de libros se pueden agregar aquí -->
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 BookSwap</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
