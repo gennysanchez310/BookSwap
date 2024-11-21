@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookSwap - Explorar Libros</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1>BookSwap</h1>
+    </div>
+    <nav>
+      <button onclick="redirectTo('index.html')">Inicio</button>
+      <button onclick="redirectTo('perfil.html')">Perfil</button>
+      <button onclick="redirectTo('comunidad.html')">Comunidad</button>
+      <button onclick="redirectTo('blog.html')">Blog</button>
+    </nav>
+    <button class="login-btn" onclick="redirectTo('login.html')">Iniciar Sesión</button>
+  </header>
+
+  <main class="explorar-content">
+    <h2>Explorar Libros</h2>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar por título, autor o género">
+      <button>Buscar</button>
+    </div>
+    <section class="genres">
+      <h3>Géneros</h3>
+      <div class="genre-list">
+        <button>Ficción</button>
+        <button>Novela</button>
+        <button>Fantasía</button>
+        <!-- Más géneros -->
+      </div>
+    </section>
+    <section class="book-display">
+      <h3>Libros Disponibles</h3>
+      <div class="book-card">
+        <img src="img/30 libros de terror y novela negra para una noche de miedo.jpg" alt="Libro 1">
+        <h4>El Visitante</h4>
+        <p>Stephen King</p>
+      </div>
+      
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 BookSwap | Contacto | Términos de Uso | Privacidad</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+/* Resetear márgenes y padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #F0F2FA;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #BBA9FF;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+nav button {
+  background-color: #858AE3;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav button:hover {
+  background-color: #CFBAF0;
+  transform: scale(1.05);
+}
+
+.login-btn {
+  background-color: #858AE3;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-left: auto;
+}
+
+.login-btn:hover {
+  background-color: #CFBAF0;
+  transform: scale(1.05);
+}
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 40px;
+  background-color: #AED7ED;
+}
+
+.hero-content {
+  max-width: 50%;
+}
+
+.hero-content h2 {
+  font-size: 42px;
+  color: #858AE3;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.hero-image img {
+  width: 80%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.search-form {
+  display: flex;
+}
+
+.search-form input {
+  padding: 12px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.search-form button {
+  padding: 12px;
+  background-color: #CFBAF0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.search-form button:hover {
+  background-color: #BBA9FF;
+}
+
+.carousel-container {
+  padding: 50px 40px;
+  background-color: #F3DBE9;
+  text-align: center;
+  position: relative;
+}
+
+.carousel-container h3 {
+  font-size: 28px;
+  color: #465375;
+  margin-bottom: 25px;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+.carousel-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 200px;
+  height: auto;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item h4 {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #858AE3;
+}
+
+.carousel-item:hover img {
+  transform: scale(1.05);
+}
+
+.recommended-section, .popular-section {
+  padding: 50px 40px;
+  text-align: center;
+}
+
+.recommended-books, .popular-books {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.book-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.book-card img {
+  width: 150px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.book-card h4 {
+  font-size: 18px;
+  color: #858AE3;
+  margin-top: 10px;
+}
+
+.book-card p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+}
+
+.cta-section {
+  padding: 50px 40px;
+  text-align: center;
+  background-color: #CFBAF0;
+}
+
+.cta-section h3 {
+  font-size: 28px;
+  color: #465375;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.button-primary {
+  background-color: #858AE3;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-primary:hover {
+  background-color: #BBA9FF;
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: #BBA9FF;
+  color: white;
+  padding: 20px 30px;
+  text-align: center;
+}
+
+footer .footer-links {
+  margin-bottom: 15px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
