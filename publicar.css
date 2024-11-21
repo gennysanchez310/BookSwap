@@ -1,0 +1,89 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #C1C3F3; /* Fondo de la página */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #BBA9FF; /* Color del header */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container h1 {
+    margin: 0;
+    color: #fff;
+}
+
+nav button {
+    background-color: #AED7ED; /* Color de los botones */
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #CFBAF0; /* Color al pasar el mouse */
+}
+
+.book-post-section {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFFFFF; /* Color de fondo del formulario */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-post-section h2 {
+    text-align: center;
+    color: #858AE3; /* Color del título */
+}
+
+.book-post-section label {
+    margin-top: 10px;
+    display: block;
+    color: #333;
+}
+
+.book-post-section input[type="text"],
+.book-post-section input[type="number"],
+.book-post-section input[type="file"],
+.book-post-section textarea,
+.book-post-section select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #C1C3F3;
+    border-radius: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.book-post-section button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #858AE3; /* Color del botón de publicar */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.book-post-section button:hover {
+    background-color: #CFBAF0; /* Color al pasar el mouse en el botón */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #BBA9FF; /* Color del footer */
+    color: white;
+}
