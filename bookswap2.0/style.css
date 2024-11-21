@@ -1,0 +1,153 @@
+/*-----------------------INDEX-------------------------------------*/
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #BBA9FF; /* Fondo principal: Morado claro */
+  }
+  
+  header {
+    background-color: #C1C3F3; /* Lila claro */
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+  }
+  
+  .logo-container h1 {
+    margin: 0;
+  }
+  
+  /* Centrando los botones de navegación */
+  nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Centra los botones */
+  }
+  
+  nav ul.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centra los botones dentro del menú */
+  }
+  
+  nav ul.menu li {
+    margin-right: 20px; /* Espacio entre los botones */
+  }
+  
+  button {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff; /* Morado claro */
+    background-color: #858AE3; /* Fondo oscuro */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 24px;
+    position: relative;
+    line-height: 24px;
+    border-radius: 9px;
+    box-shadow: 0px 1px 2px #2B3044,
+      0px 4px 16px #2B3044;
+    transform-style: preserve-3d;
+    transform: scale(var(--s, 1)) perspective(600px)
+      rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    perspective: 600px;
+    transition: transform 0.1s;
+  }
+  
+  button:hover {
+    background-color: #CFBAF0; /* Morado suave para hover */
+  }
+  
+  button:active {
+    transition: 0.3s;
+    transform: scale(0.93);
+  }
+  
+  .auth-buttons {
+    margin-left: auto;
+  }
+  
+  .auth-buttons button {
+    background-color: #858AE3; /* Morado oscuro */
+    color: #fff;
+    margin-left: 10px;
+  }
+  
+  .auth-buttons button:hover {
+    background-color: #CFBAF0; /* Morado suave para hover */
+  }
+  
+  /* Estilo arco iris para el texto */
+  .sp {
+    background: linear-gradient(
+        90deg,
+        #866ee7,
+        #ea60da,
+        #ed8f57,
+        #fbd41d,
+        #2cca91
+      );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    display: block;
+}
+
+.carousel {
+  max-width: 600px; /* Ajusta según sea necesario */
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-image {
+  min-width: 150px; /* Ajusta el tamaño mínimo de la imagen */
+  max-width: 100%; /* No permitir que la imagen supere el ancho del contenedor */
+  height: auto; /* Mantener la proporción de la imagen */
+  margin-right: 10px; /* Espacio entre imágenes */
+  border-radius: 10px; /* Esquinas redondeadas si deseas */
+}
+
+button {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+  /* Secciones */
+  section {
+    padding: 20px;
+    margin: 10px auto;
+    background-color: #AED7ED; /* Azul claro */
+    border-radius: 10px;
+    max-width: 900px;
+    text-align: center;
+  }
+  
+  h2, h3 {
+    color: #333;
+  }
+  
+  footer {
+    background-color: #858AE3; /* Morado oscuro para el pie de página */
+    color: #fff;
+    padding: 10px;
+  }
+  
+  footer p {
+    margin: 0;
+}
+

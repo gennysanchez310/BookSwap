@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil - BookSwap</title>
+  <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1>BookSwap</h1>
+    </div>
+    <nav>
+      <button class="nav-btn" onclick="redirectTo('index.html')">Inicio</button>
+      <button class="nav-btn" onclick="redirectTo('explorar.html')">Explorar Libros</button>
+      <button class="nav-btn" onclick="redirectTo('comunidad.html')">Comunidad</button>
+      <button class="nav-btn" onclick="redirectTo('blog.html')">Blog</button>
+    </nav>
+  </header>
+
+  <section class="profile-section">
+    <div class="profile-picture">
+      <img src="img/perfil-mujer-vivo.png" alt="Foto de perfil" class="profile-img">
+    </div>
+    <div class="profile-details">
+      <h2>Nombre Completo</h2>
+      <p>Edad: 25</p>
+      <p>Sexo: Masculino</p>
+      <p>Email: usuario@ejemplo.com</p>
+      <p>Ubicación: Ciudad, País</p>
+    </div>
+    <div class="profile-buttons">
+      <button onclick="redirectTo('editar.html')" class="edit-button">Editar Perfil</button>
+      <button onclick="redirectTo('publicar.html')" class="publish-button">Publicar Libro</button>
+    </div>
+  </section>
+
+  <!-- Sección para mostrar libros publicados -->
+  <section class="published-books-section">
+    <h2>Libros Publicados</h2>
+    <div class="book-list" id="book-list">
+      <div class="book-item">
+        <img src="img/Captura de pantalla 2024-09-24 183513.png" alt="Portada del Libro 1">
+        <h3>Título del Libro 1</h3>
+        <p>Autor: Autor del Libro 1</p>
+        <p>Estado: En venta / Intercambio</p>
+      </div>
+      <div class="book-item">
+        <img src="path/to/book-image2.jpg" alt="Portada del Libro 2">
+        <h3>Título del Libro 2</h3>
+        <p>Autor: Autor del Libro 2</p>
+        <p>Estado: En venta / Intercambio</p>
+      </div>
+      <div class="book-item">
+        <img src="path/to/book-image3.jpg" alt="Portada del Libro 3">
+        <h3>Título del Libro 3</h3>
+        <p>Autor: Autor del Libro 3</p>
+        <p>Estado: En venta / Intercambio</p>
+      </div>
+      <!-- Agrega más libros según sea necesario -->
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 BookSwap</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
