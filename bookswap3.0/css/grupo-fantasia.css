@@ -1,0 +1,132 @@
+:root {
+    --color-1: #A2BEDC; /* Azul claro */
+    --color-2: #042440; /* Azul oscuro */
+    --color-3: #4E499E; /* Morado intenso */
+    --color-4: #B793C9; /* Morado claro */
+    --color-5: #D26B9D; /* Rosa */
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, var(--color-1), var(--color-4));
+    color: var(--color-2);
+  }
+  
+  header {
+    background: var(--color-2);
+    color: var(--color-1);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo-container h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  nav {
+    display: flex;
+    gap: 15px;
+  }
+  
+  nav .cta {
+    background: linear-gradient(135deg, var(--color-3), var(--color-5));
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+  
+  nav .cta:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, var(--color-5), var(--color-3));
+  }
+  
+  nav .cta.active {
+    background: var(--color-3);
+  }
+  
+  main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .grupo-content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: var(--color-3);
+  }
+  
+  .grupo-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  
+  .book-of-the-month, .next-meeting {
+    background: var(--color-4);
+    padding: 15px;
+    border-radius: 10px;
+    width: 48%;
+  }
+  
+  .book-of-the-month img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  
+  .discussion-section {
+    margin-top: 30px;
+    background: var(--color-4);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .discussion-section textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid var(--color-2);
+    margin-bottom: 15px;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 10px 0;
+    background: var(--color-2);
+    color: var(--color-1);
+    font-size: 14px;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .grupo-info {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .grupo-info .book-of-the-month, .grupo-info .next-meeting {
+      width: 100%;
+    }
+  
+    .discussion-section {
+      padding: 15px;
+    }
+  }
+  

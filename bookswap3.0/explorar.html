@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BookSwap - Explorar Libros</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/explorar.css">
 </head>
 <body>
   <header>
@@ -12,44 +12,100 @@
       <h1>BookSwap</h1>
     </div>
     <nav>
-      <button onclick="redirectTo('index.html')">Inicio</button>
-      <button onclick="redirectTo('perfil.html')">Perfil</button>
-      <button onclick="redirectTo('comunidad.html')">Comunidad</button>
-      <button onclick="redirectTo('blog.html')">Blog</button>
+      <button class="cta" onclick="redirectTo('index.html')">
+        <span>Inicio</span>
+        <svg width="15px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </button>
+      <button class="cta" onclick="redirectTo('perfil.html')">
+        <span>Perfil</span>
+        <svg width="15px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </button>
+      <button class="cta" onclick="redirectTo('comunidad.html')">
+        <span>Comunidad</span>
+        <svg width="15px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </button>
+      <button class="cta" onclick="redirectTo('blog.html')">
+        <span>Blog</span>
+        <svg width="15px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </button>
     </nav>
-    <button class="login-btn" onclick="redirectTo('login.html')">Iniciar Sesión</button>
+    <button class="cta login-btn" onclick="redirectTo('login.html')">
+      <span>Iniciar Sesión</span>
+      <svg width="15px" height="10px" viewBox="0 0 13 10">
+        <path d="M1,5 L11,5"></path>
+        <polyline points="8 1 12 5 8 9"></polyline>
+      </svg>
+    </button>
   </header>
 
   <main class="explorar-content">
-    <h2>Explorar Libros</h2>
-    <div class="search-bar">
-      <input type="text" placeholder="Buscar por título, autor o género">
-      <button>Buscar</button>
-    </div>
-    <section class="genres">
+    <aside class="genre-sidebar">
       <h3>Géneros</h3>
-      <div class="genre-list">
-        <button>Ficción</button>
-        <button>Novela</button>
-        <button>Fantasía</button>
-        <!-- Más géneros -->
+      <ul>
+        <li><a href="#">Ficción</a></li>
+        <li><a href="#">Novela</a></li>
+        <li><a href="#">Historia</a></li>
+        <li><a href="#">Fantasía</a></li>
+        <li><a href="#">Ciencia Ficción</a></li>
+        <li><a href="#">Romance</a></li>
+        <li><a href="#">Misterio</a></li>
+        <li><a href="#">Biografía</a></li>
+        <li><a href="#">Autoayuda</a></li>
+        <li><a href="#">Poesía</a></li>
+        <li><a href="#">Todos</a></li>
+      </ul>
+    </aside>
+
+    <section class="book-section">
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar libros...">
+        <button>Buscar</button>
       </div>
-    </section>
-    <section class="book-display">
-      <h3>Libros Disponibles</h3>
-      <div class="book-card">
-        <img src="img/30 libros de terror y novela negra para una noche de miedo.jpg" alt="Libro 1">
-        <h4>El Visitante</h4>
-        <p>Stephen King</p>
+
+      <h2>Libros Disponibles</h2>
+      <div class="book-cards">
+        <div class="book-card">
+          <img src="img/30 libros de terror y novela negra para una noche de miedo.jpg" alt="Portada del Libro">
+          <h4>El visitante</h4>
+          <p>Steven King</p>
+          <p>Intercambio por: La Reina Roja</p>
+          <button>Ver más</button>
+        </div>
+        <div class="book-card">
+          <img src="img/BOULEVARD 🌈🚬💫.jpg" alt="Portada del Libro">
+          <h4>Boulevard</h4>
+          <p>Flor M. Salvador</p>
+          <p>Intercambio por: Bajo La Misma Estrella</p>
+          <button>Ver más</button>
+        </div>
+        <div class="book-card">
+          <img src="img/El Jardín De Las Mariposas.jpg" alt="Portada del Libro">
+          <h4>El Jardin De Las Mariposas</h4>
+          <p>Dot Hutchinson</p>
+          <p>Intercambio por: El Niño Con El pijama De Rayas</p>
+          <button>Ver más</button>
+        </div>
       </div>
-      
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2024 BookSwap | Contacto | Términos de Uso | Privacidad</p>
+    <p>&copy; 2024 BookSwap</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="js/explorar.js"></script>
+
 </body>
 </html>

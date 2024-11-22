@@ -1,0 +1,149 @@
+/* style.css */
+
+/* Paleta de colores */
+:root {
+    --color-1: #A2BEDC; /* Azul claro */
+    --color-2: #042440; /* Azul oscuro */
+    --color-3: #4E499E; /* Morado intenso */
+    --color-4: #B793C9; /* Morado claro */
+    --color-5: #D26B9D; /* Rosa */
+  }
+  
+  /* Reset */
+  body, h1, h2, h3, p, ul, li, a, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo general */
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, var(--color-1), var(--color-3));
+    color: var(--color-2);
+    line-height: 1.6;
+  }
+  
+  /* Header */
+  header {
+    background: linear-gradient(to right, var(--color-2), var(--color-3));
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+  }
+  
+  header .logo-container h1 {
+    font-size: 24px;
+  }
+  
+  nav {
+    display: flex;
+    gap: 15px;
+  }
+  
+  nav .cta, .login-btn {
+    background: linear-gradient(to right, var(--color-4), var(--color-5));
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s;
+  }
+  
+  nav .cta:hover {
+    background: var(--color-5);
+  }
+  
+  /* Contenido principal */
+  main.profile-content {
+    padding: 30px;
+    text-align: center;
+  }
+  
+  main.profile-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--color-3);
+  }
+  
+  .profile-details {
+    background: var(--color-1);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 12px;
+    max-width: 400px;
+    color: var(--color-2);
+  }
+  
+  .profile-details p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .profile-details span {
+    color: var(--color-5);
+    font-weight: bold;
+  }
+  
+  /* Mis libros */
+  .user-books {
+    margin-top: 30px;
+  }
+  
+  .user-books h3 {
+    font-size: 24px;
+    color: var(--color-3);
+    margin-bottom: 20px;
+  }
+  
+  .book-card {
+    display: inline-block;
+    width: 200px;
+    margin: 10px;
+    background: linear-gradient(to bottom, var(--color-4), var(--color-1));
+    color: var(--color-2);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .book-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .book-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .book-card h4 {
+    font-size: 18px;
+    color: var(--color-3);
+    margin-bottom: 8px;
+  }
+  
+  .book-card p {
+    font-size: 14px;
+  }
+  
+  /* Footer */
+  footer {
+    background: var(--color-2);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+  }
+  

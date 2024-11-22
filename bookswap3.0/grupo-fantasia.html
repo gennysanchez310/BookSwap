@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BookSwap - Registro</title>
-  <link rel="stylesheet" href="css/registro.css">
+  <title>BookSwap - Grupo Fantasía</title>
+  <link rel="stylesheet" href="css/grupo-fantasia.css">
 </head>
 <body>
   <header>
@@ -50,24 +50,30 @@
     </button>
   </header>
 
-  <main class="register-content">
-    <h2>Regístrate en BookSwap</h2>
-    <form id="register-form">
-      <label for="username">Nombre de usuario:</label>
-      <input type="text" id="username" name="username" placeholder="Ingresa tu nombre de usuario" required>
-      
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
-      
-      <label for="password">Contraseña:</label>
-      <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
-      
-      <label for="confirm-password">Confirmar contraseña:</label>
-      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirma tu contraseña" required>
-      
-      <button type="submit">Registrarse</button>
-    </form>
-    <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a>.</p>
+  <main class="grupo-content">
+    <h2>Grupo de Lectura: Fantasía</h2>
+    <p>Bienvenido al grupo de lectura dedicado a la fantasía. Aquí podrás compartir tus libros favoritos, descubrir nuevos mundos y participar en discusiones épicas.</p>
+    
+    <div class="grupo-info">
+      <div class="book-of-the-month">
+        <h3>Libro del Mes</h3>
+        <img src="libro-fantasia.jpg" alt="Libro de Fantasía">
+        <p>Este mes, nuestro libro seleccionado es 'El Nombre del Viento' de Patrick Rothfuss.</p>
+      </div>
+
+      <div class="next-meeting">
+        <h3>Próxima Reunión</h3>
+        <p>Fecha: 30 de Noviembre de 2024</p>
+        <p>Hora: 18:00</p>
+        <p>Ubicación: En línea (vía Zoom)</p>
+      </div>
+    </div>
+
+    <div class="discussion-section">
+      <h3>Participa en la Discusión</h3>
+      <textarea placeholder="Escribe tus comentarios sobre el libro..."></textarea>
+      <button class="cta">Publicar Comentario</button>
+    </div>
   </main>
 
   <footer>

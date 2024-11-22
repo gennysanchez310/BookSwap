@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BookSwap - Inicio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
@@ -14,12 +14,42 @@
       <h1>BookSwap</h1>
     </div>
     <nav>
-      <button onclick="redirectTo('explorar.html')">Explorar Libros</button>
-      <button onclick="redirectTo('perfil.html')">Perfil</button>
-      <button onclick="redirectTo('comunidad.html')">Comunidad</button>
-      <button onclick="redirectTo('blog.html')">Blog</button>
+      <button class="cta" onclick="redirectTo('explorar.html')">
+        <span>Explorar Libros</span>
+        <svg width="15px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </button>
+      <button class="cta" onclick="redirectTo('perfil.html')">
+        <span>Perfil</span>
+        <svg width="15px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </button>
+      <button class="cta" onclick="redirectTo('comunidad.html')">
+        <span>Comunidad</span>
+        <svg width="15px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </button>
+      <button class="cta" onclick="redirectTo('blog.html')">
+        <span>Blog</span>
+        <svg width="15px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </button>
     </nav>
-    <button class="login-btn" onclick="redirectTo('login.html')">Iniciar Sesión</button>
+    <button class="cta login-btn" onclick="redirectTo('login.html')">
+      <span>Iniciar Sesión</span>
+      <svg width="15px" height="10px" viewBox="0 0 13 10">
+        <path d="M1,5 L11,5"></path>
+        <polyline points="8 1 12 5 8 9"></polyline>
+      </svg>
+    </button>
   </header>
 
   <!-- Hero Section -->
@@ -29,7 +59,13 @@
       <p>Encuentra tus libros favoritos, descubre nuevas lecturas y comparte tus pensamientos con una comunidad apasionada.</p>
       <form class="search-form">
         <input type="text" placeholder="Busca libros...">
-        <button type="submit">Buscar</button>
+        <button class="cta" type="submit">
+          <span>Buscar</span>
+          <svg width="15px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </button>
       </form>
     </div>
     <div class="hero-image">
@@ -37,69 +73,17 @@
     </div>
   </section>
 
-  <!-- Carrusel de Libros -->
-  <section class="carousel-container">
-    <h3>Libros en Tendencia</h3>
-    <div class="carousel" id="carousel">
-      <!-- Elementos del Carrusel -->
-      <div class="carousel-item">
-        <img src="img/BOULEVARD 🌈🚬💫.jpg" alt="Libro 1">
-        <h4>Boulevard</h4>
-        <p>Flor M. Salvador</p>
-      </div>
-      <div class="carousel-item">
-        <img src="img/El Jardín De Las Mariposas.jpg" alt="Libro 2">
-        <h4>El Jardín de las Mariposas</h4>
-        <p>Dot Hutchison</p>
-      </div>
-      <!-- Agrega más libros aquí -->
-    </div>
-  </section>
-
-  <!-- Libros Recomendados -->
-  <section class="recommended-section">
-    <h3>Recomendados</h3>
-    <div class="recommended-books">
-      <div class="book-card">
-        <img src="img/BOULEVARD 🌈🚬💫.jpg" alt="Libro 1">
-        <h4>Boulevard</h4>
-        <p>Flor M. Salvador</p>
-      </div>
-      <div class="book-card">
-        <img src="img/El Jardín De Las Mariposas.jpg" alt="Libro 2">
-        <h4>El Jardín de las Mariposas</h4>
-        <p>Dot Hutchison</p>
-      </div>
-      <div class="book-card">
-        <img src="img/ROMPER EL CÍRCULO_ Collen Hoover_.jpg" alt="Libro 3">
-        <h4>Romper el Círculo</h4>
-        <p>Colleen Hoover</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Libros Populares -->
-  <section class="popular-section">
-    <h3>Populares</h3>
-    <div class="popular-books">
-      <div class="book-card">
-        <img src="img/ROMPER EL CÍRCULO_ Collen Hoover_.jpg" alt="Libro 3">
-        <h4>Romper el Círculo</h4>
-        <p>Colleen Hoover</p>
-      </div>
-      <div class="book-card">
-        <img src="img/LA CANCIÓN DE AQUILES (Madeline Miller).jpg" alt="Libro 4">
-        <h4>La Canción de Aquiles</h4>
-        <p>Madeline Miller</p>
-      </div>
-    </div>
-  </section>
-
   <!-- Llamado a la acción -->
   <section class="cta-section">
     <h3>Únete a Nuestra Comunidad</h3>
     <p>Regístrate hoy y comienza a intercambiar libros, escribir reseñas y participar en debates emocionantes.</p>
-    <button class="button-primary" onclick="redirectTo('registro.html')">Regístrate</button>
+    <button class="cta button-primary" onclick="redirectTo('registro.html')">
+      <span>Regístrate</span>
+      <svg width="15px" height="10px" viewBox="0 0 13 10">
+        <path d="M1,5 L11,5"></path>
+        <polyline points="8 1 12 5 8 9"></polyline>
+      </svg>
+    </button>
   </section>
 
   <!-- Footer -->
@@ -112,6 +96,6 @@
     <p>&copy; 2024 BookSwap | Todos los derechos reservados</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>

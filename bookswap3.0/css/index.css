@@ -1,0 +1,131 @@
+/* index.css */
+
+/* Paleta de colores */
+:root {
+    --color-1: #A2BEDC; /* Azul claro */
+    --color-2: #042440; /* Azul oscuro */
+    --color-3: #4E499E; /* Morado intenso */
+    --color-4: #B793C9; /* Morado claro */
+    --color-5: #D26B9D; /* Rosa */
+  }
+  
+  /* Estilo general */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, var(--color-1), var(--color-4));
+    color: var(--color-2);
+  }
+  
+  header {
+    background: linear-gradient(to right, var(--color-2), var(--color-3));
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  nav {
+    display: flex;
+    gap: 15px;
+  }
+  
+  nav .cta,
+  .login-btn {
+    background: linear-gradient(to right, var(--color-4), var(--color-5));
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  nav .cta:hover {
+    background: var(--color-5);
+  }
+  
+  .hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background: linear-gradient(to bottom, var(--color-3), var(--color-4));
+    color: white;
+  }
+  
+  .hero-content {
+    max-width: 50%;
+  }
+  
+  .hero-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .hero-content .search-form input {
+    padding: 10px;
+    border: 2px solid var(--color-5);
+    border-radius: 20px;
+    margin-right: 10px;
+  }
+  
+  .hero-content .search-form button {
+    background: linear-gradient(to right, var(--color-5), var(--color-3));
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .hero-content .search-form button:hover {
+    background: var(--color-4);
+  }
+  
+  .cta-section {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(to bottom, var(--color-1), var(--color-5));
+  }
+  
+  .cta-section h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .cta-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .cta-section .button-primary {
+    background: linear-gradient(to right, var(--color-3), var(--color-4));
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--color-2);
+    color: white;
+  }
+  

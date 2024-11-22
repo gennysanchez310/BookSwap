@@ -1,0 +1,194 @@
+:root {
+  --color-1: #A2BEDC; /* Azul claro */
+  --color-2: #042440; /* Azul oscuro */
+  --color-3: #4E499E; /* Morado intenso */
+  --color-4: #B793C9; /* Morado claro */
+  --color-5: #D26B9D; /* Rosa */
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: var(--color-2);
+  background: linear-gradient(to bottom, var(--color-1), var(--color-4));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: linear-gradient(to right, var(--color-3), var(--color-5));
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+.cta {
+  background: linear-gradient(45deg, var(--color-4), var(--color-5));
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta:hover {
+  background: linear-gradient(45deg, var(--color-5), var(--color-4));
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta svg {
+  margin-left: 8px;
+  fill: white;
+  transition: transform 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(5px);
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+  color: var(--color-3);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.6;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.topic {
+  background: linear-gradient(90deg, var(--color-1), var(--color-4));
+  margin: 15px 0;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.topic:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.topic h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--color-3);
+  font-weight: bold;
+}
+
+.topic p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  color: var(--color-2);
+}
+
+.topic a {
+  text-decoration: none;
+  color: var(--color-5);
+  transition: color 0.3s ease;
+}
+
+.topic a:hover {
+  color: var(--color-3);
+}
+
+.forum-create-topic {
+  margin-top: 30px;
+  background: linear-gradient(90deg, var(--color-1), var(--color-3));
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  margin: 10px 0 5px;
+  color: var(--color-2);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--color-3);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-5);
+  box-shadow: 0px 0px 6px var(--color-5);
+}
+
+button[type="submit"] {
+  background: linear-gradient(45deg, var(--color-4), var(--color-5));
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(45deg, var(--color-5), var(--color-4));
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  background: linear-gradient(to right, var(--color-3), var(--color-5));
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+}

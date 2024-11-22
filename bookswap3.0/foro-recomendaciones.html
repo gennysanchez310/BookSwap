@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BookSwap - Registro</title>
-  <link rel="stylesheet" href="css/registro.css">
+  <title>BookSwap - Foro de Recomendaciones</title>
+  <link rel="stylesheet" href="css/foro-recomendaciones.css">
 </head>
 <body>
   <header>
@@ -50,30 +50,48 @@
     </button>
   </header>
 
-  <main class="register-content">
-    <h2>Regístrate en BookSwap</h2>
-    <form id="register-form">
-      <label for="username">Nombre de usuario:</label>
-      <input type="text" id="username" name="username" placeholder="Ingresa tu nombre de usuario" required>
-      
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
-      
-      <label for="password">Contraseña:</label>
-      <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
-      
-      <label for="confirm-password">Confirmar contraseña:</label>
-      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirma tu contraseña" required>
-      
-      <button type="submit">Registrarse</button>
-    </form>
-    <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a>.</p>
+  <main>
+    <section class="forum-topics">
+      <h2>Recomendaciones de Libros</h2>
+      <p>Descubre y comparte libros que no puedes dejar de leer.</p>
+      <ul>
+        <li class="topic">
+          <h4><a href="detalle-recomendacion1.html">Libros de Fantasía que Deberías Leer</a></h4>
+          <p>Por <strong>Juan Pérez</strong> | 15 comentarios</p>
+        </li>
+        <li class="topic">
+          <h4><a href="detalle-recomendacion2.html">Recomendaciones de Novelas de Ciencia Ficción</a></h4>
+          <p>Por <strong>Lucía Gómez</strong> | 8 comentarios</p>
+        </li>
+        <li class="topic">
+          <h4><a href="detalle-recomendacion3.html">Mis Favoritos de Romance del Año</a></h4>
+          <p>Por <strong>Ana Rodríguez</strong> | 12 comentarios</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="forum-create-topic">
+      <h3>Crear Nueva Recomendación</h3>
+      <form action="#" method="post">
+        <label for="titulo">Título de tu Recomendación:</label>
+        <input type="text" id="titulo" name="titulo" placeholder="Ejemplo: Mis libros favoritos de misterio">
+
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" rows="5" placeholder="Escribe una breve descripción de tus recomendaciones..."></textarea>
+
+        <button type="submit">Publicar</button>
+      </form>
+    </section>
   </main>
 
   <footer>
     <p>&copy; 2024 BookSwap | Contacto | Términos de Uso | Privacidad</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    function redirectTo(page) {
+      window.location.href = page;
+    }
+  </script>
 </body>
 </html>

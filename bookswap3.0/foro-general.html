@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foro General - BookSwap</title>
+  <link rel="stylesheet" href="css/foro-general.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1>BookSwap</h1>
+    </div>
+    <nav>
+      <button class="cta" onclick="redirectTo('explorar.html')">
+        <span>Explorar Libros</span>
+      </button>
+      <button class="cta" onclick="redirectTo('perfil.html')">
+        <span>Perfil</span>
+      </button>
+      <button class="cta active" onclick="redirectTo('comunidad.html')">
+        <span>Comunidad</span>
+      </button>
+      <button class="cta" onclick="redirectTo('blog.html')">
+        <span>Blog</span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="forum-content">
+    <h2>Foro General</h2>
+    <p>Únete a la conversación y comparte tus ideas sobre temas relacionados con libros y lectura.</p>
+
+    <section class="forum-topics">
+      <h3>Temas Recientes</h3>
+      <ul>
+        <li class="topic">
+          <h4><a href="detalle-foro.html">¿Qué libro recomendarías para empezar a leer fantasía?</a></h4>
+          <p>Iniciado por <strong>JuanLectores</strong> | Última respuesta: hace 2 horas</p>
+        </li>
+        <li class="topic">
+          <h4><a href="detalle-foro.html">Libros que cambiaron tu vida</a></h4>
+          <p>Iniciado por <strong>AnaBiblioteca</strong> | Última respuesta: ayer</p>
+        </li>
+        <li class="topic">
+          <h4><a href="detalle-foro.html">¿Cómo organizar una biblioteca personal?</a></h4>
+          <p>Iniciado por <strong>MariaLectora</strong> | Última respuesta: hace 3 días</p>
+        </li>
+        <li class="topic">
+          <h4><a href="detalle-foro.html">Debate: ¿El libro siempre es mejor que la película?</a></h4>
+          <p>Iniciado por <strong>PedroCine</strong> | Última respuesta: hace 1 semana</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="forum-create-topic">
+      <h3>Crear un Nuevo Tema</h3>
+      <form action="#" method="post">
+        <label for="title">Título del Tema:</label>
+        <input type="text" id="title" name="title" placeholder="Escribe el título aquí..." required>
+
+        <label for="content">Contenido:</label>
+        <textarea id="content" name="content" placeholder="Escribe el contenido del tema aquí..." required></textarea>
+
+        <button type="submit" class="cta">Publicar Tema</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 BookSwap | Contacto | Términos de Uso | Privacidad</p>
+  </footer>
+
+  <script>
+    function redirectTo(url) {
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>

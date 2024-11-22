@@ -1,0 +1,129 @@
+:root {
+    --color-1: #A2BEDC; /* Azul claro */
+    --color-2: #042440; /* Azul oscuro */
+    --color-3: #4E499E; /* Morado intenso */
+    --color-4: #B793C9; /* Morado claro */
+    --color-5: #D26B9D; /* Rosa */
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, var(--color-1), var(--color-4));
+    color: var(--color-2);
+  }
+  
+  header {
+    background: var(--color-2);
+    color: var(--color-1);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo-container h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  nav {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .cta {
+    background: var(--color-3);
+    color: var(--color-1);
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .cta:hover {
+    background: var(--color-5);
+  }
+  
+  .cta svg {
+    fill: var(--color-1);
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  .blog-content h2 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-2);
+  }
+  
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .blog-card {
+    background: linear-gradient(to top right, var(--color-4), var(--color-3));
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    color: var(--color-1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .blog-info {
+    padding: 15px;
+  }
+  
+  .blog-info h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: var(--color-1);
+  }
+  
+  .blog-info p {
+    font-size: 14px;
+    color: var(--color-1);
+  }
+  
+  .blog-info .cta {
+    margin-top: 10px;
+    background: var(--color-5);
+    color: var(--color-2);
+    padding: 8px 16px;
+  }
+  
+  .blog-info .cta:hover {
+    background: var(--color-3);
+    color: var(--color-1);
+  }
+  
+  footer {
+    text-align: center;
+    background: var(--color-2);
+    color: var(--color-1);
+    padding: 15px 0;
+    font-size: 14px;
+  }
+  

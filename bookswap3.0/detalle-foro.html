@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookSwap - Detalle Foro</title>
+  <link rel="stylesheet" href="css/detalle-foro.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1>BookSwap</h1>
+    </div>
+    <nav>
+      <button class="cta" onclick="redirectTo('index.html')">
+        <span>Inicio</span>
+      </button>
+      <button class="cta" onclick="redirectTo('comunidad.html')">
+        <span>Comunidad</span>
+      </button>
+      <button class="cta" onclick="redirectTo('explorar.html')">
+        <span>Explorar</span>
+      </button>
+      <button class="cta" onclick="redirectTo('perfil.html')">
+        <span>Perfil</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="forum-details">
+      <h2>📖 Discusión General</h2>
+      <p>Este foro está dedicado a debates sobre literatura, géneros y libros favoritos.</p>
+
+      <div class="create-comment">
+        <h3>Deja tu comentario:</h3>
+        <textarea placeholder="Escribe tu mensaje aquí..."></textarea>
+        <button>Enviar</button>
+      </div>
+
+      <div class="comments-section">
+        <h3>Comentarios:</h3>
+        <div class="comment">
+          <p><strong>Usuario1:</strong> ¡Me encanta *El Principito*! ¿Alguien más lo ha leído?</p>
+          <span>Hace 2 horas</span>
+        </div>
+        <div class="comment">
+          <p><strong>Usuario2:</strong> Estoy buscando algo similar a *1984* de Orwell. ¿Recomendaciones?</p>
+          <span>Hace 5 horas</span>
+        </div>
+        <div class="comment">
+          <p><strong>Usuario3:</strong> *La Casa de los Espíritus* es una de las mejores obras de Isabel Allende, ¡muy recomendada!</p>
+          <span>Hace 1 día</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 BookSwap | Contacto | Términos de Uso | Privacidad</p>
+  </footer>
+
+  <script>
+    function redirectTo(page) {
+      window.location.href = page;
+    }
+  </script>
+</body>
+</html>

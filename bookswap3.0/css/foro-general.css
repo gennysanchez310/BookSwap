@@ -1,0 +1,189 @@
+:root {
+    --color-1: #A2BEDC; /* Azul claro */
+    --color-2: #042440; /* Azul oscuro */
+    --color-3: #4E499E; /* Morado intenso */
+    --color-4: #B793C9; /* Morado claro */
+    --color-5: #D26B9D; /* Rosa */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background: linear-gradient(to right, var(--color-3), var(--color-5));
+    color: white;
+    display: flex;
+    justify-content: center;  /* Centra los botones */
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header .logo-container h1 {
+    font-size: 2rem;
+    margin-right: 20px;
+}
+
+nav {
+    display: flex;
+    gap: 15px;  /* Espacio entre botones */
+}
+
+.cta {
+    background: linear-gradient(45deg, var(--color-4), var(--color-5));
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta:hover {
+    background: linear-gradient(45deg, var(--color-5), var(--color-4));
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta.active {
+    background: linear-gradient(45deg, var(--color-3), var(--color-4));
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+    background-color: white;
+}
+
+h2, h3 {
+    color: var(--color-3);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.forum-topics ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.forum-topics .topic {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.forum-topics h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.forum-topics a {
+    color: var(--color-3);
+    text-decoration: none;
+}
+
+.forum-topics a:hover {
+    text-decoration: underline;
+}
+
+/* Create topic section */
+.forum-create-topic {
+    background: linear-gradient(to right, var(--color-1), var(--color-2));
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.forum-create-topic label {
+    font-size: 1rem;
+    color: var(--color-2);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.forum-create-topic input, .forum-create-topic textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.forum-create-topic button {
+    background: linear-gradient(45deg, var(--color-4), var(--color-5));
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.forum-create-topic button:hover {
+    background: linear-gradient(45deg, var(--color-5), var(--color-4));
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer styles */
+footer {
+    background-color: var(--color-2);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cta {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .forum-create-topic {
+        padding: 15px;
+    }
+}

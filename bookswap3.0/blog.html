@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BookSwap - Blog</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/blog.css">
 </head>
 <body>
   <header>
@@ -12,21 +12,74 @@
       <h1>BookSwap</h1>
     </div>
     <nav>
-      <button onclick="redirectTo('index.html')">Inicio</button>
-      <button onclick="redirectTo('explorar.html')">Explorar Libros</button>
-      <button onclick="redirectTo('perfil.html')">Perfil</button>
-      <button onclick="redirectTo('comunidad.html')">Comunidad</button>
+      <button class="cta" onclick="redirectTo('index.html')">
+        <span>Inicio</span>
+        <svg width="15px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </button>
+      <button class="cta" onclick="redirectTo('explorar.html')">
+        <span>Explorar libros</span>
+        <svg width="15px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </button>
+      <button class="cta" onclick="redirectTo('perfil.html')">
+        <span>Perfil</span>
+        <svg width="15px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </button>
+      <button class="cta" onclick="redirectTo('comunidad.html')">
+        <span>Comunidad</span>
+        <svg width="15px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </button>
     </nav>
-    <button class="login-btn" onclick="redirectTo('login.html')">Iniciar Sesión</button>
+    <button class="cta login-btn" onclick="redirectTo('login.html')">
+      <span>Iniciar Sesión</span>
+      <svg width="15px" height="10px" viewBox="0 0 13 10">
+        <path d="M1,5 L11,5"></path>
+        <polyline points="8 1 12 5 8 9"></polyline>
+      </svg>
+    </button>
   </header>
 
   <main class="blog-content">
     <h2>Blog</h2>
-    <article class="blog-post">
-      <h3>Título de la Entrada</h3>
-      <p>Contenido del blog...</p>
-    </article>
-    <!-- Más artículos -->
+    <section class="blog-grid">
+      <!-- Ejemplo de cuadro de blog -->
+      <article class="blog-card">
+        <img src="https://via.placeholder.com/300x200" alt="Imagen del blog">
+        <div class="blog-info">
+          <h3>Cómo encontrar tu próximo libro favorito</h3>
+          <p>Descubre consejos para explorar y elegir tu próxima gran lectura.</p>
+          <button class="cta" onclick="redirectTo('detalle-blog.html')">Leer más</button>
+        </div>
+      </article>
+      <article class="blog-card">
+        <img src="https://via.placeholder.com/300x200" alt="Imagen del blog">
+        <div class="blog-info">
+          <h3>Reseña: El arte de la lectura</h3>
+          <p>Una revisión de este inspirador libro que celebra el placer de leer.</p>
+          <button class="cta" onclick="redirectTo('detalle-blog.html')">Leer más</button>
+        </div>
+      </article>
+      <article class="blog-card">
+        <img src="https://via.placeholder.com/300x200" alt="Imagen del blog">
+        <div class="blog-info">
+          <h3>10 consejos para leer más cada año</h3>
+          <p>Aumenta tu hábito de lectura con estos simples pero efectivos consejos.</p>
+          <button class="cta" onclick="redirectTo('detalle-blog.html')">Leer más</button>
+        </div>
+      </article>
+      <!-- Agregar más cuadros de blog aquí -->
+    </section>
   </main>
 
   <footer>

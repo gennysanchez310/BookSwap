@@ -1,0 +1,193 @@
+:root {
+    --color-1: #BBA9FF;  /* Lavanda claro */
+    --color-2: #C1C3F3;  /* Lavanda suave */
+    --color-3: #AED7ED;  /* Azul suave */
+    --color-4: #CFBAF0;  /* Lavanda muy suave */
+    --color-5: #858AE3;  /* Azul morado */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-2);
+    color: var(--color-5);
+}
+
+header {
+    background: linear-gradient(135deg, var(--color-4), var(--color-5)); /* Degradado entre lavanda suave y azul morado */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container h1 {
+    color: var(--color-1);
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+button.cta {
+    background: linear-gradient(135deg, var(--color-1), var(--color-3)); /* Degradado entre lavanda claro y azul suave */
+    border: none;
+    padding: 12px 24px;
+    color: var(--color-5);
+    font-size: 1.1em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.cta:hover {
+    background: linear-gradient(135deg, var(--color-3), var(--color-4)); /* Cambio de degradado al pasar el ratón */
+    transform: translateY(-2px);
+}
+
+button.cta svg {
+    margin-left: 10px;
+}
+
+button.login-btn {
+    background: linear-gradient(135deg, var(--color-5), var(--color-3)); /* Degradado para el botón de inicio de sesión */
+    color: var(--color-2);
+}
+
+button.login-btn:hover {
+    background: linear-gradient(135deg, var(--color-4), var(--color-1)); /* Cambio de degradado al pasar el ratón */
+}
+
+.search-section {
+    background: linear-gradient(135deg, var(--color-2), var(--color-4)); /* Degradado para la sección de búsqueda */
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--color-5);
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-form input {
+    padding: 12px;
+    font-size: 1.1em;
+    width: 350px;
+    border-radius: 6px;
+    border: 1px solid #DDD;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-form button {
+    background: linear-gradient(135deg, var(--color-1), var(--color-3));
+    border: none;
+    color: var(--color-5);
+    padding: 12px 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-form button:hover {
+    background: linear-gradient(135deg, var(--color-3), var(--color-4)); /* Degradado de hover */
+    transform: translateY(-2px);
+}
+
+.result-section {
+    background: linear-gradient(135deg, var(--color-2), var(--color-4)); /* Degradado para la sección de resultados */
+    padding: 40px 20px;
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.result-section h3 {
+    font-size: 2em;
+    color: var(--color-5);
+    margin-bottom: 20px;
+}
+
+.book-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.book-cards .book-card {
+    background: linear-gradient(135deg, var(--color-1), var(--color-3)); /* Degradado para cada tarjeta de libro */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-cards .book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-cards .book-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.book-cards .book-card h4 {
+    font-size: 1.3em;
+    color: var(--color-5);
+    margin-top: 15px;
+}
+
+.book-cards .book-card p {
+    font-size: 1em;
+    color: var(--color-5);
+    margin-top: 10px;
+}
+
+footer {
+    background: linear-gradient(135deg, var(--color-3), var(--color-5)); /* Degradado para el pie de página */
+    padding: 20px;
+    color: var(--color-2);
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer a {
+    color: var(--color-2);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    font-size: 0.9em;
+    margin-top: 15px;
+}

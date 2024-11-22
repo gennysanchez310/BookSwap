@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookSwap - Detalle del Blog</title>
+  <link rel="stylesheet" href="css/detalle-blog.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1>BookSwap</h1>
+    </div>
+    <nav>
+      <button class="cta" onclick="redirectTo('explorar.html')">
+        <span>Explorar Libros</span>
+      </button>
+      <button class="cta" onclick="redirectTo('comunidad.html')">
+        <span>Comunidad</span>
+      </button>
+      <button class="cta" onclick="redirectTo('blog.html')">
+        <span>Blog</span>
+      </button>
+      <button class="cta login-btn" onclick="redirectTo('login.html')">
+        <span>Iniciar Sesión</span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="blog-detail">
+    <h2 class="blog-title">Título del Artículo del Blog</h2>
+    <div class="blog-meta">
+      <span>Escrito por <b>Autor del Blog</b></span>
+      <span>|</span>
+      <span>Fecha de Publicación: 21 de noviembre, 2024</span>
+    </div>
+    <div class="blog-image">
+      <img src="ejemplo.jpg" alt="Imagen del artículo del blog">
+    </div>
+    <div class="blog-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non elit vel orci varius congue. Proin id feugiat leo. Quisque nec ligula sit amet sapien sagittis pellentesque non ac mi.</p>
+      <p>Suspendisse ut nisi nec neque auctor elementum. Integer vulputate vehicula urna, a sodales justo feugiat vel. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+      <p>Nullam eget nulla ligula. Praesent condimentum justo non velit fringilla, in sodales orci ultricies. Morbi ac ex felis. Etiam posuere lacus at ultricies pharetra. Vivamus venenatis arcu nec metus venenatis, vel egestas mauris mollis.</p>
+    </div>
+    <div class="blog-comments">
+      <h3>Comentarios</h3>
+      <ul>
+        <li>
+          <p><b>Usuario 1:</b> Excelente artículo, muy informativo.</p>
+        </li>
+        <li>
+          <p><b>Usuario 2:</b> Me encantaron los consejos. ¡Gracias por compartir!</p>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 BookSwap | Contacto | Términos de Uso | Privacidad</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
