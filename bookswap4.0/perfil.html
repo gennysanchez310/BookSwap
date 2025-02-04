@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookSwap - Perfil</title>
+  <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1>BookSwap</h1>
+    </div>
+    <nav>
+      <button onclick="redirectTo('bookswap4.0/index.css')">Inicio</button>
+      <button onclick="redirectTo('bookswap4.0/explorar.html')">Explorar Libros</button>
+      <button onclick="redirectTo('comunidad.html')">Comunidad</button>
+      <button onclick="redirectTo('blog.html')">Blog</button>
+    </nav>
+    <button class="login-btn" onclick="redirectTo('login.html')">Iniciar Sesión</button>
+  </header>
+
+  <main>
+    <section class="profile-info">
+      <h2>Bienvenido, [Nombre de Usuario]</h2>
+      <p><strong>Email:</strong> [Correo Electrónico]</p>
+      <p><strong>Libros Compartidos:</strong> 5</p>
+      <p><strong>Reseñas:</strong> 12</p>
+    </section>
+    <section class="user-books">
+      <h3>Mis Libros</h3>
+      <div class="book-card">
+        <img src="img/BOULEVARD 🌈🚬💫.jpg" alt="Boulevard">
+        <h4>Boulevard</h4>
+        <p>Flor M. Salvador</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 BookSwap | Todos los derechos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

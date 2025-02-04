@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorar Libros</title>
+  <link rel="stylesheet" href="explorar.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1>BookSwap</h1>
+    </div>
+    <nav>
+      <button onclick="redirectTo('index.html')">Inicio</button>
+      <button onclick="redirectTo('perfil.html')">Perfil</button>
+      <button onclick="redirectTo('comunidad.html')">Comunidad</button>
+      <button onclick="redirectTo('blog.html')">Blog</button>
+    </nav>
+    <button class="login-btn" onclick="redirectTo('login.html')">Iniciar Sesión</button>
+  </header>
+
+  <!-- Sección de Libros Recomendados -->
+  <section class="recommended-section">
+    <h3>Libros Recomendados</h3>
+    <div class="recommended-books">
+      <!-- Libro 1 -->
+      <div class="book-card">
+        <img src="img/BOULEVARD 🌈🚬💫.jpg" alt="Libro 1">
+        <h4>Boulevard</h4>
+        <p>Flor M. Salvador</p>
+        <button class="view-more-btn">Ver más</button>
+      </div>
+      <!-- Libro 2 -->
+      <div class="book-card">
+        <img src="img/El Jardín De Las Mariposas.jpg" alt="Libro 2">
+        <h4>El Jardín de las Mariposas</h4>
+        <p>Dot Hutchison</p>
+        <button class="view-more-btn">Ver más</button>
+      </div>
+      <!-- Libro 3 -->
+      <div class="book-card">
+        <img src="img/ROMPER EL CÍRCULO_ Collen Hoover_.jpg" alt="Libro 3">
+        <h4>Romper el Círculo</h4>
+        <p>Colleen Hoover</p>
+        <button class="view-more-btn">Ver más</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal para los detalles del libro -->
+  <div id="bookModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="bookTitle">Título del libro</h2>
+      <p id="bookAuthor">Autor</p>
+      <p id="bookDescription">Descripción del libro</p>
+      <h4>Lo que se pide a cambio:</h4>
+      <p id="bookRequest">Lo que se busca a cambio del libro</p>
+      <button onclick="addToCart()">Añadir al carrito</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="contacto.html">Contacto</a> | 
+      <a href="terminos.html">Términos de Uso</a> | 
+      <a href="privacidad.html">Privacidad</a>
+    </div>
+    <p>&copy; 2024 BookSwap | Todos los derechos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+:root {
+  --color-inicio-degradado: #5a62f1;
+  --color-segundo-degradado: #548fee;
+  --color-tercer-degradado: #9fd0f6;
+  --color-cuarto-degradado: #d6b3f9;
+  --color-quinto-degradado: #b191fa;
+  --color-fin-degradado: #d6b3f9;
+  --color-texto-principal: #333333; /* Cambié el color blanco por un gris oscuro */
+  --color-fondo: #9fd0f6;
+  --color-borde: #d1d1d1;
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, var(--color-inicio-degradado), var(--color-segundo-degradado), var(--color-tercer-degradado), var(--color-cuarto-degradado), var(--color-quinto-degradado));
+  margin: 0;
+  padding: 0;
+  color: var(--color-texto-principal);
+}
+
+/* Encabezado */
+header {
+  background: linear-gradient(to right, var(--color-inicio-degradado), var(--color-fin-degradado));
+  color: var(--color-texto-principal);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+header .logo-container h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+nav button {
+  background: transparent;
+  border: 2px solid var(--color-texto-principal);
+  color: var(--color-texto-principal);
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+  background-color: var(--color-texto-principal);
+  color: var(--color-inicio-degradado);
+}
+
+button.login-btn {
+  background-color: var(--color-texto-principal);
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  color: var(--color-inicio-degradado);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.login-btn:hover {
+  background-color: var(--color-fin-degradado);
+  color: var(--color-texto-principal);
+}
+
+/* Sección de héroe */
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  color: var(--color-texto-principal);
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Carrusel de libros */
+.carousel-container {
+  padding: 40px;
+  background: var(--color-fondo);
+  text-align: center;
+}
+
+.carousel-container h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.carrusel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.carrusel-item {
+  flex: 0 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  scroll-snap-align: center;
+}
+
+.carrusel-item img {
+  width: 160px;
+  height: 240px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+/* Libros Recomendados y Populares */
+.recommended-section, .popular-section {
+  padding: 40px;
+  background: var(--color-fondo);
+  text-align: center;
+}
+
+.recommended-section h3, .popular-section h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.recommended-books, .popular-books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.book-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 160px;
+}
+
+.book-card img {
+  width: 160px;
+  height: 240px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+/* Libros en tendencia */
+.popular-section .popular-books .book-card {
+  max-width: 160px;
+}
+
+.popular-section .popular-books .book-card img {
+  width: 160px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Pie de página */
+footer {
+  background: linear-gradient(to right, var(--color-inicio-degradado), var(--color-fin-degradado));
+  color: var(--color-texto-principal);
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer .footer-links {
+  margin-bottom: 10px;
+}
+
+footer .footer-links a {
+  color: var(--color-texto-principal);
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+footer p {
+  margin-top: 10px;
+  font-size: 14px;
+}

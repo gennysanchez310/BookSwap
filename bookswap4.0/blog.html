@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookSwap - Blog</title>
+  <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1>BookSwap</h1>
+    </div>
+    <nav>
+      <button onclick="redirectTo('index.html')">Inicio</button>
+      <button onclick="redirectTo('perfil.html')">Perfil</button>
+      <button onclick="redirectTo('explorar.html')">Explorar Libros</button>
+      <button onclick="redirectTo('comunidad.html')">Comunidad</button>
+    </nav>
+    <button class="login-btn" onclick="redirectTo('login.html')">Iniciar Sesión</button>
+  </header>
+
+  <main>
+    <section class="blog-articles">
+      <h2>Últimos Artículos</h2>
+      <div class="articles-container">
+        <!-- Artículo 1 -->
+        <article class="article">
+          <h3>5 libros para leer este verano</h3>
+          <p>Publicado el 15 de noviembre de 2024</p>
+          <p>Explora estos cinco libros recomendados para disfrutar durante el verano... <span class="ellipsis">...</span></p>
+          <button onclick="openPostModal('5 libros para leer este verano', 'Autor1', 'Explora estos cinco libros recomendados para disfrutar durante el verano. Conoce las historias, los personajes y las tramas que te acompañarán todo el año.')">Ver más</button>
+        </article>
+
+        <!-- Artículo 2 -->
+        <article class="article">
+          <h3>Cómo empezar un club de lectura</h3>
+          <p>Publicado el 8 de noviembre de 2024</p>
+          <p>¿Te gustaría empezar un club de lectura con tus amigos o colegas? Aquí te dejamos algunas recomendaciones para que todo salga bien... <span class="ellipsis">...</span></p>
+          <button onclick="openPostModal('Cómo empezar un club de lectura', 'Autor2', '¿Te gustaría empezar un club de lectura con tus amigos o colegas? Aquí te dejamos algunas recomendaciones para que todo salga bien. Aprende a elegir libros y coordinar reuniones.')">Ver más</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal de artículo -->
+  <div id="postModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle">Título del Artículo</h2>
+      <p id="modalAuthor">Autor: </p>
+      <p id="modalContent">Contenido del artículo...</p>
+      <section class="comments-section">
+        <h3>Comentarios</h3>
+        <div class="comment">
+          <p><strong>Usuario1:</strong> ¡Excelente artículo! Me encantaron las recomendaciones.</p>
+        </div>
+        <div class="comment">
+          <p><strong>Usuario2:</strong> Estoy interesado en el club de lectura. ¿Cuándo empieza?</p>
+        </div>
+        <textarea placeholder="Deja tu comentario..."></textarea>
+        <button class="submit-comment-btn">Enviar Comentario</button>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 BookSwap | Todos los derechos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

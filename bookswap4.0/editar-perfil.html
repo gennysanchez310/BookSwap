@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookSwap - Editar Perfil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Editar Perfil</h1>
+    <nav>
+      <button onclick="redirectTo('index.html')">Inicio</button>
+      <button onclick="redirectTo('perfil.html')">Volver al Perfil</button>
+    </nav>
+  </header>
+  
+  <main>
+    <form class="edit-profile-form">
+      <label for="nombre">Nombre Completo:</label>
+      <input type="text" id="nombre" value="[Nombre Actual]" required>
+      
+      <label for="email">Correo Electrónico:</label>
+      <input type="email" id="email" value="[Correo Actual]" required>
+      
+      <label for="username">Nombre de Usuario:</label>
+      <input type="text" id="username" value="[Usuario Actual]" required>
+      
+      <label for="password">Nueva Contraseña:</label>
+      <input type="password" id="password" placeholder="Deja en blanco si no deseas cambiar">
+      
+      <label for="confirm-password">Confirmar Nueva Contraseña:</label>
+      <input type="password" id="confirm-password" placeholder="Repite la nueva contraseña">
+      
+      <button type="submit">Guardar Cambios</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 BookSwap | Todos los derechos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

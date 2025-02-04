@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookSwap - Comunidad</title>
+  <link rel="stylesheet" href="comunidad.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <h1>BookSwap</h1>
+    </div>
+    <nav>
+      <button onclick="redirectTo('index.html')">Inicio</button>
+      <button onclick="redirectTo('perfil.html')">Perfil</button>
+      <button onclick="redirectTo('explorar.html')">Explorar Libros</button>
+      <button onclick="redirectTo('blog.html')">Blog</button>
+    </nav>
+    <button class="login-btn" onclick="redirectTo('login.html')">Iniciar Sesión</button>
+  </header>
+
+  <main>
+    <section class="community-posts">
+      <h2>Últimas Publicaciones</h2>
+
+      <article class="post" onclick="openPostModal('¿Qué libro te marcó este año?', 'Usuario123', 'Compartamos nuestras experiencias literarias de este año. ¿Qué libro te ha dejado huella?')">
+        <h3>¿Qué libro te marcó este año?</h3>
+        <p>Publicado por <strong>Usuario123</strong></p>
+        <p class="excerpt">¿Estás listo para compartir tu libro favorito del año? ¡Vamos a hacer un intercambio de recomendaciones!</p>
+      </article>
+
+      <article class="post" onclick="openPostModal('Recomendaciones de ciencia ficción', 'LibroLover', '¿Te gusta la ciencia ficción? Este año he leído algunos títulos fascinantes que quiero recomendarte.')">
+        <h3>Recomendaciones de ciencia ficción</h3>
+        <p>Publicado por <strong>LibroLover</strong></p>
+        <p class="excerpt">Si eres fan de la ciencia ficción, esta es la conversación para ti. Vamos a hablar de los mejores libros del género este año.</p>
+      </article>
+      
+      <!-- Más publicaciones -->
+      <article class="post" onclick="openPostModal('¿Cuál es tu autor favorito?', 'LecturaFeliz', 'Discutamos sobre nuestros autores favoritos y cómo han influido en nuestra lectura.')">
+        <h3>¿Cuál es tu autor favorito?</h3>
+        <p>Publicado por <strong>LecturaFeliz</strong></p>
+        <p class="excerpt">¿Tienes un autor que te ha dejado una marca profunda? Cuéntanos tu historia literaria y a qué autor sigues con devoción.</p>
+      </article>
+      
+      <article class="post" onclick="openPostModal('Intercambio de libros raros', 'BookHunter', 'Si tienes libros raros o de coleccionista, esta es la conversación que no te puedes perder.')">
+        <h3>Intercambio de libros raros</h3>
+        <p>Publicado por <strong>BookHunter</strong></p>
+        <p class="excerpt">Este intercambio se trata de encontrar joyas literarias difíciles de conseguir. ¿Tienes un libro raro que te gustaría intercambiar?</p>
+      </article>
+    </section>
+
+    <!-- Modal -->
+    <div id="postModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle">Título de la Publicación</h2>
+        <p><strong>Autor:</strong> <span id="modalAuthor">Nombre del Autor</span></p>
+        <p id="modalContent">Contenido de la publicación...</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 BookSwap | Todos los derechos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
