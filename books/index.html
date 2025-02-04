@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intercambio de Libros</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img/1__2_-removebg-preview.png" alt="BookSwap Logo">
+            </div>
+            <h1>BookSwap</h1>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Categorías</a></li>
+                <li><a href="#new-releases">Nuevos Lanzamientos</a></li>
+                <li><a href="#">Destacados</a></li>
+                <li><button class="btn" id="open-login-modal">Iniciar Sesión</button></li>
+                <li><button class="btn" id="open-register-modal">Registrarse</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Explora nuestros libros</h2>
+            <p>Encuentra los mejores títulos para ti.</p>
+            <button class="btn" onclick="scrollToNewReleases()">Explorar</button>
+        </div>
+    </section>
+
+
+    <section class="categories">
+        <h3>Explora nuestras categorías</h3>
+        <div class="category-list">
+            <div class="category-item">Educación</div>
+            <div class="category-item">Ficción</div>
+            <div class="category-item">Ciencia</div>
+            <div class="category-item">Romance</div>
+            <div class="category-item">Terror</div>
+            <div class="category-item">Comedia</div>
+            <div class="category-item">LGBT</div>
+            <div class="category-item">Accion</div>
+            <div class="category-item">Fantacia</div>
+            <div class="category-item">Suspenso</div>
+            <div class="category-item">Ciencia Ficcion</div>
+            <div class="category-item">Auto Ayuda</div>
+        </div>
+    </section>
+
+    
+    <section id="new-releases" class="new-releases">
+        <h3>Nuevos Lanzamientos</h3>
+        <div class="book-list">
+            <div class="book-item">
+                <img src="img/BOULEVARD 🌈🚬💫.jpg" alt="Boulevard">
+                <p>Boulevard</p>
+                <span class="available">Disponible</span>
+            </div>
+            <div class="book-item">
+                <img src="img/descarga (1).jpg" alt="Al Carajo, Todavía Te Amo">
+                <p>Al Carajo, Todavía Te Amo</p>
+                <span class="available">Disponible</span>
+            </div>
+            <div class="book-item">
+                <img src="img/El Jardín De Las Mariposas.jpg" alt="El Jardín de las Mariposas">
+                <p>El Jardín de las Mariposas</p>
+                <span class="unavailable">No Disponible</span>
+            </div>
+            <div class="book-item">
+                <img src="img/30 libros de terror y novela negra para una noche de miedo.jpg" alt="El Visitante">
+                <p>El Visitante</p>
+                <span class="unavailable">No Disponible</span>
+            </div>
+            <div class="book-item">
+                <img src="img/40 best books to read before you die.jpg" alt="1984">
+                <p>1984</p>
+                <span class="available">Disponible</span>
+            </div>
+            <div class="book-item">
+                <img src="img/LA CANCIÓN DE AQUILES (Madeline Miller).jpg" alt="La Cancion De Aquiles">
+                <p>La Cancion De Aquiles</p>
+                <span class="available">Disponible</span>
+            </div>
+            <div class="book-item">
+                <img src="img/Libro recomendado_ «Carta de amor a los muertos».jpg" alt="Cartas de Amor a los Muertos">
+                <p>Cartas de Amor a los Muerto</p>
+                <span class="unavailable">No Disponible</span>
+            </div>
+            <div class="book-item">
+                <img src="img/Personas Tóxicas - Aprende a identificarlas y evitar que te afecten.jpg" alt="Como Sobrevivir Entre Gente Toxica">
+                <p>Como Sobrevivir Entre Gente Toxica</p>
+                <span class="unavailable">No Disponible</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-book">
+        <h3>Libro Destacado</h3>
+        <div class="featured-content">
+            <img src="img/Fabricante de lágrimas (Spanish Edition).jpg" alt="Fabricante de Lágrimas">
+            <div>
+                <h4>Fabricante de Lágrimas</h4>
+                <p>Autor: Erin Doom</p>
+                <p>Estado: <span class="available">Disponible</span></p>
+                <button class="btn" onclick="intercambiarLibro()">Intercambiar Ahora</button>
+            </div>
+            <img src="img/descarga.jpg" alt="Un Cuento Perfecto">
+            <div>
+                <h4>Un Cuento Perfecto</h4>
+                <p>Autor: Elísabet Benavent</p>
+                <p>Estado: <span class="available">Disponible</span></p>
+                <button class="btn" onclick="intercambiarLibro()">Intercambiar Ahora</button>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2025 BookStore - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Modal para ver detalles del libro -->
+    <div id="book-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p><strong>Autor:</strong> <span id="modal-author"></span></p>
+            <p><strong>Estado:</strong> <span id="modal-status"></span></p>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <!-- Modal de Inicio de Sesión -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <form id="login-form">
+                <label for="login-email">Correo Electrónico:</label>
+                <input type="email" id="login-email" required>
+                <label for="login-password">Contraseña:</label>
+                <input type="password" id="login-password" required>
+                <button type="submit" class="btn">Ingresar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Registro -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Registro</h2>
+            <form id="register-form">
+                <label for="register-name">Nombre:</label>
+                <input type="text" id="register-name" required>
+                <label for="register-email">Correo Electrónico:</label>
+                <input type="email" id="register-email" required>
+                <label for="register-password">Contraseña:</label>
+                <input type="password" id="register-password" required>
+                <button type="submit" class="btn">Registrarse</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

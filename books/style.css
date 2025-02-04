@@ -1,0 +1,467 @@
+body {
+    background-color: #FFFFFF;
+    color: #280F3E;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #C2C3F3;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    flex: 1;
+}
+
+.logo img {
+    width: 150px;  /* Ajusta el tamaño del logo */
+    height: auto;   /* Mantiene la proporción original */
+}
+
+h1 {
+    flex: 2;
+    font-size: 24px;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+ul li {
+    display: inline;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #280F3E;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    color: #787AE6; /* Color al pasar el ratón */
+}
+
+.btn {
+    background-color: #787AE6;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.categories, .new-releases, .featured-book {
+    padding: 20px;
+    text-align: center;
+}
+
+.category-list, .book-list {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.category-item, .book-item {
+    background-color: #C2C3F3;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    width: 150px;
+}
+
+.book-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.featured-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+}
+
+.featured-content img {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #C2C3F3;
+    padding: 10px;
+    text-align: center;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    margin: 10% auto;
+    width: 50%;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+
+    ul {
+        display: block;
+    }
+
+    ul li {
+        margin-bottom: 10px;
+    }
+
+    .category-item, .book-item {
+        width: 120px;
+        padding: 10px;
+    }
+
+    .featured-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .featured-content img {
+        width: 80%;
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .category-item, .book-item {
+        width: 100px;
+        padding: 8px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .featured-content img {
+        width: 90%;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+
+body {
+    background-color: #FFFFFF;
+    color: #280F3E;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #C2C3F3;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #280F3E;
+    font-weight: bold;
+}
+
+.btn-register {
+    background-color: #787AE6;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #E6E7FA;
+}
+
+.hero-content h2 {
+    font-size: 28px;
+}
+
+.btn {
+    background-color: #787AE6;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.new-releases {
+    text-align: center;
+    padding: 20px;
+}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.book-item {
+    background-color: #C2C3F3;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    width: 150px;
+    cursor: pointer;
+}
+
+.book-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #C2C3F3;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    margin: 10% auto;
+    width: 50%;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+}
+
+body {
+    background-color: #FFFFFF;
+    color: #280F3E;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #C2C3F3;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #280F3E;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    color: #787AE6;
+}
+
+.btn {
+    background-color: #787AE6;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    margin: 10% auto;
+    width: 50%;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.book-item {
+    background-color: #C2C3F3;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    width: 150px;
+    cursor: pointer;
+}
+
+.book-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.available {
+    color: green;
+    font-weight: bold;
+}
+
+.unavailable {
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+}
