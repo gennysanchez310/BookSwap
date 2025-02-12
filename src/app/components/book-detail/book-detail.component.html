@@ -1,0 +1,50 @@
+<div id="bookDetailsModal" tabindex="-1"
+    class="fixed top-0 left-0 p-4 flex items-center justify-center z-50 w-full overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%)] max-h-full backdrop-blur-sm">
+    <div class="relative w-full max-w-4xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow">
+            <!-- Modal header -->
+            <div class="flex items-start justify-between mx-4 py-5 border-b rounded-t">
+                <div class="flex flex-col sm:flex-row items-center justify-center p-5 text-center sm:text-left">
+                    <img class="group-hover:scale-110 transition duration-300 cursor-pointer"
+                        [src]="bookDetails.volumeInfo.imageLinks.thumbnail"
+                        alt="{{ bookDetails.volumeInfo.title }} Image" />
+                    <div class="px-0 sm:px-6 mt-4 sm:mt-0">
+                        <h3 class="text-2xl sm:text-4xl font-semibold text-gray-900">{{ bookDetails.volumeInfo.title }}
+                        </h3>
+                        <div class="my-2">
+                            <h2 class="text-green-500 text-lg sm:text-xl">
+                                {{ bookDetails.volumeInfo.authors[0] }}
+                                <span *ngIf="bookDetails.volumeInfo.authors.length === 2">
+                                    and {{ bookDetails.volumeInfo.authors[1] }}
+                                </span>
+                            </h2>
+                            <h2 class="text-gray-700">{{bookDetails.volumeInfo.publisher}}</h2>
+                            <h2 class="text-gray-700">{{bookDetails.volumeInfo.publishedDate}}</h2>
+                        </div>
+                        <div class="flex gap-2 items-center">
+                            <div class="flex gap-1 items-center">
+                                <img [src]="ownerAvatarUrl" alt="avatar" class="w-12 h-12 rounded-full" />
+                                <h2 class="text-gray-900 font-semibold">@{{ ownerUsername }}</h2>
+                            </div>
+                            <button class="px-3 py-2 text-center" (click)="viewUser()"><i
+                                    class="fa-solid fa-arrow-up-right-from-square text-[#0DBE5E]"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Close Button -->
+                <button type="button"
+                    class="bg-transparent rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center"
+                    (click)="closeModal()">
+                    <!-- Font Awesome X-Mark Icon -->
+                    <i class="fa-solid fa-xmark fa-lg text-gray-400 hover:text-gray-900"></i>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-6 space-y-6">
+                <p class="text-base leading-relaxed text-gray-600">{{ bookDetails.volumeInfo.description }}.</p>
+            </div>
+        </div>
+    </div>
+</div>
