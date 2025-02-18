@@ -34,7 +34,7 @@
                         <div class="flex flex-col sm:flex-row items-center justify-center space-x-2">
                             <img [src]="user.avatarUrl" alt="User Avatar" class="w-24 h-24 mx-auto rounded-full" />
                             <div class="flex items-center justify-between">
-                                <h1 class="text-3xl font-semibold text-gray-800">@{{ user.username }}
+                                <h1 class="text-3xl font-semibold text-gray-800"> <!--@ Este arroba daba error--> {{ user.username }}
                                 </h1>
                                 <button *ngIf="isCurrentUserProfile()" class="p-2" (click)="toggleUpdateModal()">
                                     <i class="fa-solid fa-pen text-gray-500"></i>
