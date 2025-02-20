@@ -8,3 +8,5 @@ npm install
 Para probar la web es un 
 
 ng serve
+
+TRIUNFO EL MAL!!!!!!!!

@@ -3,11 +3,11 @@
     <div class="w-full bg-[#F5F5F3] relative">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 h-20">
             <div
-                class="relative w-60 sm:w-[600px] h-[50px] text-base text-gray-900  flex items-center justify-between rounded-xl">
+                class="relative w-60 sm:w-[600px] h-[50px] text-base text-gray-900 flex items-center justify-between rounded-xl">
                 <div class="relative w-full">
                     <input type="search" id="searchTerm" name="searchTerm"
                         class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-gray-800 focus:border-gray-800"
-                        placeholder="Search by Title, Author name..." required [(ngModel)]="searchTerm"
+                        placeholder="Buscar por Título, Autor..." required [(ngModel)]="searchTerm"
                         (input)="searchBooks()">
                 </div>
             </div>
@@ -20,19 +20,19 @@
                     class="absolute top-6 right-0 z-50 bg-primeColor w-52 text-[#767676] h-auto py-1 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none divide-y divide-gray-200 rounded-lg">
                     <ul>
                         <li><a (click)="profileManagement()" class="text-gray-700 block px-4 py-2 hover:bg-gray-100"
-                                tabindex="-1" id="menu-item-1">Profile Management</a></li>
+                                tabindex="-1" id="menu-item-1">Gestión de Perfil</a></li>
                         <li><a href="#contact" class="text-gray-700 block px-4 py-2 hover:bg-gray-100" tabindex="-1"
-                                id="menu-item-3">Help and Support</a></li>
+                                id="menu-item-3">Ayuda y Soporte</a></li>
                         <li>
                             <a routerLink="/listBook"
                                 class="flex items-center px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100">
-                                Exchange Book
+                                Intercambiar Libro
                             </a>
                         </li>
                     </ul>
                     <div class="py-1">
                         <a class="text-gray-700 block px-4 py-2 hover:bg-gray-100" tabindex="-1" id="menu-item-4"
-                            (click)="logout()">Sign out</a>
+                            (click)="logout()">Cerrar Sesión</a>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                 <div class="max-w-80 max-h-80 relative overflow-y-hidden bg-gray-100">
                     <div class="w-[200px] h-[260px] mx-auto flex justify-center items-center">
                         <img class="max-h-[200px] group-hover:scale-110 transition duration-300 cursor-pointer"
-                            [src]="book.coverImage" alt="{{ book.title }} Image"
+                            [src]="book.coverImage" alt="Imagen de {{ book.title }}"
                             (click)="openBookDetailsModal(book.isbn, book.userUID)" />
                     </div>
                     <div class="absolute top-5 right-4">
