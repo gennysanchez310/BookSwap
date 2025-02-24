@@ -7,21 +7,21 @@
                     <li class="flex items-center">
                         <i class="fa-solid fa-house fa-xs text-gray-500"></i>
                         <a routerLink="/" class="text-sm font-medium text-gray-700 hover:text-[#0DBE5E] md:ml-2">
-                            Home
+                            Inicio
                         </a>
                     </li>
                     <li>
                         <div class="flex items-center">
                             <i class="fa-solid fa-chevron-right fa-xs text-gray-500"></i>
                             <a routerLink="/bookStore"
-                                class="ml-1 text-sm font-medium text-gray-700 hover:text-[#0DBE5E] md:ml-2">Book
-                                Store</a>
+                                class="ml-1 text-sm font-medium text-gray-700 hover:text-[#0DBE5E] md:ml-2">Intercambio de
+                                Libros</a>
                         </div>
                     </li>
                     <li aria-current="page">
                         <div class="flex items-center">
                             <i class="fa-solid fa-chevron-right fa-xs text-gray-500"></i>
-                            <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Profile</span>
+                            <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Perfil</span>
                         </div>
                     </li>
                 </ol>
@@ -44,17 +44,17 @@
                         <h2 class="text-gray-600 text-xl">{{ user.firstName }} {{ user.lastName }}</h2>
                     </div>
                     <div class="border-t border-gray-300 pt-4">
-                        <h2 class="text-xl font-semibold">User Information</h2>
+                        <h2 class="text-xl font-semibold">Información de usuario</h2>
                         <div class="mt-2 flex space-x-2">
-                            <label class="text-gray-600">Gender:</label>
+                            <label class="text-gray-600">Genero:</label>
                             <p>{{ user.gender }}</p>
                         </div>
                         <div class="mt-2 flex space-x-2">
-                            <label class="text-gray-600">Location:</label>
+                            <label class="text-gray-600">Localización:</label>
                             <p>{{ user.location }}</p>
                         </div>
                         <div class="mt-2 flex space-x-2">
-                            <label class="text-gray-600">Birthday:</label>
+                            <label class="text-gray-600">Cumpleaños:</label>
                             <p>{{ user.birthday | date }}</p>
                         </div>
                         <div class="mt-2 flex space-x-2">

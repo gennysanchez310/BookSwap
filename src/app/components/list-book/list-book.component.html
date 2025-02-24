@@ -1,25 +1,25 @@
 <app-header></app-header>
 <section class="bg-gray-100 flex flex-col px-12 py-6 min-h-screen">
     <div class="px-4 sm:px-10 py-4 inline-block">
-        <nav class="relative" aria-label="Breadcrumb">
+        <nav class="relative" aria-label="Migas de pan">
             <ol class="inline-flex items-center space-x-1 md:space-x-3">
                 <li class="flex items-center">
                     <i class="fa-solid fa-house fa-xs text-gray-500"></i>
                     <a routerLink="/" class="ml-[2px] text-sm font-medium text-gray-700 hover:text-[#0DBE5E] md:ml-2">
-                        Home
+                        Inicio
                     </a>
                 </li>
                 <li>
                     <div class="flex items-center">
                         <i class="fa-solid fa-chevron-right fa-xs text-gray-500"></i>
                         <a routerLink="/bookStore"
-                            class="ml-1 text-sm font-medium text-gray-700 hover:text-[#0DBE5E] md:ml-2">Book Store</a>
+                            class="ml-1 text-sm font-medium text-gray-700 hover:text-[#0DBE5E] md:ml-2">Librería</a>
                     </div>
                 </li>
                 <li aria-current="page">
                     <div class="flex items-center">
                         <i class="fa-solid fa-chevron-right fa-xs text-gray-500"></i>
-                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Book Listing</span>
+                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Listado de libros</span>
                     </div>
                 </li>
             </ol>
@@ -29,48 +29,48 @@
         <div class="container max-w-screen-lg mx-auto">
             <div class="grid gap-6 gap-y-4 text-sm grid-cols-1 lg:grid-cols-3">
                 <div class="text-gray-600">
-                    <p class="font-medium text-lg py-2">Book Details</p>
-                    <p>Please fill out all the details of the book <br> you want to list.</p>
+                    <p class="font-medium text-lg py-2">Detalles del libro</p>
+                    <p>Por favor, completa todos los detalles del libro <br> que deseas listar.</p>
                 </div>
                 <div class="lg:col-span-2">
                     <form [formGroup]="bookForm" (ngSubmit)="addBook()">
                         <div class="grid gap-4 gap-y-4 text-sm grid-cols-1 md:grid-cols-5">
                             <div class="md:col-span-5">
-                                <label for="title" class="block mb-2 text-sm font-medium text-gray-600">Name of the
-                                    Book<sup class="text-red-500 text-sm">*</sup>
+                                <label for="title" class="block mb-2 text-sm font-medium text-gray-600">Nombre del
+                                    libro<sup class="text-red-500 text-sm">*</sup>
                                 </label>
                                 <input type="text" id="title" name="title" formControlName="title"
                                     [ngClass]="{'ring-1 ring-red-500': bookForm.get('title')?.invalid && bookForm.get('title')?.touched}"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#0DBE5E] focus:border-[#0DBE5E] block w-full p-2.5" />
                             </div>
                             <div class="md:col-span-5">
-                                <label for="author" class="block mb-2 text-sm font-medium text-gray-600">Author's
-                                    Name<sup class="text-red-500 text-sm">*</sup></label>
+                                <label for="author" class="block mb-2 text-sm font-medium text-gray-600">Nombre del
+                                    autor<sup class="text-red-500 text-sm">*</sup></label>
                                 <input type="text" id="author" name="author" formControlName="author"
                                     [ngClass]="{'ring-1 ring-red-500': bookForm.get('author')?.invalid && bookForm.get('author')?.touched}"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#0DBE5E] focus:border-[#0DBE5E] block w-full p-2.5" />
                             </div>
                             <div class="md:col-span-5">
                                 <label for="description"
-                                    class="block mb-2 text-sm font-medium text-gray-600">Description</label>
+                                    class="block mb-2 text-sm font-medium text-gray-600">Descripción</label>
                                 <textarea rows="5" id="description" name="description" formControlName="description"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#0DBE5E] focus:border-[#0DBE5E] block w-full p-2.5"></textarea>
                             </div>
                             <div class="md:col-span-3">
-                                <label for="address" class="block mb-2 text-sm font-medium text-gray-600">Condition<sup
+                                <label for="condition" class="block mb-2 text-sm font-medium text-gray-600">Condición<sup
                                         class="text-red-500 text-sm">*</sup></label>
-                                <label for="condition" class="sr-only">Underline select</label>
+                                <label for="condition" class="sr-only">Seleccionar condición</label>
                                 <select id="condition" name="condition" formControlName="condition"
                                     [ngClass]="{'ring-1 ring-red-500': bookForm.get('condition')?.invalid && bookForm.get('condition')?.touched}"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#0DBE5E] focus:border-[#0DBE5E] block w-full p-2.5 peer">
-                                    <option value="New">New</option>
-                                    <option value="Good">Good</option>
-                                    <option value="Fair">Fair</option>
-                                    <option value="Acceptable">Acceptable</option>
+                                    <option value="New">Nuevo</option>
+                                    <option value="Good">Bueno</option>
+                                    <option value="Fair">Regular</option>
+                                    <option value="Acceptable">Aceptable</option>
                                 </select>
                             </div>
                             <div class="md:col-span-2">
-                                <label for="country" class="block mb-2 text-sm font-medium text-gray-600">ISBN<sup
+                                <label for="isbn" class="block mb-2 text-sm font-medium text-gray-600">ISBN<sup
                                         class="text-red-500 text-sm">*</sup></label>
                                 <input name="isbn" id="isbn" formControlName="isbn"
                                     [ngClass]="{'ring-1 ring-red-500': bookForm.get('isbn')?.invalid && bookForm.get('isbn')?.touched}"
@@ -79,7 +79,7 @@
                             <div class="md:col-span-5 my-4">
                                 <div class="inline-flex items-end">
                                     <button
-                                        class="text-white bg-gradient-to-r from-[#0DBE5E] to-[#0b8b45] hover:bg-gradient-to-br focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Publish</button>
+                                        class="text-white bg-gradient-to-r from-[#0DBE5E] to-[#0b8b45] hover:bg-gradient-to-br focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Publicar</button>
                                 </div>
                             </div>
                         </div>
