@@ -1,11 +1,12 @@
-hOLA
-Que onda
-tons
+Okey esta version trae y ocupa mantenimiento SOLO PARA EL WEB 
+Necesito cambios como traduccion agregados etc.
+Esto es para josue SOLO ES WEB LA SIGUIENTE ACTUALIZACION NO SE SUBE ES UN PULL BAJALA.
 
-Si Apenas descargaste tienes que hacer un
+Si se esta clonando el repositorio por primer vez se hace un:
+
 npm install
 
-Para probar la web es un 
+Para probar la web es usa:
 
 ng serve
 
