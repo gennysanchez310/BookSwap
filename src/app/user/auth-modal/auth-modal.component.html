@@ -1,35 +1,35 @@
 <section id="authentication-modal" tabindex="-1" aria-hidden="true" [ngClass]="{'hidden': !showModal}"
     class="fixed inset-0 z-50 flex justify-center items-center bg-opacity-50 bg-black backdrop-blur-sm">
     <div class="relative w-full max-w-md max-h-full">
-        <!-- Modal content -->
+        <!-- Contenido del modal -->
         <div class="relative bg-white rounded-lg shadow">
             <button type="button"
                 class="absolute top-3 right-2.5 bg-transparent rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center"
                 data-modal-hide="authentication-modal" (click)="closeModal.emit()">
-                <span class="text-gray-600 hover:text-gray-900">&#x2715;</span>
-                <span class="sr-only">Close modal</span>
+                <span class="text-[#280F3E] hover:text-[#787AE6]">&#x2715;</span>
+                <span class="sr-only">Cerrar modal</span>
             </button>
             <div class="px-6 py-6 lg:px-8">
-                <h3 class="mb-4 text-xl font-medium text-gray-900">Your Account</h3>
+                <h3 class="mb-4 text-xl font-medium text-[#787AE6]">Tu Cuenta</h3>
                 <app-tabs-container>
-                    <app-tab tabTitle="Login">
-                        <!-- Login Form -->
+                    <app-tab tabTitle="Iniciar sesión">
+                        <!-- Formulario de inicio de sesión -->
                         <form (ngSubmit)="login()">
-                            <!-- Email -->
+                            <!-- Correo electrónico -->
                             <div class="mb-3">
-                                <label class="inline-block mb-2">Email</label>
+                                <label class="inline-block mb-2 text-[#787AE6]">Correo Electrónico</label>
                                 <input type="email" [(ngModel)]="emailLogin" name="emailLogin" class="block w-full py-1.5 px-3 border border-gray-400 transition
                         duration-500 focus:outline-none rounded bg-transparent
-                        focus:border-[#0DBE5E] focus:ring-[#0DBE5E]" placeholder="Enter Email" required />
+                        focus:border-[#787AE6] focus:ring-[#787AE6]" placeholder="Ingresa tu correo electrónico" required />
                             </div>
-                            <!-- Password -->
+                            <!-- Contraseña -->
                             <div class="mb-3">
-                                <label class="inline-block mb-2">Password</label>
+                                <label class="inline-block mb-2 text-[#787AE6]">Contraseña</label>
                                 <div class="flex items-center justify-between rounded border border-gray-400"
-                                    [ngClass]="{'border-[#0DBE5E] ring-1 ring-[#0DBE5E] transition duration-500': isFocused1}">
+                                    [ngClass]="{'border-[#787AE6] ring-1 ring-[#787AE6] transition duration-500': isFocused1}">
                                     <input class="outline-none w-full border-none focus:ring-0 mx-1"
                                         [type]="showPassword ? 'text' : 'password'" [(ngModel)]="passwordLogin"
-                                        name="passwordLogin" placeholder="Password" required (focus)="isFocused1 = true"
+                                        name="passwordLogin" placeholder="Contraseña" required (focus)="isFocused1 = true"
                                         (blur)="isFocused1 = false" />
                                     <i class="fa-regular fa-eye text-gray-400 px-3" *ngIf="!showPassword"
                                         (click)="togglePassword()"></i>
@@ -37,49 +37,49 @@
                                         (click)="togglePassword()"></i>
                                 </div>
                             </div>
-                            <button type="submit" class="my-6 block w-full bg-[#0DBE5E] text-white py-1.5 px-3 rounded transition
-                      hover:bg-[#1ea65b]">
-                                Submit
+                            <button type="submit" class="my-6 block w-full bg-[#787AE6] text-white py-1.5 px-3 rounded transition
+                      hover:bg-[#5f5be8]">
+                                Enviar
                             </button>
                             <hr class="my-6 border-gray-300 w-full">
 
                             <button type="button" (click)="signInWithGoogle()"
-                                class="w-full block bg-white hover:bg-gray-100 focus:bg-gray-100 text-gray-900 font-semibold rounded-lg py-2 border border-gray-300">
+                                class="w-full block bg-white hover:bg-gray-100 focus:bg-gray-100 text-[#280F3E] font-semibold rounded-lg py-2 border border-gray-300">
                                 <div class="flex items-center justify-center">
                                     <div class="google-icon"></div>
                                     <span class="ml-4">
-                                        Log in
-                                        with
+                                        Iniciar sesión
+                                        con
                                         Google</span>
                                 </div>
                             </button>
                         </form>
                     </app-tab>
-                    <app-tab tabTitle="Register">
-                        <!-- Registration Form -->
+                    <app-tab tabTitle="Registrarse">
+                        <!-- Formulario de registro -->
                         <form (ngSubmit)="register()">
-                            <!-- Name -->
+                            <!-- Nombre -->
                             <div class="mb-3">
-                                <label class="inline-block mb-2">Name</label>
+                                <label class="inline-block mb-2 text-[#787AE6]">Nombre</label>
                                 <input type="text" [(ngModel)]="name" name="name"
                                     class="block w-full py-1.5 px-3 border border-gray-400 transition
-                        duration-500 focus:outline-none rounded bg-transparent focus:border-[#0DBE5E] focus:ring-[#0DBE5E]" placeholder="Enter Name" />
+                        duration-500 focus:outline-none rounded bg-transparent focus:border-[#787AE6] focus:ring-[#787AE6]" placeholder="Ingresa tu nombre" />
                             </div>
-                            <!-- Email -->
+                            <!-- Correo electrónico -->
                             <div class="mb-3">
-                                <label class="inline-block mb-2">Email</label>
+                                <label class="inline-block mb-2 text-[#787AE6]">Correo Electrónico</label>
                                 <input type="email" [(ngModel)]="emailRegister" name="emailRegister"
                                     class="block w-full py-1.5 px-3 border border-gray-400 transition
-                        duration-500 focus:outline-none rounded bg-transparent focus:border-[#0DBE5E] focus:ring-[#0DBE5E]" placeholder="Enter Email" required />
+                        duration-500 focus:outline-none rounded bg-transparent focus:border-[#787AE6] focus:ring-[#787AE6]" placeholder="Ingresa tu correo electrónico" required />
                             </div>
-                            <!-- Password -->
+                            <!-- Contraseña -->
                             <div class="mb-3">
-                                <label class="inline-block mb-2">Password</label>
+                                <label class="inline-block mb-2 text-[#787AE6]">Contraseña</label>
                                 <div class="flex items-center justify-between rounded border border-gray-400"
-                                    [ngClass]="{'border-[#0DBE5E] ring-1 ring-[#0DBE5E] transition duration-500': isFocused1}">
+                                    [ngClass]="{'border-[#787AE6] ring-1 ring-[#787AE6] transition duration-500': isFocused1}">
                                     <input class="outline-none border-none w-full focus:ring-0 mx-1"
                                         [type]="showPassword ? 'text' : 'password'" [(ngModel)]="passwordRegister"
-                                        name="passwordRegister" placeholder="Password" required
+                                        name="passwordRegister" placeholder="Contraseña" required
                                         (focus)="isFocused1 = true" (blur)="isFocused1 = false" />
                                     <i class="fa-regular fa-eye text-gray-400 px-3" *ngIf="!showPassword"
                                         (click)="togglePassword()"></i>
@@ -87,14 +87,14 @@
                                         (click)="togglePassword()"></i>
                                 </div>
                             </div>
-                            <!-- Confirm Password -->
+                            <!-- Confirmar Contraseña -->
                             <div class="mb-3">
-                                <label class="inline-block mb-2">Confirm Password</label>
+                                <label class="inline-block mb-2 text-[#787AE6]">Confirmar Contraseña</label>
                                 <div class="flex items-center justify-between rounded border border-gray-400"
-                                    [ngClass]="{'border-[#0DBE5E] ring-1 ring-[#0DBE5E] transition duration-500': isFocused2}">
+                                    [ngClass]="{'border-[#787AE6] ring-1 ring-[#787AE6] transition duration-500': isFocused2}">
                                     <input class="outline-none border-none w-full focus:ring-0 mx-1"
                                         [type]="showPassword ? 'text' : 'password'" [(ngModel)]="confirmPassword"
-                                        name="confirmPassword" placeholder="Confirm Password" required
+                                        name="confirmPassword" placeholder="Confirmar Contraseña" required
                                         (focus)="isFocused2 = true" (blur)="isFocused2 = false" />
                                     <i class="fa-regular fa-eye text-gray-400 px-3" *ngIf="!showPassword"
                                         (click)="togglePassword()"></i>
@@ -102,18 +102,18 @@
                                         (click)="togglePassword()"></i>
                                 </div>
                             </div>
-                            <button type="submit" class="my-6 block w-full bg-[#0DBE5E] text-white py-1.5 px-3 rounded transition
-                      hover:bg-[#1ea65b] disabled:opacity-50">
-                                Submit
+                            <button type="submit" class="my-6 block w-full bg-[#787AE6] text-white py-1.5 px-3 rounded transition
+                      hover:bg-[#5f5be8] disabled:opacity-50">
+                                Enviar
                             </button>
                             <hr class="my-6 border-gray-300 w-full">
                             <button type="button" (click)="signUpWithGoogle()"
-                                class="w-full block bg-white hover:bg-gray-100 focus:bg-gray-100 text-gray-900 font-semibold rounded-lg py-2 border border-gray-300">
+                                class="w-full block bg-white hover:bg-gray-100 focus:bg-gray-100 text-[#280F3E] font-semibold rounded-lg py-2 border border-gray-300">
                                 <div class="flex items-center justify-center">
                                     <div class="google-icon"></div>
                                     <span class="ml-4">
-                                        Sign Up
-                                        with
+                                        Registrarse
+                                        con
                                         Google</span>
                                 </div>
                             </button>
