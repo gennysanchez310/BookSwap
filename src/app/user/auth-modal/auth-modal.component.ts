@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { generateUsername } from 'unique-username-generator';
 import axios from 'axios';
 import { ToastrService } from 'ngx-toastr';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-auth-modal',
@@ -14,6 +15,28 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./auth-modal.component.css'],
 })
 export class AuthModalComponent {
+  //Validacion de Gmail o Email.
+  validateEmail(email: string): boolean {
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(email);
+  }
+  
+  
+  // Método para emitir el cierre del modal
+  closeModalOnOutsideClick(event: MouseEvent): void {
+    const modal = document.getElementById('authentication-modal');
+    if (modal && event.target === modal) {
+      this.closeModal.emit();
+    }
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  onKeyDown(event: KeyboardEvent): void {
+    if (event.key === 'Escape') {
+      this.closeModal.emit();
+    }
+  }
+
   emailLogin = '';
   passwordLogin = '';
   emailRegister = '';
@@ -38,6 +61,11 @@ export class AuthModalComponent {
     this.showPassword = !this.showPassword;
   }
 
+  validatePassword(password: string): boolean {
+    const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+    return regex.test(password);
+  }
+
   async generateRandomUsernameAndAvatar() {
     const username = generateUsername('', 0, 10);
     let avatarUrl = '';
@@ -56,14 +84,24 @@ export class AuthModalComponent {
   }
 
   async register() {
-    if (this.passwordRegister !== this.confirmPassword) {
-      console.error('Passwords do not match.');
-      this.toastr.warning('Passwords do not match!', 'Error');
+    if (!this.validateEmail(this.emailRegister)) {
+      this.toastr.warning('Por favor ingresa un correo electrónico válido.', 'Error');
       return;
     }
+
+    if (this.passwordRegister !== this.confirmPassword) {
+      this.toastr.warning('Las contraseñas no coinciden.', 'Error');
+      return;
+    }
+
+    if (!this.validatePassword(this.passwordRegister)) {
+      this.toastr.warning('La contraseña debe tener al menos 8 caracteres, incluir una letra, un número y un carácter especial como !@#$%^&*().', 'Error');
+      return;
+    }    
+
     const { emailRegister, passwordRegister } = this;
     try {
-      // Register the user with Firebase Authentication
+    // Registro de usuario con Firebase Authentication
       const userCredential = await this.authService.register(
         emailRegister,
         passwordRegister
@@ -76,7 +114,7 @@ export class AuthModalComponent {
         const { username, avatarUrl } =
           await this.generateRandomUsernameAndAvatar();
 
-        // Store user data in Firestore
+         // Guardar datos de usuario en Firestore
         const userData = {
           username,
           avatarUrl,
@@ -97,31 +135,36 @@ export class AuthModalComponent {
         await addDoc(userInstance, userData);
 
         console.log(
-          'User registered successfully with random username and avatar.'
+          'Usuario registrado exitosamente con nombre de usuario y avatar aleatorios.'
         );
-        this.toastr.success('User registered successfully!', 'Success');
-        this.handleAuthResult(userCredential, 'Registration');
+        this.toastr.success('¡Usuario registrado exitosamente!', 'Éxito');
+        this.handleAuthResult(userCredential, 'Registro');
       }
     } catch (error) {
-      console.error('Registration error:', error);
-      this.toastr.error('An error occurred while registering', 'Error');
+      console.error('Error en el registro:', error);
+      this.toastr.error('Ocurrió un error al registrar el usuario', 'Error');
     }
   }
 
   async login() {
+    if (!this.validateEmail(this.emailLogin)) {
+      this.toastr.warning('Por favor ingresa un correo electrónico válido.', 'Error');
+      return;
+    }
+
     const { emailLogin, passwordLogin } = this;
     const userCredential = await this.authService.login(
       emailLogin,
       passwordLogin
     );
-    this.handleAuthResult(userCredential, 'Login');
+    this.handleAuthResult(userCredential, 'Inicio de sesión');
   }
 
   async signUpWithGoogle() {
     const provider = new GoogleAuthProvider();
     try {
       const result = await this.afAuth.signInWithPopup(provider);
-      console.log('Google Sign-In successful:', result);
+      console.log('Inicio de sesión con Google exitoso:', result);
 
       // Check if the user is new (just registered)
       if (result.additionalUserInfo?.isNewUser) {
@@ -153,18 +196,18 @@ export class AuthModalComponent {
           await addDoc(userInstance, userData);
 
           console.log(
-            'User registered with Google with random username and avatar.'
+            'Usuario registrado con Google con nombre de usuario y avatar aleatorios.'
           );
           this.toastr.success(
-            'User registered successfully with Google',
-            'Success'
+            'Usuario registrado exitosamente con Google',
+            'Éxito'
           );
         }
         this.router.navigate(['/bookStore']);
       }
     } catch (error) {
-      console.error('Google Sign-Up failed:', error);
-      this.toastr.error('Google Sign-Up failed', 'Error');
+      console.error('Error en el registro con Google:', error);
+      this.toastr.error('Error en el registro con Google', 'Error');
     }
   }
 
@@ -172,21 +215,21 @@ export class AuthModalComponent {
     const provider = new GoogleAuthProvider();
     try {
       const result = await this.afAuth.signInWithPopup(provider);
-      console.log('Google Sign-In successful:', result);
+      console.log('Inicio de sesión con Google exitoso:', result);
       this.router.navigate(['/bookStore']);
     } catch (error) {
-      console.error('Google Sign-In failed:', error);
-      this.toastr.error('Google Sign-In failed', 'Error');
+      console.error('Error en el inicio de sesión con Google:', error);
+      this.toastr.error('Error en el inicio de sesión con Google', 'Error');
     }
   }
 
   private handleAuthResult(userCredential: any, action: string) {
     if (userCredential) {
-      console.log(`${action} successful:`, userCredential.user);
+      console.log(`${action} exitoso:`, userCredential.user);
       this.router.navigate(['/bookStore']);
     } else {
-      console.error(`${action} failed.`);
-      this.toastr.error('Something Went Wrong', 'Error');
+      console.error(`${action} fallido.`);
+      this.toastr.error('Algo salió mal', 'Error');
     }
   }
 }

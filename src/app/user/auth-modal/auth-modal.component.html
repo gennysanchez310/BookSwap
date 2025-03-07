@@ -1,14 +1,15 @@
 <section id="authentication-modal" tabindex="-1" aria-hidden="true" [ngClass]="{'hidden': !showModal}"
-    class="fixed inset-0 z-50 flex justify-center items-center bg-opacity-50 bg-black backdrop-blur-sm">
-    <div class="relative w-full max-w-md max-h-full">
+    class="fixed inset-0 z-50 flex justify-center items-center bg-opacity-50 bg-black backdrop-blur-sm"
+    (click)="closeModalOnOutsideClick($event)">
+    <div class="relative w-full max-w-md max-h-full" (click)="$event.stopPropagation()"> <!-- Prevent click propagation -->
         <!-- Contenido del modal -->
         <div class="relative bg-white rounded-lg shadow">
             <button type="button"
                 class="absolute top-3 right-2.5 bg-transparent rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center"
-                data-modal-hide="authentication-modal" (click)="closeModal.emit()">
+                aria-label="Cerrar modal" (click)="closeModal.emit()">
                 <span class="text-[#280F3E] hover:text-[#787AE6]">&#x2715;</span>
-                <span class="sr-only">Cerrar modal</span>
-            </button>
+            </button>      
+
             <div class="px-6 py-6 lg:px-8">
                 <h3 class="mb-4 text-xl font-medium text-[#787AE6]">Tu Cuenta</h3>
                 <app-tabs-container>
