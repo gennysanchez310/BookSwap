@@ -62,9 +62,10 @@ export class AuthModalComponent {
   }
 
   validatePassword(password: string): boolean {
-    const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+    const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/; 
     return regex.test(password);
   }
+  
 
   async generateRandomUsernameAndAvatar() {
     const username = generateUsername('', 0, 10);
@@ -175,12 +176,17 @@ export class AuthModalComponent {
             await this.generateRandomUsernameAndAvatar();
 
           const userEmail = user.email;
+
+          // **Generar una contraseña aleatoria solo si es necesario**
+        const randomPassword = Math.random().toString(36).slice(-10);
+
           // Store user data in Firestore
           const userData = {
             username,
             avatarUrl,
             userUID: user.uid,
             userEmail,
+            password: randomPassword, // Solo si el sistema lo requiere
             firstName: '',
             lastName: '',
             gender: '',
