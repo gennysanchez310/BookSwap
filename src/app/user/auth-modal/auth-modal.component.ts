@@ -8,6 +8,7 @@ import { generateUsername } from 'unique-username-generator';
 import axios from 'axios';
 import { ToastrService } from 'ngx-toastr';
 import { HostListener } from '@angular/core';
+import { doc, setDoc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-auth-modal',
@@ -131,9 +132,9 @@ export class AuthModalComponent {
           twitterId: '',
         };
 
-        // Store user data in Firestore's 'users' collection
-        const userInstance = collection(this.firestore, 'users');
-        await addDoc(userInstance, userData);
+       // En lugar de addDoc, usa doc + setDoc con un UID único
+        const userInstance = doc(this.firestore, `users/${userUID}`);
+        await setDoc(userInstance, userData);
 
         console.log(
           'Usuario registrado exitosamente con nombre de usuario y avatar aleatorios.'
@@ -167,7 +168,7 @@ export class AuthModalComponent {
       const result = await this.afAuth.signInWithPopup(provider);
       console.log('Inicio de sesión con Google exitoso:', result);
 
-      // Check if the user is new (just registered)
+       // Verificar si el usuario es nuevo
       if (result.additionalUserInfo?.isNewUser) {
         const user = result.user;
 
@@ -198,8 +199,9 @@ export class AuthModalComponent {
           };
 
           // Store user data in Firestore's 'users' collection
-          const userInstance = collection(this.firestore, 'users');
-          await addDoc(userInstance, userData);
+          const userInstance = doc(this.firestore, `users/${user.uid}`);
+          await setDoc(userInstance, userData);
+
 
           console.log(
             'Usuario registrado con Google con nombre de usuario y avatar aleatorios.'
