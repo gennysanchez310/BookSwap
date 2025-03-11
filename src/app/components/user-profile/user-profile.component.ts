@@ -221,19 +221,20 @@ export class UserProfileComponent {
           // Construct the message
           const message = `
           Hola ${receiverName},
-
-          I came across your book, "${this.proposedBook.title}" by "${this.proposedBook.author}" listed on BookSwap, and I'd love to exchange books with you. 
           
-          Here are the details of the book I'm willing to offer in exchange:
-          Title: [Your Book Title]
-          Author: [Your Book Author]
-          ISBN: [Your Book ISBN]
+          Me encontré con tu libro, "${this.proposedBook.title}" de "${this.proposedBook.author}" listado en BookSwap, y me encantaría intercambiar libros contigo.
           
-          Please let me know if you're interested in this exchange.
-
-          Best regards,
+          Aquí están los detalles del libro que estoy dispuesto a ofrecer a cambio:
+          Título: [Título de tu libro]
+          Autor: [Autor de tu libro]
+          ISBN: [ISBN de tu libro]
+          
+          Por favor, avísame si estás interesado/a en este intercambio.
+          
+          Saludos cordiales,
           ${senderName}
-        `;
+          `;
+          
           const encodedSubject = encodeURIComponent(subject);
           const encodedMessage = encodeURIComponent(message);
 
