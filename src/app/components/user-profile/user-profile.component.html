@@ -49,8 +49,8 @@
                         <h2 class="text-xl font-semibold text-[#280F3E]">Información de usuario</h2>
                         <div class="mt-2 flex space-x-2">
                             <label class="text-[#787AE6]">Género:</label>
-                            <p>{{ user.gender }}</p>
-                        </div>
+                            <p>{{ user.gender === 'male' ? 'Masculino' : user.gender === 'female' ? 'Femenino' : 'Otro' }}</p>
+                    </div>
                         <div class="mt-2 flex space-x-2">
                             <label class="text-[#787AE6]">Localización:</label>
                             <p>{{ user.location }}</p>
