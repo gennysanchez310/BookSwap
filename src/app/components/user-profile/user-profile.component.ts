@@ -23,6 +23,39 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./user-profile.component.css'],
 })
 export class UserProfileComponent {
+
+  private validateAndFormatBirthday(rawBirthday: string): string | null {
+    // Verifica que el formato sea válido (YYYY-MM-DD)
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!dateRegex.test(rawBirthday)) {
+      return null; // Retorna null si el formato es incorrecto
+    }
+  
+    const date = new Date(rawBirthday);
+    if (isNaN(date.getTime())) {
+      return null; // Si la fecha no es válida, retorna null
+    }
+  
+    return rawBirthday; // Retorna la fecha en formato correcto si todo está bien
+  }  
+
+  private isValidName(name: string): boolean {
+    // Validar que no contenga caracteres no permitidos (números, símbolos, etc.)
+    const nameRegex = /^[A-Za-z\s]+$/;
+    return nameRegex.test(name);
+  }
+
+  private isValidSummaryAndLocation(value: string, maxLength: number): boolean {
+    // Verificar que no exceda la longitud máxima permitida
+    return value.length <= maxLength;
+  }
+
+  private isValidSocialMediaId(id: string): boolean {
+    // Asegurar que no tenga espacios ni caracteres especiales
+    const idRegex = /^[a-zA-Z0-9_]+$/;
+    return idRegex.test(id);
+  }
+
   user: any;
   showUpdateModal: boolean = false;
   showDeleteModal = false;
@@ -187,7 +220,7 @@ export class UserProfileComponent {
 
           // Construct the message
           const message = `
-          Hi ${receiverName},
+          Hola ${receiverName},
 
           I came across your book, "${this.proposedBook.title}" by "${this.proposedBook.author}" listed on BookSwap, and I'd love to exchange books with you. 
           
@@ -221,15 +254,64 @@ export class UserProfileComponent {
 
   // Update user details
   async updateDetails(updateForm: NgForm) {
+    const rawBirthday = updateForm.value.birthday;
+    const firstName = updateForm.value.firstName;
+    const lastName = updateForm.value.lastName;
+    const summary = updateForm.value.summary;
+    const location = updateForm.value.location;
+    const instaId = updateForm.value.instaId;
+    const twitterId = updateForm.value.twitterId;
+
+      // Validación de nombre y apellido
+    if (!this.isValidName(firstName)) {
+      this.toastr.error('El nombre contiene caracteres no válidos', 'Error');
+      return;
+    }
+    if (!this.isValidName(lastName)) {
+      this.toastr.error('El apellido contiene caracteres no válidos', 'Error');
+      return;
+    }
+
+        // Validación de resumen y ubicación
+    if (!this.isValidSummaryAndLocation(summary, 200)) {  // Limitar a 200 caracteres para resumen
+      this.toastr.error('El resumen es demasiado largo', 'Error');
+      return;
+    }
+    if (!this.isValidSummaryAndLocation(location, 100)) {  // Limitar a 100 caracteres para ubicación
+      this.toastr.error('La ubicación es demasiado larga', 'Error');
+      return;
+    }
+
+      // Validar instaId y twitterId (si no están vacíos)
+  const validSocialMediaRegex = /^[a-zA-Z0-9_]+$/; // Solo letras, números y guiones bajos
+  if (updateForm.value.instaId && !validSocialMediaRegex.test(updateForm.value.instaId)) {
+    this.toastr.error('El Instagram ID solo puede contener letras, números y guiones bajos', 'Error');
+    return;
+  }
+
+  if (updateForm.value.twitterId && !validSocialMediaRegex.test(updateForm.value.twitterId)) {
+    this.toastr.error('El Twitter ID solo puede contener letras, números y guiones bajos', 'Error');
+    return;
+  }
+
+
+    // Validar la fecha de nacimiento
+    const formattedBirthday = this.validateAndFormatBirthday(rawBirthday);
+    if (!formattedBirthday) {
+      this.toastr.error('La fecha de nacimiento es inválida', 'Error');
+      return;
+    }
+
+
     const newUserData = {
-      firstName: updateForm.value.firstName,
-      lastName: updateForm.value.lastName,
+      firstName,
+      lastName,
       gender: updateForm.value.gender,
-      location: updateForm.value.location,
-      birthday: updateForm.value.birthday,
-      summary: updateForm.value.summary,
-      instaId: updateForm.value.instaId,
-      twitterId: updateForm.value.twitterId,
+      location,
+      birthday: formattedBirthday,
+      summary,
+      instaId,
+      twitterId,
     };
 
     this.route.paramMap.subscribe((params) => {
@@ -248,35 +330,25 @@ export class UserProfileComponent {
 
               // Update the user's document
               updateDoc(userDocRef, newUserData)
-                .then(() => {
-                  console.log('User details updated successfully');
-                  this.toastr.success(
-                    'User details updated successfully',
-                    'Success'
-                  );
-                  this.toggleUpdateModal();
-                })
-                .catch((error) => {
-                  console.error('Error updating user details:', error);
-                  this.toastr.error(
-                    'An error occurred while updating user details',
-                    'Error'
-                  );
-                });
+              .then(() => {
+                console.log('User details updated successfully');
+                this.toastr.success('Perfil actualizado con éxito', 'Éxito');
+                this.toggleUpdateModal();
+              })
+              .catch((error) => {
+                console.error('Error updating user details:', error);
+                this.toastr.error(
+                  'Ocurrió un error al actualizar los datos',
+                  'Error'
+                );
+              });
             } else {
-              console.log('There is no such user in the database!');
-              this.toastr.warning(
-                'There is no such user in the database!',
-                'Error'
-              );
+              this.toastr.warning('Usuario no encontrado', 'Advertencia');
             }
           })
           .catch((error) => {
             console.error('Error fetching user data:', error);
-            this.toastr.error(
-              'An error occurred while fetching user data',
-              'Error'
-            );
+            this.toastr.error('Error al obtener datos del usuario', 'Error');
           });
       }
     });
