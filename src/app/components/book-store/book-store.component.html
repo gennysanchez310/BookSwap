@@ -19,19 +19,19 @@
                 <div *ngIf="isProfileDropdownOpen"
                     class="absolute top-6 right-0 z-50 bg-primeColor w-52 text-[#767676] h-auto py-1 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none divide-y divide-gray-200 rounded-lg">
                     <ul>
-                        <li><a (click)="profileManagement()" class="text-gray-700 block px-4 py-2 hover:bg-gray-100"
+                        <li><a (click)="profileManagement()" class="text-gray-700 block px-4 py-2 hover:bg-purple-200"
                                 tabindex="-1" id="menu-item-1">Gestión de Perfil</a></li>
-                        <li><a href="#contact" class="text-gray-700 block px-4 py-2 hover:bg-gray-100" tabindex="-1"
+                        <li><a href="#contact" class="text-gray-700 block px-4 py-2 hover:bg-purple-200" tabindex="-1"
                                 id="menu-item-3">Ayuda y Soporte</a></li>
                         <li>
                             <a routerLink="/listBook"
-                                class="flex items-center px-4 py-2 text-gray-900 rounded-lg hover:bg-gray-100">
+                            class="flex items-center px-4 py-2 text-gray-700 rounded-lg hover:bg-purple-200">
                                 Intercambiar Libro
                             </a>
                         </li>
                     </ul>
                     <div class="py-1">
-                        <a class="text-gray-700 block px-4 py-2 hover:bg-gray-100" tabindex="-1" id="menu-item-4"
+                        <a class="text-gray-700 block px-4 py-2 hover:bg-purple-200" tabindex="-1" id="menu-item-4"
                             (click)="logout()">Cerrar Sesión</a>
                     </div>
                 </div>
