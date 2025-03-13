@@ -4,6 +4,9 @@ Esto es para josue SOLO ES WEB LA SIGUIENTE ACTUALIZACION NO SE SUBE ES UN PULL 
 
 Si se esta clonando el repositorio por primer vez se hace un:
 
+ejemplo
+
+
 npm install
 
 Para probar la web es usa:
