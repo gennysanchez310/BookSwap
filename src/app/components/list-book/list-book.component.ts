@@ -26,12 +26,14 @@ export class ListBookComponent implements OnDestroy {
     private afAuth: AngularFireAuth,
     private toastr: ToastrService,
     private fb: FormBuilder
-  ) {}
+  ) {
+    
+  }
 
   addBook() {
     if (this.bookForm.invalid) {
       this.toastr.error(
-        'Please fill out all required fields and correct any errors.',
+        'Por favor, rellene todos los campos obligatorios y corrija cualquier error..',
         'Error'
       );
       return;
@@ -49,13 +51,13 @@ export class ListBookComponent implements OnDestroy {
         addDoc(bookInstance, bookDataWithUID)
           .then(() => {
             console.log('Data Added Successfully');
-            this.toastr.success('Book added successfully', 'Success');
+            this.toastr.success('Libro agregado exitosamente', 'Éxito');
             this.bookForm.reset();
           })
           .catch((err) => {
             console.log(err.message);
             this.toastr.error(
-              'An error occurred while adding the book',
+              'Se produjo un error al agregar el libro.',
               'Error'
             );
           })
