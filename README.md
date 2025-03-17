@@ -17,4 +17,4 @@ TRIUNFO EL MAL!!!!!!!!
 
 Para retrodecer un cambio lanzado usar el comando
 
-git reset --hard HEAD~1
+"git reset --hard HEAD~1"
