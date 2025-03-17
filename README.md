@@ -14,3 +14,7 @@ Para probar la web es usa:
 ng serve
 
 TRIUNFO EL MAL!!!!!!!!
+
+Para retrodecer un cambio lanzado usar el comando
+
+git reset --hard HEAD~1
