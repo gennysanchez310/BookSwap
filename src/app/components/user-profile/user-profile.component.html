@@ -4,23 +4,23 @@
             <nav class="relative" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="flex items-center">
-                        <i class="fa-solid fa-house fa-xs text-[#787AE6]"></i>
-                        <a routerLink="/" class="text-sm font-medium text-[#787AE6] hover:text-[#0DBE5E] md:ml-2">
+                        <i class="fa-solid fa-house fa-xs text-[#787AE6]"></i> <!-- Cambié el color del ícono -->
+                        <a routerLink="/" class="text-sm font-medium text-[#787AE6] hover:text-[#0DBE5E] md:ml-2"> <!-- Cambié el color del enlace -->
                             Inicio
                         </a>
                     </li>
                     <li>
                         <div class="flex items-center">
-                            <i class="fa-solid fa-chevron-right fa-xs text-[#787AE6]"></i>
-                            <a routerLink="/bookStore" class="ml-1 text-sm font-medium text-[#787AE6] hover:text-[#0DBE5E] md:ml-2">
+                            <i class="fa-solid fa-chevron-right fa-xs text-[#787AE6]"></i> <!-- Cambié el color del ícono -->
+                            <a routerLink="/bookStore" class="ml-1 text-sm font-medium text-[#787AE6] hover:text-[#0DBE5E] md:ml-2"> <!-- Cambié el color del enlace -->
                                 Intercambio de Libros
                             </a>
                         </div>
                     </li>
                     <li aria-current="page">
                         <div class="flex items-center">
-                            <i class="fa-solid fa-chevron-right fa-xs text-[#787AE6]"></i>
-                            <span class="ml-1 text-sm font-medium text-[#787AE6] md:ml-2">
+                            <i class="fa-solid fa-chevron-right fa-xs text-[#787AE6]"></i> <!-- Cambié el color del ícono -->
+                            <span class="ml-1 text-sm font-medium text-[#787AE6] md:ml-2"> <!-- Cambié el color del texto -->
                                 Perfil
                             </span>
                         </div>
@@ -49,7 +49,7 @@
                         <div class="mt-2 flex space-x-2">
                             <label class="text-[#787AE6]">Género:</label>
                             <p>{{ user.gender === 'male' ? 'Masculino' : user.gender === 'female' ? 'Femenino' : 'Otro' }}</p>
-                        </div>
+                    </div>
                         <div class="mt-2 flex space-x-2">
                             <label class="text-[#787AE6]">Localización:</label>
                             <p>{{ user.location }}</p>
@@ -59,7 +59,7 @@
                             <p>{{ user.birthday | date }}</p>
                         </div>
                         <div class="mt-2 flex space-x-2">
-                            <label class="text-[#787AE6]">Acerca de mi:</label>
+                            <label class="text-[#787AE6]">Resumen:</label>
                             <p>{{ user.summary }}</p>
                         </div>
                         <h2 class="text-xl font-semibold text-[#280F3E] mt-4">Información de contacto</h2>
@@ -100,7 +100,7 @@
                                 <p class="text-[#787AE6] text-[14px]">{{ book.author }}</p>
                             </div>
                         </div>
-                        <button *ngIf="isCurrentUserProfile()" (click)="showDeleteConfirmationModal(book)" class="absolute top-5 right-4 text-[#787AE6] hover:text-[#280F3E]" title="Eliminar libro">
+                        <button *ngIf="isCurrentUserProfile()" (click)="showDeleteConfirmationModal(book)" class="absolute top-5 right-4 text-[#787AE6] hover:text-[#280F3E]">
                             <i class="fa-solid fa-trash"></i>
                         </button>
                     </div>
@@ -133,29 +133,97 @@
                             class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Apellido</label>
                     </div>
                 </div>
+                <div class="relative">
+                    <label for="gender"
+                        class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Género:</label>
+                    <select id="gender" name="gender" [(ngModel)]="user.gender"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="male">Masculino</option>
+                        <option value="female">Femenino</option>
+                        <option value="others">Otros</option>
+                    </select>
+                </div>
+                <div class="relative">
+                    <input type="text" id="location" name="location" [(ngModel)]="user.location"
+                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" " (input)="onLocationInput($event)" />
+                    <label for="location"
+                        class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Ubicación:</label>
+                    <ul *ngIf="locationSuggestions.length"
+                        class="mt-2 bg-white border border-gray-300 border-solid rounded-lg shadow-lg absolute z-50 w-full max-h-40 overflow-y-auto">
+                        <li *ngFor="let suggestion of locationSuggestions"
+                            class="p-2 cursor-pointer hover:bg-gray-100" (click)="selectLocation(suggestion)">
+                            {{ suggestion.display_name }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <input type="date" id="birthday" name="birthday" [(ngModel)]="user.birthday"
+                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                    <label for="birthday"
+                        class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Cumpleaños:</label>
+                </div>
                 <div class="flex space-x-4">
                     <div class="relative flex-1">
-                        <input type="date" id="birthday" name="birthday" [(ngModel)]="user.birthday" required
-                            class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" />
-                        <label for="birthday"
-                            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Cumpleaños</label>
+                        <input type="text" id="instaId" name="instaId" [(ngModel)]="user.instaId"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " />
+                        <label for="instaId"
+                            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">ID de Instagram</label>
                     </div>
                     <div class="relative flex-1">
-                        <select id="gender" name="gender" [(ngModel)]="user.gender"
-                            class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer">
-                            <option value="male">Masculino</option>
-                            <option value="female">Femenino</option>
-                            <option value="other">Otro</option>
-                        </select>
-                        <label for="gender"
-                            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Género</label>
+                        <input type="text" id="twitterId" name="twitterId" [(ngModel)]="user.twitterId"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " />
+                        <label for="twitterId"
+                            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">ID de Twitter</label>
                     </div>
                 </div>
-                <button type="submit" class="w-full py-2.5 px-4 bg-[#787AE6] text-white text-sm font-semibold rounded-md">
-                    Actualizar
-                </button>
+                <div class="relative">
+                    <label for="summary"
+                        class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Resumen del libro:</label>
+                    <textarea id="summary" name="summary" [(ngModel)]="user.summary" rows="4"
+                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" "></textarea>
+                </div>
+                <div class="text-right">
+                    <button type="submit"
+                        class="text-white bg-gradient-to-r from-[#0DBE5E] to-[#0b8b45] hover:bg-gradient-to-br focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Guardar
+                        Cambios</button>
+                    <button type="button"
+                        class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-[#0DBE5E] focus:z-10 focus:ring-4 focus:ring-gray-200"
+                        (click)="toggleUpdateModal()">Cancelar</button>
+                </div>
             </form>
         </div>
     </div>
 </div>
+
+    <!-- Modal for book delete  -->
+    <div *ngIf="showDeleteModal" tabindex="-1"
+    class="fixed top-0 left-0 p-4 flex items-center justify-center z-50 w-full overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%)] max-h-full bg-black bg-opacity-40 backdrop-blur-sm">
+    <div class="relative w-full max-w-md max-h-full">
+        <div class="relative bg-purple-600 rounded-lg shadow">
+            <div class="p-6 text-center">
+                <svg class="mx-auto mb-4 text-white w-12 h-12" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                <h3 class="mb-5 text-lg font-normal text-white">
+                    ¿Estás seguro de que deseas eliminar este libro?
+                </h3>
+                <button (click)="confirmDelete()" type="button"
+                    class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                    Sí, estoy seguro
+                </button>
+                <button (click)="hideDeleteModal()" type="button"
+                    class="text-white bg-gray-600 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">
+                    No, cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 </section>
+<app-footer></app-footer>
