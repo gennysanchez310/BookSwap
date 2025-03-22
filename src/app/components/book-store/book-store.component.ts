@@ -39,6 +39,10 @@ export class BookStoreComponent {
     });
   }
 
+  noAction() {
+    // No hacer nada literalmente es que no haga nada no lo muevan
+  }
+  
   getData() {
     const bookInstance = collection(this.firestore, 'books');
     getDocs(bookInstance).then((res) => {
