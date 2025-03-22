@@ -30,14 +30,25 @@ export class UserProfileComponent {
     if (!dateRegex.test(rawBirthday)) {
       return null; // Retorna null si el formato es incorrecto
     }
-  
-    const date = new Date(rawBirthday);
-    if (isNaN(date.getTime())) {
+
+    const [year, month, day] = rawBirthday.split('-').map(Number);
+    const currentYear = new Date().getFullYear();
+
+    if (year < 1900 || year > currentYear) {
+      return null; // Retorna null si el año no es válido
+    }
+
+    const date = new Date(year, month - 1, day);
+    if (
+      date.getFullYear() !== year ||
+      date.getMonth() + 1 !== month ||
+      date.getDate() !== day
+    ) {
       return null; // Si la fecha no es válida, retorna null
     }
   
     return rawBirthday; // Retorna la fecha en formato correcto si todo está bien
-  }  
+  }
 
   private isValidName(name: string): boolean {
     // Validar que no contenga caracteres no permitidos (números, símbolos, etc.)

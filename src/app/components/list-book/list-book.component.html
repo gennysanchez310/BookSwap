@@ -4,9 +4,6 @@
             <ol class="inline-flex items-center space-x-1 md:space-x-3">
                 <li class="flex items-center">
                     <i class="fa-solid fa-house fa-xs text-gray-500"></i>
-                    <a routerLink="/" class="ml-[2px] text-sm font-medium text-gray-700 hover:text-[#0DBE5E] md:ml-2">
-                        Inicio
-                    </a>
                 </li>
                 <li>
                     <div class="flex items-center">
@@ -34,6 +31,14 @@
                 <div class="lg:col-span-2">
                     <form [formGroup]="bookForm" (ngSubmit)="addBook()">
                         <div class="grid gap-4 gap-y-4 text-sm grid-cols-1 md:grid-cols-5">
+                            <!-- ISBN primero -->
+                            <div class="md:col-span-2">
+                                <label for="isbn" class="block mb-2 text-sm font-medium text-gray-600">ISBN<sup class="text-red-500 text-sm">*</sup></label>
+                                <input name="isbn" id="isbn" formControlName="isbn"
+                                    [ngClass]="{'ring-1 ring-red-500': bookForm.get('isbn')?.invalid && bookForm.get('isbn')?.touched}"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#0DBE5E] focus:border-[#0DBE5E] block w-full p-2.5" />
+                            </div>
+                            <!-- Nombre del libro -->
                             <div class="md:col-span-5">
                                 <label for="title" class="block mb-2 text-sm font-medium text-gray-600">Nombre del
                                     libro<sup class="text-red-500 text-sm">*</sup>
@@ -42,6 +47,7 @@
                                     [ngClass]="{'ring-1 ring-red-500': bookForm.get('title')?.invalid && bookForm.get('title')?.touched}"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#0DBE5E] focus:border-[#0DBE5E] block w-full p-2.5" />
                             </div>
+                            <!-- Nombre del autor -->
                             <div class="md:col-span-5">
                                 <label for="author" class="block mb-2 text-sm font-medium text-gray-600">Nombre del
                                     autor<sup class="text-red-500 text-sm">*</sup></label>
@@ -49,12 +55,14 @@
                                     [ngClass]="{'ring-1 ring-red-500': bookForm.get('author')?.invalid && bookForm.get('author')?.touched}"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#0DBE5E] focus:border-[#0DBE5E] block w-full p-2.5" />
                             </div>
+                            <!-- Descripción -->
                             <div class="md:col-span-5">
                                 <label for="description"
                                     class="block mb-2 text-sm font-medium text-gray-600">Descripción</label>
                                 <textarea rows="5" id="description" name="description" formControlName="description"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#0DBE5E] focus:border-[#0DBE5E] block w-full p-2.5"></textarea>
                             </div>
+                            <!-- Condición -->
                             <div class="md:col-span-3">
                                 <label for="condition" class="block mb-2 text-sm font-medium text-gray-600">Condición<sup
                                         class="text-red-500 text-sm">*</sup></label>
@@ -68,13 +76,7 @@
                                     <option value="Aceptable">Aceptable</option>
                                 </select>
                             </div>
-                            <div class="md:col-span-2">
-                                <label for="isbn" class="block mb-2 text-sm font-medium text-gray-600">ISBN<sup
-                                        class="text-red-500 text-sm">*</sup></label>
-                                <input name="isbn" id="isbn" formControlName="isbn"
-                                    [ngClass]="{'ring-1 ring-red-500': bookForm.get('isbn')?.invalid && bookForm.get('isbn')?.touched}"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#0DBE5E] focus:border-[#0DBE5E] block w-full p-2.5" />
-                            </div>
+                            <!-- Botón Publicar -->
                             <div class="md:col-span-5 my-4">
                                 <div class="inline-flex items-end">
                                     <button
