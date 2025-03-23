@@ -98,12 +98,14 @@ export class BookStoreComponent {
     this.selectedISBN = isbn;
     this.selectedUserUID = userUID;
     this.isModalOpen = true;
+    document.body.style.overflow = 'hidden'; // Bloquea el scroll
     console.log('Modal opened for ISBN:', isbn);
   }
 
   closeModal() {
     this.isModalOpen = false;
-  }
+    document.body.style.overflow = 'auto'; // Reactiva el scroll
+}
 
   profileManagement() {
     this.router.navigate(['/profile', this.currentUserUID]);
