@@ -1,9 +1,9 @@
 <section class="min-h-screen">
     <div class="w-full bg-purple-200 relative">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-3 h-16">
-            <!-- Logo (Ajustado para que no se sobreponga en móviles) -->
+            <!-- Logo con GIF más grande -->
             <div class="hidden sm:flex items-center cursor-pointer w-auto min-w-0 mr-4" (click)="noAction()">
-                <img src="../../../assets/icons8-book-96.png" class="h-8 transform transition duration-300 hover:scale-110 hover:shadow-lg" alt="Logo BookSwap" />
+                <img src="../../../assets/Logo2.jpg" class="h-14 transform transition duration-300 hover:scale-110 hover:shadow-lg" alt="Logo BookSwap" />
                 <span class="self-center text-2xl font-semibold text-white hover:text-gray-300 transition duration-300 ml-2">Book-Swap</span>
             </div>
 
@@ -15,7 +15,7 @@
                     (input)="searchBooks()">
             </div>
 
-            <!-- Ícono de Usuario (Siempre visible) -->
+            <!-- Ícono de Usuario -->
             <div class="flex items-center gap-4 cursor-pointer relative ml-6 sm:ml-10 justify-center w-auto">
                 <div (click)="toggleProfileDropdown()" class="flex">
                     <i class="fa-regular fa-user fa-lg text-gray-500"></i>
@@ -53,10 +53,18 @@
                     </div>
                 </div>
                 <div class="max-w-80 py-6 flex flex-col gap-1 border border-t-0 px-2">
-                    <div class="flex flex-col gap-1 items-center justify-between font-titleFont">
-                        <h2 class="text-lg text-gray-900 font-bold text-center leading-tight">{{ book.title }}</h2>
+                    <div class="flex flex-col gap-1 items-center justify-between font-titleFont h-[80px]">
+                        <h2 class="text-lg text-gray-900 font-bold text-center leading-tight line-clamp-2">
+                            {{ book.title }}
+                        </h2>
                         <p class="text-gray-500 text-[14px]">{{ book.author }}</p>
                     </div>
+                    <!-- Botón para ver detalles más pequeño -->
+                    <button 
+                        class="mt-2 px-3 py-1 text-sm bg-purple-600 text-white rounded-md hover:bg-purple-800 transition duration-300"
+                        (click)="openBookDetailsModal(book.isbn, book.userUID)">
+                        Ver Detalles
+                    </button>
                 </div>
             </div>
         </div>
