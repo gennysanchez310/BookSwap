@@ -1,41 +1,47 @@
 <div id="bookDetailsModal" tabindex="-1"
     class="fixed inset-0 flex items-center justify-center z-50 w-full h-full backdrop-blur-md bg-black/30 p-4">
-    <div class="relative w-full max-w-3xl bg-white rounded-lg shadow-lg overflow-hidden max-h-[90vh] flex flex-col">
+    <div class="relative w-full max-w-3xl bg-white rounded-lg shadow-2xl overflow-auto max-h-[90vh] flex flex-col">
         <!-- Modal header -->
-        <div class="flex items-center justify-between p-5 border-b">
-            <h3 class="text-2xl font-semibold text-gray-900">{{ bookDetails.volumeInfo.title }}</h3>
-            <button type="button" class="text-gray-500 hover:text-gray-900 p-2" (click)="closeModal()">
+        <div class="flex items-center justify-between p-5 border-b bg-gray-50">
+            <h3 class="text-lg sm:text-2xl font-semibold text-gray-900">
+                {{ bookDetails.volumeInfo.title }}
+            </h3>
+            <button type="button" class="text-gray-500 hover:text-gray-900 hover:bg-gray-200 p-2 rounded-full"
+                (click)="closeModal()">
                 <i class="fa-solid fa-xmark fa-lg"></i>
             </button>
         </div>
 
-        <!-- Modal body con diseño fijo para imagen y scroll solo en la descripción -->
-        <div class="p-6 grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <!-- Imagen del libro (Siempre visible) -->
-            <img class="w-full h-auto object-cover rounded-md shadow-md"
-                [src]="bookDetails.volumeInfo.imageLinks.thumbnail" alt="{{ bookDetails.volumeInfo.title }} Image" />
+        <!-- Modal body con diseño flexible -->
+        <div class="p-6 grid grid-cols-1 sm:grid-cols-[auto,1fr] gap-6 items-start">
+            <!-- Imagen del libro (tamaño ajustable) -->
+            <img class="w-full max-w-32 sm:max-w-48 h-auto object-contain rounded-md shadow-md mx-auto sm:mx-0"
+                [src]="bookDetails.volumeInfo.imageLinks?.thumbnail || 'assets/default-book.jpg'"
+                alt="{{ bookDetails.volumeInfo.title }} Image" />
 
             <!-- Información del libro -->
-            <div class="sm:col-span-2 flex flex-col justify-between">
-                <div>
-                    <h2 class="text-lg font-semibold text-green-500">
-                        {{ bookDetails.volumeInfo.authors[0] }}
-                        <span *ngIf="bookDetails.volumeInfo.authors.length === 2">
-                            y {{ bookDetails.volumeInfo.authors[1] }}
-                        </span>
-                    </h2>
-                    <p class="text-gray-700">{{ bookDetails.volumeInfo.publisher }} - {{ bookDetails.volumeInfo.publishedDate }}</p>
-                    
-                    <!-- Descripción con scroll si es muy larga -->
-                    <div class="mt-2 text-gray-600 text-sm leading-relaxed max-h-40 overflow-y-auto p-2 bg-gray-100 rounded-md">
-                        {{ bookDetails.volumeInfo.description }}.
-                    </div>
+            <div class="flex flex-col gap-2">
+                <h2 class="text-md sm:text-lg font-semibold text-green-500">
+                    {{ bookDetails.volumeInfo.authors?.[0] || 'Autor desconocido' }}
+                    <span *ngIf="bookDetails.volumeInfo.authors?.length === 2">
+                        y {{ bookDetails.volumeInfo.authors[1] }}
+                    </span>
+                </h2>
+                <p class="text-gray-700 text-sm sm:text-base">
+                    {{ bookDetails.volumeInfo.publisher || 'Editorial no disponible' }} - 
+                    {{ bookDetails.volumeInfo.publishedDate || 'Fecha no disponible' }}
+                </p>
+
+                <!-- Descripción con scroll si es larga -->
+                <div class="mt-2 text-gray-600 text-sm sm:text-base leading-relaxed max-h-32 overflow-y-auto p-3 bg-gray-100 rounded-md shadow-inner">
+                    {{ bookDetails.volumeInfo.description || 'No hay descripción disponible.' }}
                 </div>
 
                 <!-- Usuario dueño del libro -->
-                <div class="mt-4 flex items-center gap-4 bg-gray-100 p-3 rounded-md">
-                    <img [src]="ownerAvatarUrl" alt="avatar" class="w-10 h-10 rounded-full shadow-md" />
-                    <h2 class="text-gray-900 font-semibold"><!--@ Deja el arroba-->{{ ownerUsername }}</h2>
+                <div class="mt-4 flex items-center gap-4 bg-gray-100 p-3 rounded-md shadow">
+                    <img [src]="ownerAvatarUrl || 'assets/default-avatar.png'" 
+                        alt="avatar" class="w-10 h-10 rounded-full shadow-md" />
+                    <h2 class="text-gray-900 font-semibold">@{{ ownerUsername }}</h2>
                     <button class="ml-auto text-[#0DBE5E] hover:text-green-600" (click)="viewUser()">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </button>
