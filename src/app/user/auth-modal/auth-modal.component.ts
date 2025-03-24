@@ -62,11 +62,21 @@ export class AuthModalComponent {
     this.showPassword = !this.showPassword;
   }
 
-  validatePassword(password: string): boolean {
-    const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/; 
-    return regex.test(password);
-  }
-  
+  validatePassword(password: string): string | null {
+    if (password.length < 6) {
+      return 'La contraseña debe tener al menos 6 caracteres.';
+    }
+    if (!/[A-Za-z]/.test(password)) {
+      return 'La contraseña debe incluir al menos una letra.';
+    }
+    if (!/\d/.test(password)) {
+      return 'La contraseña debe incluir al menos un número.';
+    }
+    if (!/[!@#$%^&*()_+]/.test(password)) {
+      return 'La contraseña debe incluir al menos un carácter especial (!@#$%^&*()).';
+    }
+    return null; // Contraseña válida
+  }  
 
   async generateRandomUsernameAndAvatar() {
     const username = generateUsername('', 0, 10);
@@ -96,10 +106,11 @@ export class AuthModalComponent {
       return;
     }
 
-    if (!this.validatePassword(this.passwordRegister)) {
-      this.toastr.warning('La contraseña debe tener al menos 8 caracteres, incluir una letra, un número y un carácter especial como !@#$%^&*().', 'Error');
+    const passwordError = this.validatePassword(this.passwordRegister);
+    if (passwordError) {
+      this.toastr.warning(passwordError, 'Error');
       return;
-    }    
+    } 
 
     const { emailRegister, passwordRegister } = this;
     try {
