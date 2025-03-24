@@ -40,14 +40,14 @@
     <div class="container mx-auto px-4">
         <div class="my-10 mx-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-8">
             <div class="w-full relative group" *ngFor="let book of filteredBooks">
-                <div class="max-w-80 max-h-80 relative overflow-hidden bg-gray-100">
+                <div class="max-w-80 max-h-80 relative overflow-hidden bg-purple-200">
                     <div class="w-[200px] h-[260px] mx-auto flex justify-center items-center">
                         <img class="max-h-[200px] group-hover:scale-110 transition duration-300 cursor-pointer"
                             [src]="book.coverImage" alt="Imagen de {{ book.title }}"
                             (click)="openBookDetailsModal(book.isbn, book.userUID)" />
                     </div>
                     <div class="absolute top-5 right-4">
-                        <div class="px-2 py-1 bg-gray-800 text-white text-sm font-semibold rounded">
+                        <div class="px-2 py-1 bg-purple-400 text-black text-sm font-semibold rounded">
                             {{ book.condition }}
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                     </div>
                     <!-- Botón para ver detalles más pequeño -->
                     <button 
-                        class="mt-2 px-3 py-1 text-sm bg-purple-600 text-white rounded-md hover:bg-purple-800 transition duration-300"
+                        class="mt-2 px-3 py-1 text-sm bg-purple-400 text-black rounded-md hover:bg-purple-500 transition duration-300"
                         (click)="openBookDetailsModal(book.isbn, book.userUID)">
                         Ver Detalles
                     </button>

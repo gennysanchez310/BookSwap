@@ -112,29 +112,29 @@
     *ngIf="showUpdateModal">
     <div class="relative w-full max-w-md max-h-full">
         <div class="relative bg-white rounded-lg shadow px-6 py-6 lg:px-8">
-            <h2 class="text-xl font-semibold text-gray-900 mb-4">Actualizar Perfil</h2>
+            <h2 class="text-xl font-semibold text-purple-900 mb-4">Actualizar Perfil</h2>
             <form #updateForm="ngForm" (ngSubmit)="updateDetails(updateForm)" class="space-y-6">
                 <div class="flex space-x-4">
                     <div class="relative flex-1">
                         <input type="text" id="firstName" name="firstName" [(ngModel)]="user.firstName" required
-                            class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-purple-500 bg-transparent rounded-lg border-1 border-purple-300 appearance-none focus:outline-none focus:ring-0 focus:border-purple-300 peer"
                             placeholder=" " />
                         <label for="firstName"
-                            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Nombre</label>
+                            class="absolute text-sm text-purple-600 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-purple-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Nombre</label>
                     </div>
                     <div class="relative flex-1">
                         <input type="text" id="lastName" name="lastName" [(ngModel)]="user.lastName"
-                            class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-purple-500 bg-transparent rounded-lg border-1 border-purple-300 appearance-none focus:outline-none focus:ring-0 focus:border-purple-300 peer"
                             placeholder=" " />
                         <label for="lastName"
-                            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Apellido</label>
+                            class="absolute text-sm text-purple-600 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-purple-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Apellido</label>
                     </div>
                 </div>
                 <div class="relative">
                     <label for="gender"
-                        class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Género:</label>
+                        class="absolute text-sm text-purple-600 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-purple-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Género:</label>
                     <select id="gender" name="gender" [(ngModel)]="user.gender"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        class="bg-purple-50 border border-purple-300 text-grey-400 text-sm rounded-lg focus:ring-purple-300 focus:border-purple-300 block w-full p-2.5 dark:bg-purple-700 dark:border-purple-300 dark:placeholder-purple-400 dark:text-white dark:focus:ring-purple-200 dark:focus:border-purple-200">
                         <option value="male">Masculino</option>
                         <option value="female">Femenino</option>
                         <option value="others">Otros</option>
@@ -142,12 +142,12 @@
                 </div>
                 <div class="relative">
                     <input type="text" id="location" name="location" [(ngModel)]="user.location"
-                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-purple-300 appearance-none focus:outline-none focus:ring-0 focus:border-purple-300 peer"
                         placeholder=" " (input)="onLocationInput($event)" />
                     <label for="location"
-                        class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Ubicación:</label>
+                        class="absolute text-sm text-purple-600 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-purple-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Ubicación:</label>
                     <ul *ngIf="locationSuggestions.length"
-                        class="mt-2 bg-white border border-gray-300 border-solid rounded-lg shadow-lg absolute z-50 w-full max-h-40 overflow-y-auto">
+                        class="mt-2 bg-white border border-purple-300 border-solid rounded-lg shadow-lg absolute z-50 w-full max-h-40 overflow-y-auto">
                         <li *ngFor="let suggestion of locationSuggestions"
                             class="p-2 cursor-pointer hover:bg-gray-100" (click)="selectLocation(suggestion)">
                             {{ suggestion.display_name }}
@@ -156,41 +156,44 @@
                 </div>
                 <div class="relative">
                     <input type="date" id="birthday" name="birthday" [(ngModel)]="user.birthday"
-                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-purple-600 bg-transparent rounded-lg border-1 border-purple-300 appearance-none focus:outline-none focus:ring-0 focus:border-purple-300 peer">
                     <label for="birthday"
-                        class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Cumpleaños:</label>
+                        class="absolute text-sm text-purple-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-purple-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Cumpleaños:</label>
                 </div>
                 <div class="flex space-x-4">
                     <div class="relative flex-1">
                         <input type="text" id="instaId" name="instaId" [(ngModel)]="user.instaId"
-                            class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-purple-300 appearance-none focus:outline-none focus:ring-0 focus:border-purple-300 peer"
                             placeholder=" " />
                         <label for="instaId"
-                            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">ID de Instagram</label>
+                            class="absolute text-sm text-purple-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-purple-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">ID de Instagram</label>
                     </div>
                     <div class="relative flex-1">
                         <input type="text" id="twitterId" name="twitterId" [(ngModel)]="user.twitterId"
-                            class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-purple-300 appearance-none focus:outline-none focus:ring-0 focus:border-purple-300 peer"
                             placeholder=" " />
                         <label for="twitterId"
-                            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">ID de Twitter</label>
+                            class="absolute text-sm text-purple-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-purple-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">ID de Twitter</label>
                     </div>
                 </div>
                 <div class="relative">
                     <label for="summary"
-                        class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Resumen del libro:</label>
+                        class="absolute text-sm text-purple-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-purple-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Resumen del libro:</label>
                     <textarea id="summary" name="summary" [(ngModel)]="user.summary" rows="4"
-                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-purple-300 appearance-none focus:outline-none focus:ring-0 focus:border-purple-300 peer"
                         placeholder=" "></textarea>
                 </div>
                 <div class="text-right">
                     <button type="submit"
-                        class="text-white bg-gradient-to-r from-[#0DBE5E] to-[#0b8b45] hover:bg-gradient-to-br focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Guardar
-                        Cambios</button>
+                        class="text-white bg-gradient-to-r from-[#C2C3F3] to-[#787AE6] hover:bg-gradient-to-br focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">
+                        Guardar Cambios
+                    </button>
                     <button type="button"
-                        class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-[#0DBE5E] focus:z-10 focus:ring-4 focus:ring-gray-200"
-                        (click)="toggleUpdateModal()">Cancelar</button>
-                </div>
+                        class="text-white bg-gradient-to-r from-[#C2C3F3] to-[#787AE6] hover:bg-gradient-to-br focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
+                        (click)="toggleUpdateModal()">
+                        Cancelar
+                    </button>
+                </div>                
             </form>
         </div>
     </div>

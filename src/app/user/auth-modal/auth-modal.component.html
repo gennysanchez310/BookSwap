@@ -19,14 +19,14 @@
                             <!-- Correo electrónico -->
                             <div class="mb-3">
                                 <label class="inline-block mb-2 text-[#787AE6]">Correo Electrónico</label>
-                                <input type="email" [(ngModel)]="emailLogin" name="emailLogin" class="block w-full py-1.5 px-3 border border-gray-400 transition
+                                <input type="email" [(ngModel)]="emailLogin" name="emailLogin" class="block w-full py-1.5 px-3 border border-purple-500 transition
                         duration-500 focus:outline-none rounded bg-transparent
                         focus:border-[#787AE6] focus:ring-[#787AE6]" placeholder="Ingresa tu correo electrónico" required />
                             </div>
                             <!-- Contraseña -->
                             <div class="mb-3">
                                 <label class="inline-block mb-2 text-[#787AE6]">Contraseña</label>
-                                <div class="flex items-center justify-between rounded border border-gray-400"
+                                <div class="flex items-center justify-between rounded border border-purple-500"
                                     [ngClass]="{'border-[#787AE6] ring-1 ring-[#787AE6] transition duration-500': isFocused1}">
                                     <input class="outline-none w-full border-none focus:ring-0 mx-1"
                                         [type]="showPassword ? 'text' : 'password'" [(ngModel)]="passwordLogin"
@@ -38,14 +38,14 @@
                                         (click)="togglePassword()"></i>
                                 </div>
                             </div>
-                            <button type="submit" class="my-6 block w-full bg-[#787AE6] text-white py-1.5 px-3 rounded transition
-                      hover:bg-[#5f5be8]">
-                                Enviar
-                            </button>
+                            <button type="submit"
+                            class="text-white bg-gradient-to-r from-[#C2C3F3] to-[#787AE6] hover:bg-gradient-to-br focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 w-full my-6 transition">
+                            Enviar
+                        </button>                        
                             <hr class="my-6 border-gray-300 w-full">
 
                             <button type="button" (click)="signInWithGoogle()"
-                                class="w-full block bg-white hover:bg-gray-100 focus:bg-gray-100 text-[#280F3E] font-semibold rounded-lg py-2 border border-gray-300">
+                                class="w-full block bg-white hover:bg-purple-500 focus:bg-gray-100 text-[#280F3E] font-semibold rounded-lg py-2 border border-purple-500">
                                 <div class="flex items-center justify-center">
                                     <div class="google-icon"></div>
                                     <span class="ml-4">
@@ -63,20 +63,20 @@
                             <div class="mb-3">
                                 <label class="inline-block mb-2 text-[#787AE6]">Nombre</label>
                                 <input type="text" [(ngModel)]="name" name="name"
-                                    class="block w-full py-1.5 px-3 border border-gray-400 transition
+                                    class="block w-full py-1.5 px-3 border border-purple-500 transition
                         duration-500 focus:outline-none rounded bg-transparent focus:border-[#787AE6] focus:ring-[#787AE6]" placeholder="Ingresa tu nombre" />
                             </div>
                             <!-- Correo electrónico -->
                             <div class="mb-3">
                                 <label class="inline-block mb-2 text-[#787AE6]">Correo Electrónico</label>
                                 <input type="email" [(ngModel)]="emailRegister" name="emailRegister"
-                                    class="block w-full py-1.5 px-3 border border-gray-400 transition
+                                    class="block w-full py-1.5 px-3 border border-purple-500 transition
                         duration-500 focus:outline-none rounded bg-transparent focus:border-[#787AE6] focus:ring-[#787AE6]" placeholder="Ingresa tu correo electrónico" required />
                             </div>
                             <!-- Contraseña -->
                             <div class="mb-3">
                                 <label class="inline-block mb-2 text-[#787AE6]">Contraseña</label>
-                                <div class="flex items-center justify-between rounded border border-gray-400"
+                                <div class="flex items-center justify-between rounded border border-purple-500"
                                     [ngClass]="{'border-[#787AE6] ring-1 ring-[#787AE6] transition duration-500': isFocused1}">
                                     <input class="outline-none border-none w-full focus:ring-0 mx-1"
                                         [type]="showPassword ? 'text' : 'password'" [(ngModel)]="passwordRegister"
@@ -91,7 +91,7 @@
                             <!-- Confirmar Contraseña -->
                             <div class="mb-3">
                                 <label class="inline-block mb-2 text-[#787AE6]">Confirmar Contraseña</label>
-                                <div class="flex items-center justify-between rounded border border-gray-400"
+                                <div class="flex items-center justify-between rounded border border-purple-500"
                                     [ngClass]="{'border-[#787AE6] ring-1 ring-[#787AE6] transition duration-500': isFocused2}">
                                     <input class="outline-none border-none w-full focus:ring-0 mx-1"
                                         [type]="showPassword ? 'text' : 'password'" [(ngModel)]="confirmPassword"
@@ -103,13 +103,13 @@
                                         (click)="togglePassword()"></i>
                                 </div>
                             </div>
-                            <button type="submit" class="my-6 block w-full bg-[#787AE6] text-white py-1.5 px-3 rounded transition
-                      hover:bg-[#5f5be8] disabled:opacity-50">
-                                Enviar
-                            </button>
+                            <button type="submit"
+                            class="text-white bg-gradient-to-r from-[#C2C3F3] to-[#787AE6] hover:bg-gradient-to-br focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 w-full my-6 transition">
+                            Enviar
+                        </button>
                             <hr class="my-6 border-gray-300 w-full">
                             <button type="button" (click)="signUpWithGoogle()"
-                                class="w-full block bg-white hover:bg-gray-100 focus:bg-gray-100 text-[#280F3E] font-semibold rounded-lg py-2 border border-gray-300">
+                                class="w-full block bg-white hover:bg-purple-500 focus:bg-gray-100 text-[#280F3E] font-semibold rounded-lg py-2 border border-purple-300">
                                 <div class="flex items-center justify-center">
                                     <div class="google-icon"></div>
                                     <span class="ml-4">
