@@ -1,32 +1,32 @@
 <section class="py-12 bg-gradient-to-b from-gray-50 to-gray-100">
     <div class="max-w-2xl mx-auto bg-white shadow-lg rounded-xl p-8">
-        <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">Contáctanos</h2>
+        <h2 class="text-4xl font-bold text-center text-purple-400 mb-4">Contáctanos</h2>
         <p class="text-center text-gray-600 mb-6">¿Tienes una pregunta o sugerencia? No dudes en escribirnos.</p>
         
         <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="space-y-6">
             <div>
                 <label for="email" class="block text-sm font-medium text-gray-700">Tu Correo Electrónico <span class="text-red-500">*</span></label>
                 <input type="email" id="email" formControlName="email" 
-                    class="mt-1 w-full p-3 border rounded-lg focus:ring-green-500 focus:border-green-500 shadow-sm"
+                    class="mt-1 w-full p-3 border rounded-lg focus:ring-purple-500 focus:border-purple-500 shadow-sm"
                     placeholder="tucorreo@ejemplo.com" />
             </div>
 
             <div>
                 <label for="subject" class="block text-sm font-medium text-gray-700">Asunto</label>
                 <input type="text" id="subject" formControlName="subject"
-                    class="mt-1 w-full p-3 border rounded-lg focus:ring-green-500 focus:border-green-500 shadow-sm"
+                    class="mt-1 w-full p-3 border rounded-lg focus:ring-purple-500 focus:border-purple-500 shadow-sm"
                     placeholder="Cuéntanos en qué podemos ayudarte" />
             </div>
 
             <div>
                 <label for="message" class="block text-sm font-medium text-gray-700">Mensaje <span class="text-red-500">*</span></label>
                 <textarea id="message" rows="5" formControlName="message"
-                    class="mt-1 w-full p-3 border rounded-lg focus:ring-green-500 focus:border-green-500 shadow-sm"
+                    class="mt-1 w-full p-3 border rounded-lg focus:ring-purple-500 focus:border-purple-500 shadow-sm"
                     placeholder="Escribe tu mensaje aquí..."></textarea>
             </div>
 
             <button type="submit" 
-                class="w-full bg-green-500 text-white py-3 rounded-lg text-lg font-semibold hover:bg-green-600 transition">
+                class="w-full bg-purple-400 text-black py-3 rounded-lg text-lg font-semibold hover:bg-purple-600 transition">
                 Enviar Mensaje
             </button>
         </form>
