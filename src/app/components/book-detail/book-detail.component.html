@@ -41,7 +41,7 @@
                 <div class="mt-4 flex items-center gap-4 bg-purple-300 p-3 rounded-md shadow">
                     <img [src]="ownerAvatarUrl || 'assets/default-avatar.png'" 
                         alt="avatar" class="w-10 h-10 rounded-full shadow-md" />
-                    <h2 class="text-gray-900 font-semibold">@{{ ownerUsername }}</h2>
+                        <h2 class="text-gray-900 font-semibold" [innerText]="'@' + ownerUsername"></h2>
                     <button class="ml-auto text-[#9333ea] hover:text-purple-600" (click)="viewUser()">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </button>
