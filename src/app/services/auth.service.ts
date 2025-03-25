@@ -45,17 +45,27 @@ export class AuthService {
     }
   }
 
-  // Check if the user is authenticated
-  isAuthenticated(): boolean {
-    return !!this.afAuth.currentUser;
+  // ✅ Método para obtener el ID del usuario autenticado
+  getCurrentUserId(): string | null {
+    const user = firebase.auth().currentUser;
+    return user ? user.uid : null;
   }
 
-  // Get the current user
-  getCurrentUser() {
-    return this.afAuth.currentUser;
+  // ✅ Modificado: Comprobar si hay un usuario autenticado correctamente
+  isAuthenticated(): Observable<boolean> {
+    return new Observable<boolean>((observer) => {
+      this.afAuth.authState.subscribe((user) => {
+        observer.next(!!user);
+      });
+    });
   }
 
-  // Sign out the user
+  // Obtener información del usuario actual
+  getCurrentUser(): Observable<firebase.User | null> {
+    return this.user$;
+  }
+
+  // Cerrar sesión
   signOut(): Promise<void> {
     return this.afAuth.signOut();
   }
