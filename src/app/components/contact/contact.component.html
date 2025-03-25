@@ -1,34 +1,107 @@
-<section class="py-12 bg-gradient-to-b from-gray-50 to-gray-100">
-    <div class="max-w-2xl mx-auto bg-white shadow-lg rounded-xl p-8">
-        <h2 class="text-4xl font-bold text-center text-purple-400 mb-4">Contáctanos</h2>
-        <p class="text-center text-gray-600 mb-6">¿Tienes una pregunta o sugerencia? No dudes en escribirnos.</p>
-        
-        <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="space-y-6">
-            <div>
-                <label for="email" class="block text-sm font-medium text-gray-700">Tu Correo Electrónico <span class="text-red-500">*</span></label>
-                <input type="email" id="email" formControlName="email" 
-                    class="mt-1 w-full p-3 border rounded-lg focus:ring-purple-500 focus:border-purple-500 shadow-sm"
-                    placeholder="tucorreo@ejemplo.com" />
-            </div>
-
-            <div>
-                <label for="subject" class="block text-sm font-medium text-gray-700">Asunto</label>
-                <input type="text" id="subject" formControlName="subject"
-                    class="mt-1 w-full p-3 border rounded-lg focus:ring-purple-500 focus:border-purple-500 shadow-sm"
-                    placeholder="Cuéntanos en qué podemos ayudarte" />
-            </div>
-
-            <div>
-                <label for="message" class="block text-sm font-medium text-gray-700">Mensaje <span class="text-red-500">*</span></label>
-                <textarea id="message" rows="5" formControlName="message"
-                    class="mt-1 w-full p-3 border rounded-lg focus:ring-purple-500 focus:border-purple-500 shadow-sm"
-                    placeholder="Escribe tu mensaje aquí..."></textarea>
-            </div>
-
-            <button type="submit" 
-                class="w-full bg-purple-400 text-black py-3 rounded-lg text-lg font-semibold hover:bg-purple-600 transition">
-                Enviar Mensaje
-            </button>
-        </form>
+<div class="contact-container">
+  <div class="support-info">
+    <h2>Centro de Ayuda y Soporte</h2>
+    
+    <!-- Estado del soporte -->
+    <div class="support-status" [ngClass]="{'open': isSupportOpen(), 'closed': !isSupportOpen()}">
+      <i class="fas" [ngClass]="{'fa-check-circle': isSupportOpen(), 'fa-times-circle': !isSupportOpen()}"></i>
+      <span>Soporte {{isSupportOpen() ? 'Disponible' : 'No Disponible'}}</span>
     </div>
-</section>
+
+    <!-- Horarios de atención -->
+    <div class="support-hours">
+      <h3>Horarios de Atención</h3>
+      <ul>
+        <li>Lunes a Viernes: {{supportInfo.hours.weekdays}}</li>
+        <li>Sábados: {{supportInfo.hours.saturdays}}</li>
+        <li>Domingos: {{supportInfo.hours.sundays}}</li>
+      </ul>
+    </div>
+
+    <!-- Información de contacto -->
+    <div class="contact-info">
+      <h3>Información de Contacto</h3>
+      <ul>
+        <li><i class="fas fa-envelope"></i> Email: {{supportInfo.contact.email}}</li>
+        <li><i class="fas fa-phone"></i> Teléfono: {{supportInfo.contact.phone}}</li>
+        <li><i class="fas fa-clock"></i> Tiempo de respuesta: {{supportInfo.responseTime}}</li>
+      </ul>
+    </div>
+
+    <!-- Enlaces útiles -->
+    <div class="useful-links">
+      <h3>Enlaces Útiles</h3>
+      <ul>
+        <li><a [routerLink]="supportInfo.faq">Preguntas Frecuentes</a></li>
+        <li><a [routerLink]="supportInfo.guide">Guía del Usuario</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Formulario de contacto -->
+  <div class="contact-form">
+    <h2>Envíanos un Mensaje</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" formControlName="name" class="form-control">
+        <div class="error-message" *ngIf="contactForm.get('name')?.errors?.['required'] && contactForm.get('name')?.touched">
+          El nombre es requerido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" class="form-control">
+        <div class="error-message" *ngIf="contactForm.get('email')?.errors?.['required'] && contactForm.get('email')?.touched">
+          El email es requerido
+        </div>
+        <div class="error-message" *ngIf="contactForm.get('email')?.errors?.['email'] && contactForm.get('email')?.touched">
+          Ingresa un email válido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="issueType">Tipo de Problema</label>
+        <select id="issueType" formControlName="issueType" class="form-control">
+          <option value="">Selecciona un tipo de problema</option>
+          <option *ngFor="let type of issueTypes" [value]="type.value">
+            {{type.label}}
+          </option>
+        </select>
+        <div class="error-message" *ngIf="contactForm.get('issueType')?.errors?.['required'] && contactForm.get('issueType')?.touched">
+          Selecciona un tipo de problema
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Asunto</label>
+        <input type="text" id="subject" formControlName="subject" class="form-control">
+        <div class="error-message" *ngIf="contactForm.get('subject')?.errors?.['required'] && contactForm.get('subject')?.touched">
+          El asunto es requerido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Mensaje</label>
+        <textarea id="message" formControlName="message" class="form-control" rows="5"></textarea>
+        <div class="error-message" *ngIf="contactForm.get('message')?.errors?.['required'] && contactForm.get('message')?.touched">
+          El mensaje es requerido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="priority">Prioridad</label>
+        <select id="priority" formControlName="priority" class="form-control">
+          <option value="normal">Normal</option>
+          <option value="high">Alta</option>
+          <option value="urgent">Urgente</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn" [disabled]="contactForm.invalid || !isSupportOpen()">
+        Enviar Mensaje
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,7 +1,7 @@
-<section class="bg-gray-100 flex flex-col px-12 py-6 min-h-screen">
-    <div class="px-4 sm:px-10 py-4 inline-block">
+<section class="bg-gray-100 flex flex-col px-12 py-10 min-h-screen space-y-8">
+    <div class="px-4 sm:px-10 py-4">
         <nav class="relative" aria-label="Migas de pan">
-            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+            <ol class="inline-flex items-center space-x-3 md:space-x-4">
                 <li class="flex items-center">
                     <i class="fa-solid fa-house fa-xs text-purple-500"></i>
                 </li>
@@ -9,85 +9,130 @@
                     <div class="flex items-center">
                         <i class="fa-solid fa-chevron-right fa-xs text-purple-300"></i>
                         <a routerLink="/bookStore"
-                            class="ml-1 text-sm font-medium text-purple-500 hover:text-[#0DBE5E] md:ml-2">Librería</a>
+                            class="ml-2 text-sm font-medium text-purple-500 hover:text-[#0DBE5E]">Librería</a>
                     </div>
                 </li>
                 <li aria-current="page">
                     <div class="flex items-center">
                         <i class="fa-solid fa-chevron-right fa-xs text-purple-300"></i>
-                        <span class="ml-1 text-sm font-medium text-purple-500 md:ml-2">Listado de libros</span>
+                        <span class="ml-2 text-sm font-medium text-purple-500">Listado de libros</span>
                     </div>
                 </li>
             </ol>
         </nav>
     </div>
-    <div class="flex flex-col items-center justify-center p-4 my-4">
-        <div class="container max-w-screen-lg mx-auto">
-            <div class="grid gap-6 gap-y-4 text-sm grid-cols-1 lg:grid-cols-3">
+
+    <div class="flex flex-col items-center justify-center p-6">
+        <div class="container max-w-screen-lg mx-auto space-y-8">
+            
+            <div class="grid gap-8 text-sm grid-cols-1 lg:grid-cols-3">
                 <div class="text-purple-600">
-                    <p class="font-medium text-lg py-2">Detalles del libro</p>
+                    <p class="font-medium text-lg py-4">Detalles del libro</p>
                     <p>Por favor, completa todos los detalles del libro <br> que deseas listar.</p>
                 </div>
                 <div class="lg:col-span-2">
-                    <form [formGroup]="bookForm" (ngSubmit)="addBook()">
-                        <div class="grid gap-4 gap-y-4 text-sm grid-cols-1 md:grid-cols-5">
-                            <!-- ISBN primero -->
-                            <div class="md:col-span-2">
-                                <label for="isbn" class="block mb-2 text-sm font-medium text-grey-600">ISBN<sup class="text-red-500 text-sm">*</sup></label>
-                                <input name="isbn" id="isbn" formControlName="isbn"
-                                    [ngClass]="{'ring-1 ring-red-500': bookForm.get('isbn')?.invalid && bookForm.get('isbn')?.touched}"
-                                    class="bg-gray-50 border border-purple-400 text-gray-900 text-sm rounded-lg focus:ring-[#C2C3F3] focus:border-[#C2C3F3] block w-full p-2.5" />
+                    <form [formGroup]="bookForm" (ngSubmit)="addBook()" class="space-y-6">
+                        <div class="grid gap-6 text-sm grid-cols-1 md:grid-cols-5">
+
+                            <!-- ISBN -->
+                            <div class="md:col-span-5">
+                                <label for="isbn" class="block mb-2 text-sm font-medium text-grey-600">ISBN
+                                    <sup class="text-red-500">*</sup>
+                                </label>
+                                <div class="flex flex-row items-start gap-4">
+                                    <input type="text" name="isbn" id="isbn" formControlName="isbn" placeholder="Ingrese ISBN"
+                                        [ngClass]="{'ring-1 ring-red-500': bookForm.get('isbn')?.invalid && bookForm.get('isbn')?.touched}"
+                                        class="bg-gray-50 border border-purple-400 text-gray-900 text-sm rounded-lg focus:ring-[#C2C3F3] focus:border-[#C2C3F3] block w-48 p-2.5 text-left" />
+                                    
+                                    <button type="button" (click)="searchBookByISBN()"
+                                        class="text-black bg-gradient-to-r from-[#C2C3F3] to-[#787AE6] hover:bg-gradient-to-br focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-6 py-3">
+                                        <i class="fa-solid fa-search"></i> Buscar
+                                    </button>                                  
+                                </div>
+                                <!-- Vista previa del libro -->
+                                <div *ngIf="bookPreview"
+                                class="mt-6 p-6 bg-white shadow-lg rounded-lg inline-flex flex-col sm:flex-row items-start gap-6">
+
+                                <!-- Imagen del libro -->
+                                <img *ngIf="bookPreview.image" [src]="bookPreview.image" alt="Portada del libro"
+                                    class="max-w-full h-auto object-cover rounded-lg shadow-md">
+
+                                <!-- Contenedor del texto -->
+                                <div class="flex flex-col w-full">
+                                    <h3 class="text-xl font-semibold text-gray-700 break-words">
+                                        {{ bookPreview.title }}
+                                    </h3>
+                                    <p class="text-md text-gray-600 mb-2">{{ bookPreview.author }}</p>
+
+                                    <!-- Descripción con altura limitada y scroll interno -->
+                                    <div class="text-sm text-gray-600 max-h-32 overflow-y-auto leading-relaxed">
+                                        {{ bookPreview.description }}
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>
+                            <!-- Estado de carga -->
+                            <div *ngIf="isLoading" class="flex items-center justify-center my-4">
+                                <i class="fa-solid fa-spinner fa-spin text-[#0DBE5E] text-2xl"></i>
                             </div>
+
                             <!-- Nombre del libro -->
                             <div class="md:col-span-5">
-                                <label for="title" class="block mb-2 text-sm font-medium text-grey-600">Nombre del
-                                    libro<sup class="text-red-500 text-sm">*</sup>
+                                <label for="title" class="block mb-2 text-sm font-medium text-grey-600">Nombre del libro
+                                    <sup class="text-red-500">*</sup>
                                 </label>
                                 <input type="text" id="title" name="title" formControlName="title"
                                     [ngClass]="{'ring-1 ring-red-500': bookForm.get('title')?.invalid && bookForm.get('title')?.touched}"
                                     class="bg-gray-50 border border-purple-400 text-gray-900 text-sm rounded-lg focus:ring-[#C2C3F3] focus:border-[#C2C3F3] block w-full p-2.5" />
                             </div>
+
                             <!-- Nombre del autor -->
                             <div class="md:col-span-5">
-                                <label for="author" class="block mb-2 text-sm font-medium text-grey-600">Nombre del
-                                    autor<sup class="text-red-500 text-sm">*</sup></label>
+                                <label for="author" class="block mb-2 text-sm font-medium text-grey-600">Nombre del autor
+                                    <sup class="text-red-500">*</sup>
+                                </label>
                                 <input type="text" id="author" name="author" formControlName="author"
                                     [ngClass]="{'ring-1 ring-red-500': bookForm.get('author')?.invalid && bookForm.get('author')?.touched}"
                                     class="bg-gray-50 border border-purple-400 text-gray-900 text-sm rounded-lg focus:ring-[#C2C3F3] focus:border-[#C2C3F3] block w-full p-2.5" />
                             </div>
+
                             <!-- Descripción -->
                             <div class="md:col-span-5">
-                                <label for="description"
-                                    class="block mb-2 text-sm font-medium text-grey-600">Descripción</label>
+                                <label for="description" class="block mb-2 text-sm font-medium text-grey-600">Descripción</label>
                                 <textarea rows="5" id="description" name="description" formControlName="description"
                                     class="bg-gray-50 border border-purple-400 text-gray-900 text-sm rounded-lg focus:ring-[#C2C3F3] focus:border-[#C2C3F3] block w-full p-2.5"></textarea>
                             </div>
+
                             <!-- Condición -->
                             <div class="md:col-span-3">
-                                <label for="condition" class="block mb-2 text-sm font-medium text-grey-600">Condición<sup
-                                        class="text-red-500 text-sm">*</sup></label>
-                                <label for="condition" class="sr-only">Seleccionar condición</label>
+                                <label for="condition" class="block mb-2 text-sm font-medium text-grey-600">Condición
+                                    <sup class="text-red-500">*</sup>
+                                </label>
                                 <select id="condition" name="condition" formControlName="condition"
                                     [ngClass]="{'ring-1 ring-red-500': bookForm.get('condition')?.invalid && bookForm.get('condition')?.touched}"
-                                    class="bg-gray-50 border border-purple-400 text-gray-900 text-sm rounded-lg focus:ring-[#C2C3F3] focus:border-[#C2C3F3] block w-full p-2.5 peer">
+                                    class="bg-gray-50 border border-purple-400 text-gray-900 text-sm rounded-lg focus:ring-[#C2C3F3] focus:border-[#C2C3F3] block w-full p-2.5">
                                     <option value="Nuevo">Nuevo</option>
                                     <option value="Bueno">Bueno</option>
                                     <option value="Regular">Regular</option>
                                     <option value="Aceptable">Aceptable</option>
                                 </select>
                             </div>
+
                             <!-- Botón Publicar -->
-                            <div class="md:col-span-5 my-4">
-                                <div class="inline-flex items-end">
-                                    <button
-                                        class="text-black bg-gradient-to-r from-[#C2C3F3] to-[#787AE6] hover:bg-gradient-to-br focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Publicar</button>
-                                </div>
+                            <div class="md:col-span-5 flex justify-center mt-6">
+                                <button
+                                    class="text-black bg-gradient-to-r from-[#C2C3F3] to-[#787AE6] hover:bg-gradient-to-br focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-6 py-3">
+                                    Publicar
+                                </button>
                             </div>
+
                         </div>
                     </form>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
+
 <app-footer></app-footer>

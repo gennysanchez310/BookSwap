@@ -8,7 +8,7 @@ import { generateUsername } from 'unique-username-generator';
 import axios from 'axios';
 import { ToastrService } from 'ngx-toastr';
 import { HostListener } from '@angular/core';
-import { doc, setDoc } from '@angular/fire/firestore';
+import { doc, setDoc, getDoc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-auth-modal',
@@ -16,6 +16,19 @@ import { doc, setDoc } from '@angular/fire/firestore';
   styleUrls: ['./auth-modal.component.css'],
 })
 export class AuthModalComponent {
+
+  emailLogin = '';
+  passwordLogin = '';
+  emailRegister = '';
+  passwordRegister = '';
+  confirmPassword = '';
+  name = '';
+  showPassword: boolean = false;
+  isFocused1: boolean = false;
+  isFocused2: boolean = false;
+  @Input() showModal!: boolean;
+  @Output() closeModal = new EventEmitter<void>();
+
   //Validacion de Gmail o Email.
   validateEmail(email: string): boolean {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -37,18 +50,6 @@ export class AuthModalComponent {
       this.closeModal.emit();
     }
   }
-
-  emailLogin = '';
-  passwordLogin = '';
-  emailRegister = '';
-  passwordRegister = '';
-  confirmPassword = '';
-  name = '';
-  showPassword: boolean = false;
-  isFocused1: boolean = false;
-  isFocused2: boolean = false;
-  @Input() showModal!: boolean;
-  @Output() closeModal = new EventEmitter<void>();
 
   constructor(
     private authService: AuthService,
@@ -178,57 +179,55 @@ export class AuthModalComponent {
     try {
       const result = await this.afAuth.signInWithPopup(provider);
       console.log('Inicio de sesión con Google exitoso:', result);
-
-       // Verificar si el usuario es nuevo
-      if (result.additionalUserInfo?.isNewUser) {
-        const user = result.user;
-
-        if (user) {
-          const { username, avatarUrl } =
-            await this.generateRandomUsernameAndAvatar();
-
-          const userEmail = user.email;
-
-          // **Generar una contraseña aleatoria solo si es necesario**
-        const randomPassword = Math.random().toString(36).slice(-10);
-
-          // Store user data in Firestore
-          const userData = {
-            username,
-            avatarUrl,
-            userUID: user.uid,
-            userEmail,
-            password: randomPassword, // Solo si el sistema lo requiere
-            firstName: '',
-            lastName: '',
-            gender: '',
-            location: '',
-            birthday: '',
-            summary: '',
-            instaId: '',
-            twitterId: '',
-          };
-
-          // Store user data in Firestore's 'users' collection
-          const userInstance = doc(this.firestore, `users/${user.uid}`);
-          await setDoc(userInstance, userData);
-
-
-          console.log(
-            'Usuario registrado con Google con nombre de usuario y avatar aleatorios.'
-          );
-          this.toastr.success(
-            'Usuario registrado exitosamente con Google',
-            'Éxito'
-          );
-        }
-        this.router.navigate(['/bookStore']);
+  
+      const user = result.user;
+      if (!user) {
+        console.error('No se pudo obtener el usuario de Google.');
+        this.toastr.error('No se pudo obtener el usuario de Google.', 'Error');
+        return;
       }
+  
+      // Obtener datos del usuario
+      const userUID = user.uid;
+      const userEmail = user.email;
+  
+      // Revisar si el usuario ya existe en Firestore antes de crearlo
+      const userRef = doc(this.firestore, `users/${userUID}`);
+      const userSnapshot = await getDoc(userRef);
+  
+      if (!userSnapshot.exists()) {
+        // Si es un usuario nuevo, genera username y avatar
+        const { username, avatarUrl } = await this.generateRandomUsernameAndAvatar();
+  
+        const userData = {
+          username,
+          avatarUrl,
+          userUID,
+          userEmail,
+          firstName: '',
+          lastName: '',
+          gender: '',
+          location: '',
+          birthday: '',
+          summary: '',
+          instaId: '',
+          twitterId: '',
+        };
+  
+        // Guardar en Firestore
+        await setDoc(userRef, userData);
+        console.log('Usuario registrado con Google y guardado en Firestore.');
+        this.toastr.success('Usuario registrado exitosamente con Google', 'Éxito');
+      } else {
+        console.log('Usuario ya registrado en Firestore.');
+      }
+  
+      this.router.navigate(['/bookStore']);
     } catch (error) {
       console.error('Error en el registro con Google:', error);
       this.toastr.error('Error en el registro con Google', 'Error');
     }
-  }
+  }  
 
   async signInWithGoogle() {
     const provider = new GoogleAuthProvider();

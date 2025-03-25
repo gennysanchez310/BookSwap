@@ -1,0 +1,43 @@
+<!-- Botón flotante para abrir el chat -->
+<button (click)="toggleChat()" 
+        class="fixed bottom-4 right-4 bg-purple-500 text-white p-4 rounded-full shadow-lg hover:bg-purple-600 transition duration-300 z-50">
+    <i class="fas fa-comments"></i>
+</button>
+
+<!-- Ventana del chat -->
+<div *ngIf="isOpen" 
+     class="fixed bottom-20 right-4 w-96 bg-white rounded-lg shadow-xl z-50 border border-gray-200">
+    <!-- Encabezado del chat -->
+    <div class="bg-purple-500 text-white p-4 rounded-t-lg flex justify-between items-center">
+        <h3 class="font-semibold">Asistente Virtual BookSwap</h3>
+        <button (click)="toggleChat()" class="text-white hover:text-gray-200">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Área de mensajes -->n
+    <div class="h-96 overflow-y-auto p-4 space-y-4">
+        <div *ngFor="let message of messages" 
+             [ngClass]="{'flex justify-end': message.isUser, 'flex justify-start': !message.isUser}">
+            <div [ngClass]="{'bg-purple-500 text-white rounded-lg py-2 px-4 max-w-[80%]': message.isUser,
+                            'bg-gray-100 text-gray-800 rounded-lg py-2 px-4 max-w-[80%]': !message.isUser}">
+                {{ message.text }}
+            </div>
+        </div>
+    </div>
+
+    <!-- Área de entrada de mensaje -->
+    <div class="p-4 border-t">
+        <div class="flex space-x-2">
+            <input type="text" 
+                   [(ngModel)]="newMessage" 
+                   (keyup.enter)="sendMessage()"
+                   placeholder="Escribe tu mensaje..."
+                   class="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+            <button (click)="sendMessage()" 
+                    class="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition duration-300">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</div> 
