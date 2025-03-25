@@ -21,6 +21,7 @@ import { BookStoreComponent } from './components/book-store/book-store.component
 import { ListBookComponent } from './components/list-book/list-book.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
+import { ChatbotComponent } from './components/chatbot/chatbot.component';
 
 import { environment } from 'src/environments/environment';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -40,6 +41,7 @@ import { LazyLoadCanvasDirective } from './lazy-load-canvas.directive';
     ListBookComponent,
     UserProfileComponent,
     BookDetailComponent,
+    ChatbotComponent,
     LazyLoadCanvasDirective,
   ],
   imports: [
