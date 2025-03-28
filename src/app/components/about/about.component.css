@@ -1,0 +1,9 @@
+/* Ajuste para botones en pantallas móviles */
+@media (max-width: 640px) {
+    .bg-purple-600:hover {
+        background-color: #5a1b9a; /* Cambiar al color más oscuro en hover */
+    }
+    .bg-gradient-to-r {
+        background: linear-gradient(to right, #7e56cc, #5a1b9a); /* Cambio de gradiente para visibilidad */
+    }
+}

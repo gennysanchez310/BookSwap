@@ -1,24 +1,24 @@
 <footer class="bg-purple-300">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-        <div class="sm:flex sm:items-center sm:justify-between">
-            <a href="#" class="flex items-center mb-4 sm:mb-0">
-                <img src="../../../assets/icons8-book-96.png" class="h-8 mr-3" alt="Logo Read Cycle" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap">BookSwap</span>
-            </a>
-            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-600 sm:mb-0">
-                <li>
-                    <a href="#" class="mr-4 hover:underline md:mr-6">Inicio</a>
-                </li>
-                <li>
-                    <a href="#about" class="mr-4 hover:underline md:mr-6">Acerca de</a>
-                </li>
-                <li>
-                    <a href="#contact" class="hover:underline">Contacto</a>
-                </li>
-            </ul>
-        </div>
-        <hr class="my-6 border-gray-300 sm:mx-auto lg:my-8" />
-        <span class="block text-sm text-gray-600 text-center">© {{year}} <a href="#" class="hover:underline">BookSwap
-                ™</a>. Todos los derechos reservados.</span>
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <a href="#" class="flex items-center mb-4 sm:mb-0">
+          <img src="../../../assets/icons8-book-96.png" class="h-8 mr-3" alt="Logo Book-Swap" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap">BookSwap</span>
+        </a>
+        <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-600 sm:mb-0">
+          <li>
+            <a href="#" class="mr-4 hover:underline md:mr-6" (click)="goToSection($event, 'home')">Inicio</a>
+          </li>
+          <li>
+            <a href="#about" class="mr-4 hover:underline md:mr-6" (click)="goToSection($event, 'about')">Acerca de</a>
+          </li>
+          <li>
+            <a href="#contact" class="hover:underline" (click)="goToSection($event, 'contact')">Contacto</a>
+          </li>
+        </ul>
+      </div>
+      <hr class="my-6 border-gray-300 sm:mx-auto lg:my-8" />
+      <span class="block text-sm text-gray-600 text-center">© {{year}} <a href="#" class="hover:underline">BookSwap ™</a>. Todos los derechos reservados.</span>
     </div>
-</footer>
+  </footer>
+  

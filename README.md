@@ -18,3 +18,18 @@ TRIUNFO EL MAL!!!!!!!!
 Para retrodecer un cambio lanzado usar el comando
 
 "git reset --hard HEAD~1"
+
+ Configuración de Firebase para Capacitor
+ 
+Cuando usas Firebase Authentication con Google en una aplicación móvil, debes asegurarte de que la configuración en Firebase sea correcta para las plataformas móviles (iOS/Android). Capacitor necesita un plugin para manejar la autenticación de Google.
+
+Pasos a seguir:
+Agregar Firebase SDK: Asegúrate de que tienes el SDK de Firebase configurado para trabajar con Capacitor. Si no lo has hecho, puedes seguir las instrucciones en la documentación oficial.
+
+Integrar el Plugin de Capacitor para Google SignIn: Firebase no tiene un SDK nativo para Google SignIn en móvil, por lo que necesitarás integrar un plugin adicional para Google SignIn. Un plugin común para esto es capacitor-google-auth, que es compatible con Capacitor. Aquí tienes un ejemplo de instalación:
+
+bash
+Copiar
+Editar
+npm install capacitor-google-auth
+npx cap sync

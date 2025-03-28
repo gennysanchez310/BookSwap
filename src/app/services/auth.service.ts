@@ -10,6 +10,7 @@ export class AuthService {
   user$: Observable<firebase.User | null>;
 
   constructor(private afAuth: AngularFireAuth) {
+    // Establecer un observable para el estado del usuario
     this.user$ = afAuth.authState as Observable<firebase.User | null>;
   }
 
@@ -45,17 +46,22 @@ export class AuthService {
     }
   }
 
-  // Check if the user is authenticated
-  isAuthenticated(): boolean {
-    return !!this.afAuth.currentUser;
+  // Verificar si el usuario está autenticado usando un observable
+  isAuthenticated(): Observable<boolean> {
+    return new Observable((observer) => {
+      this.afAuth.authState.subscribe((user) => {
+        observer.next(!!user); // Si hay un usuario, devuelve true, sino false
+        observer.complete();
+      });
+    });
   }
 
-  // Get the current user
+  // Obtener el usuario actual
   getCurrentUser() {
     return this.afAuth.currentUser;
   }
 
-  // Sign out the user
+  // Cerrar sesión
   signOut(): Promise<void> {
     return this.afAuth.signOut();
   }

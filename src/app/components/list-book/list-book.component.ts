@@ -48,7 +48,9 @@ export class ListBookComponent implements OnDestroy {
           this.bookPreview = {
             title: bookData.title,
             author: bookData.authors ? bookData.authors.join(', ') : 'Desconocido',
-            image: bookData.imageLinks?.thumbnail || '',
+            image: bookData.imageLinks?.thumbnail
+              ? bookData.imageLinks.thumbnail.replace(/^http:\/\//i, 'https://')
+              : '',
             description: bookData.description || 'Sin descripción disponible.',
           };
           this.bookForm.patchValue({

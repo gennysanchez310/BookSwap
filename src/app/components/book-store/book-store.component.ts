@@ -1,26 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Firestore, collection, getDocs } from '@angular/fire/firestore';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { BookService } from 'src/app/services/book.service';
-import { BookDetailComponent } from '../book-detail/book-detail.component';
 import { ToastrService } from 'ngx-toastr';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-book-store',
   templateUrl: './book-store.component.html',
   styleUrls: ['./book-store.component.css'],
 })
-export class BookStoreComponent {
+export class BookStoreComponent implements OnInit, OnDestroy {
   books: any[] = [];
   isProfileDropdownOpen: boolean = false;
   searchTerm: string = '';
   filteredBooks: any[] = [];
-  isModalOpen = false; // Track whether the modal is open
-  selectedISBN!: string; // Store the selected book's ISBN
+  isModalOpen = false; // Controla si el modal está abierto
+  selectedISBN!: string; // Guarda el ISBN del libro seleccionado
   selectedUserUID!: string;
   currentUserUID: any;
+  private routerEventsSubscription!: Subscription;
 
   constructor(
     private firestore: Firestore,
@@ -39,10 +40,27 @@ export class BookStoreComponent {
     });
   }
 
-  noAction() {
-    // No hacer nada literalmente es que no haga nada no lo muevan
+  ngOnInit(): void {
+    // Nos suscribimos a los eventos de navegación para asegurarnos de que el scroll se reactive al cambiar de ruta
+    this.routerEventsSubscription = this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // Reactiva el scroll cuando termina la navegación
+        this.checkAndRestoreScroll();
+      }
+    });
   }
-  
+
+  ngOnDestroy(): void {
+    // Nos desuscribimos de los eventos del router para evitar posibles fugas de memoria
+    if (this.routerEventsSubscription) {
+      this.routerEventsSubscription.unsubscribe();
+    }
+  }
+
+  noAction() {
+    // No hacer nada, literalmente es para no mover nada
+  }
+
   getData() {
     const bookInstance = collection(this.firestore, 'books');
     getDocs(bookInstance).then((res) => {
@@ -50,7 +68,7 @@ export class BookStoreComponent {
         return { ...item.data(), id: item.id };
       });
 
-      // Fetch additional book details including cover image
+      // Fetch detalles adicionales de los libros, como la imagen de portada
       this.books.forEach((book) => {
         this.googleBooksApiService
           .getBookDetailsByISBN(book.isbn)
@@ -73,14 +91,14 @@ export class BookStoreComponent {
   logout() {
     this.authService.signOut().then(() => {
       this.currentUserUID = null;
-      console.log('Logout Successfull');
-      this.toastr.success('Logged out successfully!', 'Success');
+      console.log('Cierre de sesión exitoso');
+      this.toastr.success('¡Has cerrado sesión correctamente!', 'Éxito');
       this.router.navigate(['/']);
     });
   }
 
   searchBooks() {
-    // Filter the books based on the search term
+    // Filtra los libros en base al término de búsqueda
     this.filteredBooks = this.books.filter((book) => {
       const titleMatch = book.title
         .toLowerCase()
@@ -99,15 +117,23 @@ export class BookStoreComponent {
     this.selectedUserUID = userUID;
     this.isModalOpen = true;
     document.body.style.overflow = 'hidden'; // Bloquea el scroll
-    console.log('Modal opened for ISBN:', isbn);
+    console.log('Modal abierto para el ISBN:', isbn);
   }
 
   closeModal() {
     this.isModalOpen = false;
-    document.body.style.overflow = 'auto'; // Reactiva el scroll
-}
+    this.checkAndRestoreScroll();
+  }
 
   profileManagement() {
+    this.closeModal(); // Asegúrate de cerrar el modal antes de navegar
     this.router.navigate(['/profile', this.currentUserUID]);
+  }
+
+  private checkAndRestoreScroll() {
+    // Verifica si hay algún modal abierto antes de restaurar el scroll
+    if (!this.isModalOpen) {
+      document.body.style.overflow = 'auto'; // Reactiva el scroll
+    }
   }
 }

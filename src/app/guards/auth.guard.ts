@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
@@ -22,11 +22,20 @@ export class AuthGuard implements CanActivate {
           return true;
         } else {
           this.toastr.error(
-            'Authentication is required to access this page.',
-            'Authentication Required'
+            'Se requiere autenticación para acceder a esta página.',
+            'Autenticación requerida'
           );
+          this.router.navigate(['/login']);  // Redirigir a la página de login
           return false;
         }
+      }),
+      catchError((error) => {
+        this.toastr.error(
+          'Ocurrió un error al verificar la autenticación.',
+          'Error de autenticación'
+        );
+        this.router.navigate(['/']);  // Redirigir a la página de inicio
+        return of(false);
       })
     );
   }
