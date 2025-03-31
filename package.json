@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "vercel-build": "npm install @codetrix-studio/capacitor-google-auth --force"
+
   },
   "private": true,
   "dependencies": {
