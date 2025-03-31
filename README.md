@@ -19,8 +19,15 @@ Para retrodecer un cambio lanzado usar el comando
 
 "git reset --hard HEAD~1"
 
+Actualizar la version android
+
+"npx cap sync android"
+
+
+Usando para alertas SweetAlert2
+
  Configuración de Firebase para Capacitor
- 
+
 Cuando usas Firebase Authentication con Google en una aplicación móvil, debes asegurarte de que la configuración en Firebase sea correcta para las plataformas móviles (iOS/Android). Capacitor necesita un plugin para manejar la autenticación de Google.
 
 Pasos a seguir:
@@ -33,3 +40,6 @@ Copiar
 Editar
 npm install capacitor-google-auth
 npx cap sync
+
+
+Hola Soy josue sin querer lo desplegue en firebase lo voy a eliminar ya que usamos vercel

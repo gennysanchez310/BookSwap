@@ -2,7 +2,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.BookSwapMovil.app',
-  appName: 'book-swap',
+  appName: 'BookSwap',
   webDir: 'dist'
 };
 

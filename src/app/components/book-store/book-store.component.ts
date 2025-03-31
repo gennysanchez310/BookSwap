@@ -6,6 +6,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { BookService } from 'src/app/services/book.service';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-book-store',
@@ -89,13 +90,26 @@ export class BookStoreComponent implements OnInit, OnDestroy {
   }
 
   logout() {
-    this.authService.signOut().then(() => {
-      this.currentUserUID = null;
-      console.log('Cierre de sesión exitoso');
-      this.toastr.success('¡Has cerrado sesión correctamente!', 'Éxito');
-      this.router.navigate(['/']);
+    Swal.fire({
+      title: '¿Cerrar sesión?',
+      text: '¿Estás seguro de que quieres cerrar sesión?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Sí, cerrar sesión',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.authService.signOut().then(() => {
+          this.currentUserUID = null;
+          Swal.fire('Sesión cerrada', 'Has cerrado sesión correctamente.', 'success');
+          this.router.navigate(['/']); // Redirige a la página de inicio
+        });
+      }
     });
-  }
+  }  
+  
 
   searchBooks() {
     // Filtra los libros en base al término de búsqueda

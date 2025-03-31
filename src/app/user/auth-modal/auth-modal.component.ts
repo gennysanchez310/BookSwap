@@ -9,6 +9,7 @@ import axios from 'axios';
 import { ToastrService } from 'ngx-toastr';
 import { HostListener } from '@angular/core';
 import { doc, setDoc, getDoc } from '@angular/fire/firestore';
+import { GoogleAuth } from '@codetrix-studio/capacitor-google-auth';  // Importar Capacitor Google Auth
 
 @Component({
   selector: 'app-auth-modal',
@@ -34,8 +35,7 @@ export class AuthModalComponent {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return regex.test(email);
   }
-  
-  
+
   // Método para emitir el cierre del modal
   closeModalOnOutsideClick(event: MouseEvent): void {
     const modal = document.getElementById('authentication-modal');
@@ -77,7 +77,7 @@ export class AuthModalComponent {
       return 'La contraseña debe incluir al menos un carácter especial (!@#$%^&*()).';
     }
     return null; // Contraseña válida
-  }  
+  }
 
   async generateRandomUsernameAndAvatar() {
     const username = generateUsername('', 0, 10);
@@ -111,11 +111,11 @@ export class AuthModalComponent {
     if (passwordError) {
       this.toastr.warning(passwordError, 'Error');
       return;
-    } 
+    }
 
     const { emailRegister, passwordRegister } = this;
     try {
-    // Registro de usuario con Firebase Authentication
+      // Registro de usuario con Firebase Authentication
       const userCredential = await this.authService.register(
         emailRegister,
         passwordRegister
@@ -144,7 +144,7 @@ export class AuthModalComponent {
           twitterId: '',
         };
 
-       // En lugar de addDoc, usa doc + setDoc con un UID único
+        // En lugar de addDoc, usa doc + setDoc con un UID único
         const userInstance = doc(this.firestore, `users/${userUID}`);
         await setDoc(userInstance, userData);
 
@@ -174,69 +174,64 @@ export class AuthModalComponent {
     this.handleAuthResult(userCredential, 'Inicio de sesión');
   }
 
-  async signUpWithGoogle() {
-    const provider = new GoogleAuthProvider();
-    try {
-      const result = await this.afAuth.signInWithPopup(provider);
-      console.log('Inicio de sesión con Google exitoso:', result);
-  
-      const user = result.user;
-      if (!user) {
-        console.error('No se pudo obtener el usuario de Google.');
-        this.toastr.error('No se pudo obtener el usuario de Google.', 'Error');
-        return;
-      }
-  
-      // Obtener datos del usuario
-      const userUID = user.uid;
-      const userEmail = user.email;
-  
-      // Revisar si el usuario ya existe en Firestore antes de crearlo
-      const userRef = doc(this.firestore, `users/${userUID}`);
-      const userSnapshot = await getDoc(userRef);
-  
-      if (!userSnapshot.exists()) {
-        // Si es un usuario nuevo, genera username y avatar
-        const { username, avatarUrl } = await this.generateRandomUsernameAndAvatar();
-  
-        const userData = {
-          username,
-          avatarUrl,
-          userUID,
-          userEmail,
-          firstName: '',
-          lastName: '',
-          gender: '',
-          location: '',
-          birthday: '',
-          summary: '',
-          instaId: '',
-          twitterId: '',
-        };
-  
-        // Guardar en Firestore
-        await setDoc(userRef, userData);
-        console.log('Usuario registrado con Google y guardado en Firestore.');
-        this.toastr.success('Usuario registrado exitosamente con Google', 'Éxito');
-      } else {
-        console.log('Usuario ya registrado en Firestore.');
-      }
-  
-      this.router.navigate(['/bookStore']);
-    } catch (error) {
-      console.error('Error en el registro con Google:', error);
-      this.toastr.error('Error en el registro con Google', 'Error');
-    }
-  }  
+  //Logica para movil inicio de sesion o web
+  async signInOrSignUpWithGoogle() {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-  async signInWithGoogle() {
-    const provider = new GoogleAuthProvider();
     try {
-      const result = await this.afAuth.signInWithPopup(provider);
-      console.log('Inicio de sesión con Google exitoso:', result);
+      let result;
+      if (isMobile) {
+        // Si es móvil, usa Capacitor Google Auth para evitar abrir navegador
+        const googleUser = await GoogleAuth.signIn();
+        const user = googleUser;
+        if (!user) {
+          console.error('No se pudo obtener el usuario de Google.');
+          this.toastr.error('No se pudo obtener el usuario de Google.', 'Error');
+          return;
+        }
+
+        const userUID = user.id;
+        const userEmail = user.email;
+
+        // Verificar si el usuario ya existe en Firestore
+        const userRef = doc(this.firestore, `users/${userUID}`);
+        const userSnapshot = await getDoc(userRef);
+
+        if (!userSnapshot.exists()) {
+          // Si el usuario no existe, se registra y se guarda en Firestore
+          const { username, avatarUrl } = await this.generateRandomUsernameAndAvatar();
+          const userData = {
+            username,
+            avatarUrl,
+            userUID,
+            userEmail,
+            firstName: '',
+            lastName: '',
+            gender: '',
+            location: '',
+            birthday: '',
+            summary: '',
+            instaId: '',
+            twitterId: '',
+          };
+
+          await setDoc(userRef, userData);
+          this.toastr.success('Usuario registrado exitosamente con Google', 'Éxito');
+        } else {
+          console.log('Usuario ya registrado en Firestore.');
+        }
+      } else {
+        // Si es web, usar el popup de Firebase
+        result = await this.afAuth.signInWithPopup(new GoogleAuthProvider());
+      }
+
+      // ✅ Mostrar mensaje de inicio de sesión exitoso
+      this.toastr.success('Inicio de sesión exitoso', 'Bienvenido');
+
+      // ✅ Redirigir a la página de libros
       this.router.navigate(['/bookStore']);
     } catch (error) {
-      console.error('Error en el inicio de sesión con Google:', error);
+      console.error('Error en la autenticación con Google:', error);
       this.toastr.error('Error en el inicio de sesión con Google', 'Error');
     }
   }
@@ -249,5 +244,46 @@ export class AuthModalComponent {
       console.error(`${action} fallido.`);
       this.toastr.error('Algo salió mal', 'Error');
     }
+  }
+
+  ngOnInit() {
+    this.afAuth.getRedirectResult().then(async (result) => {
+      if (result.user) {
+        const user = result.user;
+        const userUID = user.uid;
+        const userEmail = user.email;
+
+        const userRef = doc(this.firestore, `users/${userUID}`);
+        const userSnapshot = await getDoc(userRef);
+
+        if (!userSnapshot.exists()) {
+          // Registrar usuario si es nuevo
+          const { username, avatarUrl } = await this.generateRandomUsernameAndAvatar();
+          const userData = {
+            username,
+            avatarUrl,
+            userUID,
+            userEmail,
+            firstName: '',
+            lastName: '',
+            gender: '',
+            location: '',
+            birthday: '',
+            summary: '',
+            instaId: '',
+            twitterId: '',
+          };
+
+          await setDoc(userRef, userData);
+          this.toastr.success('Usuario registrado exitosamente con Google', 'Éxito');
+        }
+
+        this.toastr.success('Inicio de sesión exitoso', 'Bienvenido');
+        this.router.navigate(['/bookStore']);
+      }
+    }).catch(error => {
+      console.error('Error en el inicio de sesión con Google:', error);
+      this.toastr.error('Error en el inicio de sesión con Google', 'Error');
+    });
   }
 }

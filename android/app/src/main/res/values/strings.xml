@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">book-swap</string>
-    <string name="title_activity_main">book-swap</string>
+    <string name="app_name">BookSwap</string>
+    <string name="title_activity_main">BookSwap</string>
     <string name="package_name">com.BookSwapMovil.app</string>
     <string name="custom_url_scheme">com.BookSwapMovil.app</string>
 </resources>
